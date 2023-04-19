@@ -296,9 +296,6 @@ require("lazy").setup({
 			vim.notify = require("notify")
 		end,
 	},
-
-	-- Dressing
-	"stevearc/dressing.nvim",
 }, {})
 
 -- [[ Setting options ]]
