@@ -270,31 +270,43 @@ require("lazy").setup({
 		end,
 	},
 
-	-- Notify
+	-- Dressing
 	{
-		"rcarriga/nvim-notify",
-		keys = {
-			{
-				"<leader>un",
-				function()
-					require("notify").dismiss({ silent = true, pending = true })
-				end,
-				desc = "Delete all Notifications",
-			},
-		},
-		opts = {
-			timeout = 3000,
-			max_height = function()
-				return math.floor(vim.o.lines * 0.75)
-			end,
-			max_width = function()
-				return math.floor(vim.o.columns * 0.75)
-			end,
-		},
+		"stevearc/dressing.nvim",
+		lazy = true,
 		init = function()
-			-- when noice is not enabled, install notify on VeryLazy
-			vim.notify = require("notify")
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.select = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.select(...)
+			end
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
 		end,
+	},
+
+	-- IndentScope
+	{ "echasnovski/mini.indentscope" },
+
+	-- Noice
+	{
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({
+				-- add any options here
+			})
+		end,
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
 	},
 }, {})
 
@@ -560,14 +572,14 @@ end, { desc = "[S]earch [F]ile Browser" })
 require("nvim-treesitter.configs").setup({
 	-- Add languages to be installed here that you want installed for treesitter
 	ensure_installed = {
-		-- "json",
+		"json",
 		"javascript",
-		-- "yaml",
+		"yaml",
 		"lua",
-		-- "python",
+		"python",
 		"html",
 		"css",
-		-- "markdown",
+		"markdown",
 		"svelte",
 		"bash",
 		"dockerfile",
@@ -577,6 +589,12 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"vimdoc",
 		"vim",
+		"luadoc",
+		"luap",
+		"markdown_inline",
+		"query",
+		"regex",
+		"vimdoc",
 	},
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -1144,3 +1162,7 @@ require("interestingwords").setup({
 	color_key = "<leader>k",
 	cancel_color_key = "<leader>K",
 })
+
+-- IndentScope
+local indentScope = require("mini.indentscope")
+indentScope.setup()
