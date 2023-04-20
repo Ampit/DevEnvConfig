@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.cmd("autocmd!")
 vim.opt.shell = "zsh"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -17,39 +16,34 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
---
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require("lazy").setup({
 	-- NOTE: First, some plugins that don't require any configuration
-
 	-- Git related plugins
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
-
 	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
-
 	-- NOTE: This is where your plugins related to LSP can be installed.
 	--  The configuration is done below. Search for lspconfig to find it below.
-	{ -- LSP Configuration & Plugins
+	{
+		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-
 			-- Useful status updates for LSP
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 			{ "j-hui/fidget.nvim", opts = {} },
-
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
 			"jose-elias-alvarez/typescript.nvim",
 		},
 	},
-
-	{ -- Autocompletion
+	{
+		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
@@ -59,10 +53,10 @@ require("lazy").setup({
 			"hrsh7th/cmp-buffer",
 		},
 	},
-
 	-- Useful plugin to show you pending keybinds.
 	{ "folke/which-key.nvim", opts = {} },
-	{ -- Adds git releated signs to the gutter, as well as utilities for managing changes
+	{
+		-- Adds git releated signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
 			-- See `:help gitsigns.txt`
@@ -75,7 +69,6 @@ require("lazy").setup({
 			},
 		},
 	},
-
 	{
 		"navarasu/onedark.nvim",
 		-- "arcticicestudio/nord-vim",
@@ -83,11 +76,12 @@ require("lazy").setup({
 		config = function()
 			vim.cmd.colorscheme("onedark")
 			vim.cmd("autocmd ColorScheme * highlight Normal guibg=NONE")
+			vim.cmd("autocmd ColorScheme * highlight NotifyBackground guibg=#282c34")
 			-- vim.cmd.colorscheme("nord")
 		end,
 	},
-
-	{ -- Set lualine as statusline
+	{
+		-- Set lualine as statusline
 		"nvim-lualine/lualine.nvim",
 		-- See `:help lualine.txt`
 		opts = {
@@ -100,8 +94,8 @@ require("lazy").setup({
 		},
 		dependencies = { "nvim-tree/nvim-web-devicons", opts = {} },
 	},
-
-	{ -- Add indentation guides even on blank lines
+	{
+		-- Add indentation guides even on blank lines
 		"lukas-reineke/indent-blankline.nvim",
 		-- Enable `lukas-reineke/indent-blankline.nvim`
 		-- See `:help indent_blankline.txt`
@@ -110,15 +104,16 @@ require("lazy").setup({
 			show_trailing_blankline_indent = false,
 		},
 	},
-
 	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {}, dependencies = {
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	} },
-
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	},
 	-- Fuzzy Finder (files, lsp, etc)
 	{ "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
-
 	-- Fuzzy Finder Algorithm which requires local dependencies to be built.
 	-- Only load if `make` is available. Make sure you have the system
 	-- requirements installed.
@@ -131,8 +126,8 @@ require("lazy").setup({
 			return vim.fn.executable("make") == 1
 		end,
 	},
-
-	{ -- Highlight, edit, and navigate code
+	{
+		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
@@ -145,51 +140,36 @@ require("lazy").setup({
 	"theprimeagen/harpoon",
 	-- Undotree
 	{ "mbbill/undotree", config = function() end },
-
 	-- not sure what this does yet.
 	"christoomey/vim-tmux-navigator",
-
 	-- Maximize window/tab
 	"szw/vim-maximizer",
-
 	-- Surround text helper plugin
 	"tpope/vim-surround",
-
 	-- Replace and keep the copied text in the buffer
 	{ "vim-scripts/ReplaceWithRegister" },
-
 	-- File explorer, see below for setup
 	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons", opts = {} } },
-
 	-- friendly snippets
 	"rafamadriz/friendly-snippets",
-
 	-- Wakatime
 	"wakatime/vim-wakatime",
-
 	-- formatting and linting
 	"jose-elias-alvarez/null-ls.nvim",
 	"jayp0521/mason-null-ls.nvim",
-
 	-- auto closing
 	"windwp/nvim-autopairs",
 	"windwp/nvim-ts-autotag",
-
 	-- Copilot
 	"github/copilot.vim",
-
 	-- Project Management
 	"ahmedkhalf/project.nvim",
-
 	-- Highlight colors
 	"brenoprata10/nvim-highlight-colors",
-
 	-- Transparent Bg
 	"xiyaowong/transparent.nvim",
-
 	-- Tabs
 	"nanozuki/tabby.nvim",
-
 	-- Dashboard
 	{
 		"glepnir/dashboard-nvim",
@@ -230,7 +210,6 @@ require("lazy").setup({
 		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
-
 	-- Git Blame
 	"f-person/git-blame.nvim",
 	-- Diff View
@@ -239,28 +218,20 @@ require("lazy").setup({
 	"karb94/neoscroll.nvim",
 	-- Scrollbar
 	"Xuyuanp/scrollbar.nvim",
-	-- LSP Saga
-	"glepnir/lspsaga.nvim",
-
 	-- Telescope file browser
 	"nvim-telescope/telescope-file-browser.nvim",
-
 	-- Zen mode
 	{ "folke/zen-mode.nvim", opts = {} },
-
 	-- Bufferline
 	"akinsho/bufferline.nvim",
-
 	-- Peepsight
 	"koenverburg/peepsight.nvim",
-
 	-- Highlight words
 	"Mr-LLLLL/interestingwords.nvim",
-
 	-- Trouble
 	{
 		"folke/trouble.nvim",
-		requires = "nvim-tree/nvim-web-devicons",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("trouble").setup({
 				-- your configuration comes here
@@ -269,10 +240,8 @@ require("lazy").setup({
 			})
 		end,
 	},
-
 	-- IndentScope
 	{ "echasnovski/mini.indentscope" },
-
 	-- Noice
 	{
 		"folke/noice.nvim",
@@ -578,10 +547,8 @@ require("nvim-treesitter.configs").setup({
 		"regex",
 		"vimdoc",
 	},
-
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	auto_install = true,
-
 	highlight = { enable = true },
 	indent = { enable = true, disable = { "python" } },
 	autotag = { enable = true },
@@ -701,7 +668,6 @@ local servers = {
 	tsserver = {},
 	html = {},
 	cssls = {},
-
 	lua_ls = {
 		Lua = {
 			diagnostics = {
@@ -837,7 +803,8 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
-		diagnostics.eslint_d.with({ -- js/ts linter
+		diagnostics.eslint_d.with({
+			-- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
 				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
@@ -925,36 +892,6 @@ function tab_modified(tab)
 		end
 	end
 	return ""
-end
-
-function lsp_diag(buf)
-	diagnostics = vim.diagnostic.get(buf)
-	local count = { 0, 0, 0, 0 }
-
-	for _, diagnostic in ipairs(diagnostics) do
-		count[diagnostic.severity] = count[diagnostic.severity] + 1
-	end
-	if count[1] > 0 then
-		return vim.bo[buf].modified and "" or ""
-	elseif count[2] > 0 then
-		return vim.bo[buf].modified and "" or ""
-	end
-	return vim.bo[buf].modified and "" or ""
-end
-
-local function get_modified(buf)
-	if vim.bo[buf].modified then
-		return ""
-	else
-		return ""
-	end
-end
-
-local function buffer_name(buf)
-	if string.find(buf, "NvimTree") then
-		return "NvimTree"
-	end
-	return buf
 end
 
 local theme = {
@@ -1051,38 +988,6 @@ require("transparent").setup({
 	extra_groups = {}, -- additional groups that should be cleared
 	exclude_groups = {}, -- groups you don't want to clear
 })
-
--- LSP Saga
-local saga = require("lspsaga")
-
-saga.setup({
-	ui = {
-		winblend = 10,
-		border = "rounded",
-		colors = {
-			normal_bg = "#002b36",
-		},
-	},
-})
-
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-vim.keymap.set("n", "<leader>ls", "<Cmd>Lspsaga show_diagnostic<CR>", opts)
-vim.keymap.set("n", "<leader>lh", "<Cmd>Lspsaga hover_doc<CR>", opts)
-vim.keymap.set("n", "<leader>lf", "<Cmd>Lspsaga lsp_finder<CR>", opts)
-vim.keymap.set("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-vim.keymap.set("n", "<leader>lp", "<Cmd>Lspsaga peek_definition<CR>", opts)
-vim.keymap.set("n", "<leader>lr", "<Cmd>Lspsaga rename<CR>", opts)
-
--- code action
-local codeaction = require("lspsaga.codeaction")
-vim.keymap.set("n", "<leader>lca", function()
-	codeaction:code_action()
-end, { silent = true })
-vim.keymap.set("v", "<leader>lca", function()
-	vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-U>", true, false, true))
-	codeaction:range_code_action()
-end, { silent = true })
 
 -- BufferLine
 local bufferline = require("bufferline")
