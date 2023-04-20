@@ -384,8 +384,8 @@ vim.keymap.set("n", "<leader>-", "<C-x>")
 vim.keymap.set("n", "<leader>d", ":DiffviewOpen<CR>")
 
 -- split screen kaymaps
-vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-vim.keymap.set("n", "<leader>sb", "<C-w>s") -- split window horizontally
+vim.keymap.set("n", "<leader>s|", "<C-w>v") -- split window vertically
+vim.keymap.set("n", "<leader>s-", "<C-w>s") -- split window horizontally
 vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close curr
 
@@ -655,7 +655,7 @@ local on_attach = function(_, bufnr)
 
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-		vim.lsp.buf.format()
+		vim.lsp.buf.format({ timeout_ms = 5000 })
 	end, { desc = "Format current buffer with LSP" })
 end
 
