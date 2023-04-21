@@ -881,20 +881,6 @@ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 require("nvim-highlight-colors").turnOn()
 
 -- Tabs Setup
-function tab_name(tab)
-	return string.gsub(tab, "%[..%]", "")
-end
-
-function tab_modified(tab)
-	local wins = require("tabby.module.api").get_tab_wins(tab)
-	for i, x in pairs(wins) do
-		if vim.bo[vim.api.nvim_win_get_buf(x)].modified then
-			return ""
-		end
-	end
-	return ""
-end
-
 local theme = {
 	fill = "TabLineFill",
 	-- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
