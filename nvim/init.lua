@@ -71,14 +71,14 @@ require("lazy").setup({
 		},
 	},
 	{
-		"navarasu/onedark.nvim",
-		-- "arcticicestudio/nord-vim",
+		"folke/tokyonight.nvim",
+		name = "tokyonight",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("onedark")
+			vim.cmd.colorscheme("tokyonight")
 			vim.cmd("autocmd ColorScheme * highlight Normal guibg=NONE")
 			vim.cmd("autocmd ColorScheme * highlight NotifyBackground guibg=#282c34")
-			-- vim.cmd.colorscheme("nord")
 		end,
 	},
 	{
