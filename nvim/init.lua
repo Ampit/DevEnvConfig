@@ -260,6 +260,15 @@ require("lazy").setup({
 			"rcarriga/nvim-notify",
 		},
 	},
+
+	-- Debugging
+	{ "mfussenegger/nvim-dap" },
+	{ "rcarriga/nvim-dap-ui", opts = {} },
+	{ "theHamsta/nvim-dap-virtual-text" },
+	{ "Pocco81/DAPInstall.nvim" },
+	{ "nvim-telescope/telescope-dap.nvim" },
+	{ "mxsdev/nvim-dap-vscode-js" },
+	{ "microsoft/vscode-js-debug" },
 }, {})
 
 -- [[ Setting options ]]
@@ -381,7 +390,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("x", "x", '"_x')
 vim.keymap.set("n", "<leader>+", "<C-a>")
 vim.keymap.set("n", "<leader>-", "<C-x>")
-vim.keymap.set("n", "<leader>d", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>")
 
 -- split screen kaymaps
 vim.keymap.set("n", "<leader>s|", "<C-w>v") -- split window vertically
@@ -1040,3 +1049,44 @@ require("interestingwords").setup({
 -- IndentScope
 local indentScope = require("mini.indentscope")
 indentScope.setup()
+
+-- Debugging Config
+vim.keymap.set("n", "<leader>dc", "<Cmd>lua require('dap').continue()<CR>", {})
+vim.keymap.set("n", "<leader>db", "<Cmd>lua require('dap').toggle_breakpoint()<CR>", {})
+vim.keymap.set(
+	"n",
+	"<leader>dB",
+	"<Cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+	{}
+)
+vim.keymap.set(
+	"n",
+	"<leader>dl",
+	"<Cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+	{}
+)
+vim.keymap.set("n", "<leader>dr", "<Cmd>lua require('dap').repl.open()<CR>", {})
+vim.keymap.set("n", "<leader>dn", "<Cmd>lua require('dap').step_over()<CR>", {})
+vim.keymap.set("n", "<leader>di", "<Cmd>lua require('dap').step_into()<CR>", {})
+vim.keymap.set("n", "<leader>do", "<Cmd>lua require('dap').step_out()<CR>", {})
+vim.keymap.set("n", "<leader>dp", "<Cmd>lua require('dap').pause.toggle()<CR>", {})
+vim.keymap.set("n", "<leader>du", "<Cmd>lua require('dap').up()<CR>", {})
+vim.keymap.set("n", "<leader>dU", "<Cmd>lua require('dap').down()<CR>", {})
+vim.keymap.set("n", "<leader>de", "<Cmd>lua require('dap').set_exception_breakpoints({'all'})<CR>", {})
+vim.keymap.set("n", "<leader>dE", "<Cmd>lua require('dap').set_exception_breakpoints({})<CR>", {})
+vim.keymap.set("n", "<leader>dx", "<Cmd>lua require('dap').disconnect()<CR>", {})
+
+-- Dap UI keymaps
+vim.keymap.set("n", "<leader>dt", "<Cmd>lua require('dapui').toggle()<CR>", {})
+
+-- AutoOpen Dap UI
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+	dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+	dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+	dapui.close()
+end
