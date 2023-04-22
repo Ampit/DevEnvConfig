@@ -391,6 +391,7 @@ vim.keymap.set("x", "x", '"_x')
 vim.keymap.set("n", "<leader>+", "<C-a>")
 vim.keymap.set("n", "<leader>-", "<C-x>")
 vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<leader>dash", ":Dashboard<CR>")
 
 -- split screen kaymaps
 vim.keymap.set("n", "<leader>s|", "<C-w>v") -- split window vertically
@@ -666,6 +667,21 @@ local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
 		vim.lsp.buf.format({ timeout_ms = 5000 })
 	end, { desc = "Format current buffer with LSP" })
+	-- Automatically format the buffer on save
+	if _.supports_method("textDocument/formatting") then
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({
+					timeout_ms = 5000,
+					bufnr = bufnr,
+				})
+			end,
+		})
+	end
 end
 
 -- Enable the following language servers
@@ -823,25 +839,6 @@ null_ls.setup({
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
-		if current_client.supports_method("textDocument/formatting") then
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({
-						timeout_ms = 5000,
-						filter = function(client)
-							--  only use null-ls for formatting instead of lsp server
-							return client.name == "null-ls"
-						end,
-						bufnr = bufnr,
-					})
-				end,
-			})
-		end
-
 		-- semantic highlighting
 		local caps = current_client.server_capabilities
 		if caps.semanticTokensProvider and caps.semanticTokensProvider.full then
@@ -1093,4 +1090,4 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 -- Auto save
-vim.cmd("au BufLeave,FocusLost * silent! wa")
+vim.cmd("au BufLeave,FocusLost * wa")
