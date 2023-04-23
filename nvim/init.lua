@@ -675,10 +675,7 @@ local on_attach = function(_, bufnr)
 			group = augroup,
 			buffer = bufnr,
 			callback = function()
-				vim.lsp.buf.format({
-					timeout_ms = 5000,
-					bufnr = bufnr,
-				})
+				vim.cmd("Format")
 			end,
 		})
 	end
