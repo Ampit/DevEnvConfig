@@ -269,6 +269,15 @@ require("lazy").setup({
 	{ "nvim-telescope/telescope-dap.nvim" },
 	{ "mxsdev/nvim-dap-vscode-js" },
 	{ "microsoft/vscode-js-debug" },
+
+	-- Pretty Fold
+	{ "anuvyklack/pretty-fold.nvim", opts = {} },
+	-- Fold Preview
+	{
+		"anuvyklack/fold-preview.nvim",
+		dependencies = { "anuvyklack/keymap-amend.nvim" },
+		opts = {},
+	},
 }, {})
 
 -- [[ Setting options ]]
@@ -333,6 +342,8 @@ vim.opt.inccommand = "split" -- show preview of the substitution
 vim.opt.smarttab = true -- Insert indents automatically
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Trouble Keymaps
 vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
@@ -1105,3 +1116,28 @@ function _G.format_save_current_buffer()
 end
 
 vim.cmd("au BufLeave,FocusLost * lua format_save_current_buffer()")
+
+-- AutoUnfold
+local api = vim.api
+local M = {}
+
+function M.nvim_create_augroups(definitions)
+	for group_name, definition in pairs(definitions) do
+		api.nvim_command("augroup " .. group_name)
+		api.nvim_command("autocmd!")
+		for _, def in ipairs(definition) do
+			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
+			api.nvim_command(command)
+		end
+		api.nvim_command("augroup END")
+	end
+end
+
+local autoCommands = {
+	-- other autocommands
+	open_folds = {
+		{ "BufReadPost,FileReadPost", "*", "normal zR" },
+	},
+}
+
+M.nvim_create_augroups(autoCommands)
