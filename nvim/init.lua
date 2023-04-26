@@ -52,6 +52,7 @@ require("lazy").setup({
 			"saadparwaiz1/cmp_luasnip",
 			"onsails/lspkind.nvim",
 			"hrsh7th/cmp-buffer",
+			"quangnguyen30192/cmp-nvim-ultisnips",
 		},
 	},
 	-- Useful plugin to show you pending keybinds.
@@ -278,6 +279,9 @@ require("lazy").setup({
 		dependencies = { "anuvyklack/keymap-amend.nvim" },
 		opts = {},
 	},
+	-- Snippets
+	"SirVer/ultisnips",
+	"mlaursen/vim-react-snippets",
 }, {})
 
 -- [[ Setting options ]]
@@ -344,6 +348,12 @@ vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevelstart = 99
+
+-- UltiSnips configuration
+vim.g.UltiSnipsSnippetDirectories = { "UltiSnips" }
+-- vim-react-snippets configuration
+vim.g.snippets_directory = "~/.config/nvim/snippets"
 
 -- Trouble Keymaps
 vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
@@ -375,7 +385,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- line wrapping
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- cursor line
 vim.opt.cursorline = true
@@ -755,6 +765,8 @@ cmp.setup({
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
+			-- Expands UltiSnips snippets
+			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
@@ -787,6 +799,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "ultisnips" }, -- Add UltiSnips as a source
 		{ name = "buffer" },
 		{ name = "path" },
 	},
@@ -1117,27 +1130,24 @@ end
 
 vim.cmd("au BufLeave,FocusLost * lua format_save_current_buffer()")
 
--- AutoUnfold
-local api = vim.api
-local M = {}
+-- AutoCommands
+-- local api = vim.api
+-- local M = {}
+--
+-- function M.nvim_create_augroups(definitions)
+-- 	for group_name, definition in pairs(definitions) do
+-- 		api.nvim_command("augroup " .. group_name)
+-- 		api.nvim_command("autocmd!")
+-- 		for _, def in ipairs(definition) do
+-- 			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
+-- 			api.nvim_command(command)
+-- 		end
+-- 		api.nvim_command("augroup END")
+-- 	end
+-- end
+--
+-- local autoCommands = {
+-- other autocommands
+-- }
 
-function M.nvim_create_augroups(definitions)
-	for group_name, definition in pairs(definitions) do
-		api.nvim_command("augroup " .. group_name)
-		api.nvim_command("autocmd!")
-		for _, def in ipairs(definition) do
-			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
-			api.nvim_command(command)
-		end
-		api.nvim_command("augroup END")
-	end
-end
-
-local autoCommands = {
-	-- other autocommands
-	open_folds = {
-		{ "BufReadPost,FileReadPost", "*", "normal zR" },
-	},
-}
-
-M.nvim_create_augroups(autoCommands)
+-- M.nvim_create_augroups(autoCommands)
