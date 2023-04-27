@@ -480,6 +480,12 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 -- See `:help telescope` and `:help telescope.setup()`
 require("telescope").setup({
 	defaults = {
+		file_sorter = require("telescope.sorters").get_fzy_sorter,
+		prompt_prefix = "> ",
+		color_devicons = true,
+		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 		mappings = {
 			i = {
 				["<C-u>"] = false,
@@ -491,6 +497,12 @@ require("telescope").setup({
 		},
 	},
 	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
 		file_browser = {
 			theme = "dropdown",
 			-- disables netrw and use telescope-file-browser in its place
@@ -665,7 +677,12 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-	nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+	vim.api.nvim_set_keymap(
+		"n",
+		"gd",
+		"<cmd>Telescope lsp_definitions<CR>",
+		{ noremap = true, silent = true, desc = "[G]oto [D]efinition" }
+	)
 	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 	nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
 	nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
