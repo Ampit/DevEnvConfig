@@ -15,19 +15,14 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
+
+-- Lazy Plugins
 require("lazy").setup({
-	-- NOTE: First, some plugins that don't require any configuration
 	-- Git related plugins
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
 	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
-	-- NOTE: This is where your plugins related to LSP can be installed.
-	--  The configuration is done below. Search for lspconfig to find it below.
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
@@ -35,7 +30,6 @@ require("lazy").setup({
 			-- Automatically install LSPs to stdpath for neovim
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			-- Useful status updates for LSP
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 			{ "j-hui/fidget.nvim", opts = {} },
 			-- Additional lua configuration, makes nvim stuff amazing!
@@ -63,11 +57,31 @@ require("lazy").setup({
 		opts = {
 			-- See `:help gitsigns.txt`
 			signs = {
-				add = { text = "+" },
-				change = { text = "~" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
+				add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+				change = {
+					hl = "GitSignsChange",
+					text = "▎",
+					numhl = "GitSignsChangeNr",
+					linehl = "GitSignsChangeLn",
+				},
+				delete = {
+					hl = "GitSignsDelete",
+					text = "▎",
+					numhl = "GitSignsDeleteNr",
+					linehl = "GitSignsDeleteLn",
+				},
+				topdelete = {
+					hl = "GitSignsDelete",
+					text = "▎",
+					numhl = "GitSignsDeleteNr",
+					linehl = "GitSignsDeleteLn",
+				},
+				changedelete = {
+					hl = "GitSignsChange",
+					text = "▎",
+					numhl = "GitSignsChangeNr",
+					linehl = "GitSignsChangeLn",
+				},
 			},
 		},
 	},
@@ -349,6 +363,13 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 99
+
+-- Set GitSigns colors
+vim.cmd([[
+  highlight GitSignsAdd    guifg=#81A1C1 guibg=NONE gui=NONE
+  highlight GitSignsChange guifg=#EBCB8B guibg=NONE gui=NONE
+  highlight GitSignsDelete guifg=#BF616A guibg=NONE gui=NONE
+]])
 
 -- UltiSnips configuration
 vim.g.UltiSnipsSnippetDirectories = { "UltiSnips" }
@@ -660,12 +681,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-	-- NOTE: Remember that lua is a real programming language, and as such it is possible
-	-- to define small helper and utility functions so you don't have to repeat yourself
-	-- many times.
-	--
-	-- In this case, we create a function that lets us more easily define mappings specific
-	-- for LSP related items. It sets the mode, buffer and description for us each time.
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
@@ -794,24 +809,6 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
-		-- ["<Tab>"] = cmp.mapping(function(fallback)
-		-- 	if cmp.visible() then
-		-- 		cmp.select_next_item()
-		-- 	elseif luasnip.expand_or_jumpable() then
-		-- 		luasnip.expand_or_jump()
-		-- 	else
-		-- 		fallback()
-		-- 	end
-		-- end, { "i", "s" }),
-		-- ["<S-Tab>"] = cmp.mapping(function(fallback)
-		-- 	if cmp.visible() then
-		-- 		cmp.select_prev_item()
-		-- 	elseif luasnip.jumpable(-1) then
-		-- 		luasnip.jump(-1)
-		-- 	else
-		-- 		fallback()
-		-- -- 	end
-		-- end, { "i", "s" }),
 	}),
 	sources = {
 		{ name = "nvim_lsp" },
@@ -821,9 +818,6 @@ cmp.setup({
 		{ name = "path" },
 	},
 })
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
 
 -- nvim-tree
 local nvimtree = require("nvim-tree")
@@ -976,7 +970,7 @@ require("tabby.tabline").set(function(line)
 	}
 end)
 
--- Convert the Vimscript autocmd block to Lua and execute it
+-- Convert the Vimscript scrollbar autocmd block to Lua and execute it
 vim.api.nvim_exec(
 	[[
   augroup ScrollbarInit
