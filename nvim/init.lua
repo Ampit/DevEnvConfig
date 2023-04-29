@@ -377,13 +377,42 @@ vim.g.UltiSnipsSnippetDirectories = { "UltiSnips" }
 vim.g.snippets_directory = "~/.config/nvim/snippets"
 
 -- Trouble Keymaps
-vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>twd", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>tdd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
-
+vim.keymap.set(
+	"n",
+	"<leader>tt",
+	"<cmd>TroubleToggle<cr>",
+	{ silent = true, noremap = true, desc = "Toggle Trouble overview" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>twd",
+	"<cmd>TroubleToggle workspace_diagnostics<cr>",
+	{ silent = true, noremap = true, desc = "Toggle workspace diagnostics in Trouble" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tdd",
+	"<cmd>TroubleToggle document_diagnostics<cr>",
+	{ silent = true, noremap = true, desc = "Toggle document diagnostics in Trouble" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tl",
+	"<cmd>TroubleToggle loclist<cr>",
+	{ silent = true, noremap = true, desc = "Toggle loclist in Trouble" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tq",
+	"<cmd>TroubleToggle quickfix<cr>",
+	{ silent = true, noremap = true, desc = "Toggle quickfix in Trouble" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tr",
+	"<cmd>TroubleToggle lsp_references<cr>",
+	{ silent = true, noremap = true, desc = "Toggle lsp_references in Trouble" }
+)
 vim.g.copilot_assume_mapped = true
 
 -- Turn off paste mode when leaving insert
@@ -427,19 +456,25 @@ vim.opt.splitbelow = true
 vim.opt.iskeyword:append("-")
 
 -- CUSTOM Keymaps
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-vim.keymap.set("x", "x", '"_x')
+-- Prevent yanking when using 'x'
+vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true })
+-- Prevent yanking when using 'x' with other motions (e.g., 'xiw')
+vim.api.nvim_set_keymap("o", "x", '"_x', { noremap = true })
+-- Prevent yanking when using 'c'
+vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
+-- Prevent yanking when using 'c' with other motions (e.g., 'ciw')
+vim.api.nvim_set_keymap("o", "c", '"_c', {}) -- Do no yank with c
 vim.keymap.set("n", "<leader>+", "<C-a>")
 vim.keymap.set("n", "<leader>-", "<C-x>")
 vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "<leader>dash", ":Dashboard<CR>")
 
 -- split screen kaymaps
-vim.keymap.set("n", "<leader>s|", "<C-w>v") -- split window vertically
-vim.keymap.set("n", "<leader>s-", "<C-w>s") -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
-vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close curr
+vim.keymap.set("n", "<C-w>|", "<C-w>v") -- split window vertically
+vim.keymap.set("n", "<C-w>-", "<C-w>s") -- split window horizontally
+vim.keymap.set("n", "<C-w>x", ":close<CR>") -- close curr
 
 -- tab keymaps
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
