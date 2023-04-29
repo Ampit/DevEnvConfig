@@ -348,7 +348,7 @@ vim.opt.incsearch = true
 vim.opt.title = true
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
-vim.cmd("set guifont=Hack")
+vim.cmd("set guifont=FiraCode\\ Nerd\\ Font:h12")
 vim.o.showtabline = 2
 vim.opt.formatoptions:append({ "r" })
 vim.opt.backup = false
