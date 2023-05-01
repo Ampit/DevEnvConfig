@@ -461,8 +461,8 @@ vim.opt.splitbelow = true
 vim.opt.iskeyword:append("-")
 
 -- CUSTOM Keymaps
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "Explorer" })
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
 -- Prevent yanking when using 'x'
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true })
 -- Prevent yanking when using 'x' with other motions (e.g., 'xiw')
@@ -471,15 +471,15 @@ vim.api.nvim_set_keymap("o", "x", '"_x', { noremap = true })
 vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
 -- Prevent yanking when using 'c' with other motions (e.g., 'ciw')
 vim.api.nvim_set_keymap("o", "c", '"_c', {}) -- Do no yank with c
-vim.keymap.set("n", "<leader>+", "<C-a>")
-vim.keymap.set("n", "<leader>-", "<C-x>")
-vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>")
-vim.keymap.set("n", "<leader>dash", ":Dashboard<CR>")
+vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment" })
+vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement" })
+vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>dash", ":Dashboard<CR>", { desc = "Open Dashboard" })
 
 -- split screen kaymaps
-vim.keymap.set("n", "<C-w>|", "<C-w>v") -- split window vertically
-vim.keymap.set("n", "<C-w>-", "<C-w>s") -- split window horizontally
-vim.keymap.set("n", "<C-w>x", ":close<CR>") -- close curr
+vim.keymap.set("n", "<C-w>|", "<C-w>v", { desc = "Split Screen Vertically" }) -- split window vertically
+vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split Screen Horizontally" }) -- split window horizontally
+vim.keymap.set("n", "<C-w>x", ":close<CR>", { desc = "Close Window" }) -- close curr
 
 -- tab keymaps
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
