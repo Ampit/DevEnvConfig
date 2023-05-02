@@ -759,23 +759,6 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>wl", function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
-
-	-- Create a command `:Format` local to the LSP buffer
-	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-		vim.lsp.buf.format({ timeout_ms = 5000 })
-	end, { desc = "Format current buffer with LSP" })
-	-- Automatically format the buffer on save
-	if _.supports_method("textDocument/formatting") then
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = augroup,
-			buffer = bufnr,
-			callback = function()
-				vim.cmd("Format")
-			end,
-		})
-	end
 end
 
 -- Enable the following language servers
@@ -939,6 +922,14 @@ mason_null_ls.setup({
 		"eslint_d",
 	},
 })
+
+-- Add this section to configure format on buffer pre-write with null-ls and Prettier
+vim.cmd [[
+augroup FormatOnSave
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf_request_sync(0, "textDocument/formatting", vim.lsp.util.make_formatting_params(), 5000)
+augroup END
+]]
 
 -- autopairs
 local autopairs = require("nvim-autopairs")
