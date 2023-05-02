@@ -92,6 +92,7 @@ require("lazy").setup({
 		priority = 1000,
 		config = function()
 			vim.cmd.colorscheme("tokyonight")
+			vim.g.tokyonight_style = "storm"
 			vim.cmd("autocmd ColorScheme * highlight Normal guibg=NONE")
 			vim.cmd("autocmd ColorScheme * highlight NotifyBackground guibg=#282c34")
 		end,
@@ -103,7 +104,7 @@ require("lazy").setup({
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = "onedark",
+				theme = "tokyonight",
 				component_separators = "|",
 				section_separators = "",
 			},
@@ -284,7 +285,7 @@ require("lazy").setup({
 	-- Debugging
 	{ "mfussenegger/nvim-dap" },
 	{ "rcarriga/nvim-dap-ui", opts = {} },
-	{ "theHamsta/nvim-dap-virtual-text" },
+	{ "theHamsta/nvim-dap-virtual-text", opts = {} },
 	{ "Pocco81/DAPInstall.nvim" },
 	{ "nvim-telescope/telescope-dap.nvim" },
 	{ "mxsdev/nvim-dap-vscode-js" },
@@ -545,6 +546,8 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 -- See `:help telescope` and `:help telescope.setup()`
 require("telescope").setup({
 	defaults = {
+		win_blend = 0,
+		set_env = { ["COLORTERM"] = "truecolor" },
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
 		prompt_prefix = "> ",
 		color_devicons = true,
@@ -1171,6 +1174,15 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			program = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
 			args = { "test:wf-executor:e2e" },
 			cwd = "${workspaceFolder}",
+			console = "integratedTerminal", -- Add this line
+		},
+		{
+			name = "Test:Server:Local:Module",
+			type = "pwa-node",
+			request = "launch",
+			program = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
+			args = { "test:server:module:local"},
+			cwd = "${workspaceFolder}/packages/main-backend",
 		},
 		{
 			type = "pwa-node",
