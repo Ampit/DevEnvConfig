@@ -471,6 +471,7 @@ vim.opt.iskeyword:append("-")
 -- CUSTOM Keymaps
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "Explorer" })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
+vim.api.nvim_set_keymap('n', '<leader>ff', ':NvimTreeFindFile<CR>', {noremap = true, silent = true})
 -- Prevent yanking when using 'x'
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true })
 -- Prevent yanking when using 'x' with other motions (e.g., 'xiw')
