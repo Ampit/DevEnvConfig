@@ -157,14 +157,17 @@ require("lazy").setup({
 	"theprimeagen/harpoon",
 	-- Undotree
 	{ "mbbill/undotree", config = function() end },
-	-- not sure what this does yet.
-	"christoomey/vim-tmux-navigator",
+	-- Tmux vim navigation
+	{
+		"aserowy/tmux.nvim",
+		config = function() return require("tmux").setup() end
+	},
 	-- Maximize window/tab
 	"szw/vim-maximizer",
 	-- Surround text helper plugin
 	"tpope/vim-surround",
 	-- Replace and keep the copied text in the buffer
-	{ "vim-scripts/ReplaceWithRegister" },
+	-- { "vim-scripts/ReplaceWithRegister" },
 	-- File explorer, see below for setup
 	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons", opts = {} } },
 	-- friendly snippets
@@ -472,10 +475,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true })
 -- Prevent yanking when using 'x' with other motions (e.g., 'xiw')
 vim.api.nvim_set_keymap("o", "x", '"_x', { noremap = true })
--- Prevent yanking when using 'c'
-vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
--- Prevent yanking when using 'c' with other motions (e.g., 'ciw')
-vim.api.nvim_set_keymap("o", "c", '"_c', {}) -- Do no yank with c
+
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment" })
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement" })
 vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
@@ -484,7 +484,7 @@ vim.keymap.set("n", "<leader>dash", ":Dashboard<CR>", { desc = "Open Dashboard" 
 -- split screen kaymaps
 vim.keymap.set("n", "<C-w>|", "<C-w>v", { desc = "Split Screen Vertically" }) -- split window vertically
 vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split Screen Horizontally" }) -- split window horizontally
-vim.keymap.set("n", "<C-w>x", ":close<CR>", { desc = "Close Window" }) -- close curr
+vim.keymap.set("n", "<C-x>", ":close<CR>", { desc = "Close Window" }) -- close curr
 
 -- tab keymaps
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
@@ -1114,11 +1114,11 @@ require("telescope").load_extension("dap")
 vim.keymap.set("n", "<leader>dcc", '<cmd>lua require"telescope".extensions.dap.commands{}<CR>')
 vim.keymap.set("n", "<leader>dco", '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>')
 vim.keymap.set("n", "<leader>dlb", '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>')
-vim.keymap.set("n", "<leader>dv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>')
+vim.keymap.set("n", "<leader>dvr", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>')
 vim.keymap.set("n", "<leader>df", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>')
 
 -- Dap keymaps
-vim.keymap.set("n", "<leader>dc", "<Cmd>lua require('dap').continue()<CR>", {})
+vim.keymap.set("n", "<leader>dco", "<Cmd>lua require('dap').continue()<CR>", {})
 vim.keymap.set("n", "<leader>db", "<Cmd>lua require('dap').toggle_breakpoint()<CR>", {})
 vim.keymap.set(
 	"n",
@@ -1128,12 +1128,12 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>dl",
+	"<leader>dlm",
 	"<Cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
 	{}
 )
-vim.keymap.set("n", "<leader>dr", "<Cmd>lua require('dap').repl.open()<CR>", {})
-vim.keymap.set("n", "<leader>dl", "<Cmd>lua require('dap').repl.run_last()<CR>", {})
+vim.keymap.set("n", "<leader>dro", "<Cmd>lua require('dap').repl.open()<CR>", {})
+vim.keymap.set("n", "<leader>drl", "<Cmd>lua require('dap').repl.run_last()<CR>", {})
 vim.keymap.set("n", "<leader>dn", "<Cmd>lua require('dap').step_over()<CR>", {})
 vim.keymap.set("n", "<leader>di", "<Cmd>lua require('dap').step_into()<CR>", {})
 vim.keymap.set("n", "<leader>do", "<Cmd>lua require('dap').step_out()<CR>", {})
