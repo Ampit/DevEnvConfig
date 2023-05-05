@@ -900,7 +900,6 @@ null_ls.setup({
 			end,
 		}),
 	},
-	-- configure format on save
 	on_attach = function(current_client, bufnr)
 		-- semantic highlighting
 		local caps = current_client.server_capabilities
