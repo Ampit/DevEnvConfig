@@ -1119,7 +1119,7 @@ vim.keymap.set("n", "<leader>dvr", '<cmd>lua require"telescope".extensions.dap.v
 vim.keymap.set("n", "<leader>df", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>')
 
 -- Dap keymaps
-vim.keymap.set("n", "<leader>dco", "<Cmd>lua require('dap').continue()<CR>", {})
+vim.keymap.set("n", "<leader>dcn", "<Cmd>lua require('dap').continue()<CR>", {})
 vim.keymap.set("n", "<leader>db", "<Cmd>lua require('dap').toggle_breakpoint()<CR>", {})
 vim.keymap.set(
 	"n",
@@ -1164,7 +1164,16 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			program = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
 			args = { "test:wf-executor:e2e" },
 			cwd = "${workspaceFolder}",
-			console = "integratedTerminal", -- Add this line
+			console = "integratedTerminal", 
+		},
+		{
+			name = "Debug:Server:Internal:Refresh",
+			type = "pwa-node",
+			request = "launch",
+			program = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
+			args = { "start:server:internal:refresh" },
+			cwd = "${workspaceFolder}",
+			console = "integratedTerminal",
 		},
 		{
 			name = "Test:Server:Local:Module",
