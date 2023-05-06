@@ -160,7 +160,9 @@ require("lazy").setup({
 	-- Tmux vim navigation
 	{
 		"aserowy/tmux.nvim",
-		config = function() return require("tmux").setup() end
+		config = function()
+			return require("tmux").setup()
+		end,
 	},
 	-- Maximize window/tab
 	"szw/vim-maximizer",
@@ -471,7 +473,7 @@ vim.opt.iskeyword:append("-")
 -- CUSTOM Keymaps
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "Explorer" })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
-vim.api.nvim_set_keymap('n', '<leader>ff', ':NvimTreeFindFile<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>ff", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 -- Prevent yanking when using 'x'
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true })
 -- Prevent yanking when using 'x' with other motions (e.g., 'xiw')
@@ -892,6 +894,8 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
+		formatting.rustfmt,
+		formatting.gofmt,
 		diagnostics.eslint_d.with({
 			-- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
@@ -901,6 +905,18 @@ null_ls.setup({
 		}),
 	},
 	on_attach = function(current_client, bufnr)
+		-- format on save
+		if current_client.supports_method("textDocument/formatting") then
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = bufnr, timeout = 5000 })
+				end,
+			})
+		end
 		-- semantic highlighting
 		local caps = current_client.server_capabilities
 		if caps.semanticTokensProvider and caps.semanticTokensProvider.full then
@@ -923,16 +939,10 @@ mason_null_ls.setup({
 		"prettier",
 		"stylua",
 		"eslint_d",
+		"rustfmt",
+		"gofmt",
 	},
 })
-
--- Add this section to configure format on buffer pre-write with null-ls and Prettier
-vim.cmd [[
-augroup FormatOnSave
-    autocmd!
-    autocmd BufWritePre * lua vim.lsp.buf_request_sync(0, "textDocument/formatting", vim.lsp.util.make_formatting_params(), 5000)
-augroup END
-]]
 
 -- autopairs
 local autopairs = require("nvim-autopairs")
@@ -960,41 +970,41 @@ require("nvim-highlight-colors").turnOn()
 -- Tabs Setup
 -- Define the custom Tokyo Night-based theme
 local tokyonight_tabby = {
-  fill = "TabLineFill",
-  head = { fg = "#c0caf5", bg = "#1a1b26", style = "italic" },
-  current_tab = { fg = "#ffffff", bg = "#7aa2f7", style = "italic" },
-  tab = { fg = "#c0caf5", bg = "#1a1b26", style = "italic" },
-  win = "TabLine",
-  tail = { fg = "#c0caf5", bg = "#1a1b26", style = "italic" },
+	fill = "TabLineFill",
+	head = { fg = "#c0caf5", bg = "#1a1b26", style = "italic" },
+	current_tab = { fg = "#ffffff", bg = "#7aa2f7", style = "italic" },
+	tab = { fg = "#c0caf5", bg = "#1a1b26", style = "italic" },
+	win = "TabLine",
+	tail = { fg = "#c0caf5", bg = "#1a1b26", style = "italic" },
 }
 
 -- Set the custom theme for Tabby
 require("tabby.tabline").set(function(line)
-  return {
-    {
-      { "  ", hl = tokyonight_tabby.head },
-      line.sep("", tokyonight_tabby.head, tokyonight_tabby.fill),
-    },
-    line.tabs().foreach(function(tab)
-      local hl = tab.is_current() and tokyonight_tabby.current_tab or tokyonight_tabby.tab
-      return {
-        line.sep("", hl, tokyonight_tabby.fill),
-        tab.is_current() and "" or "",
-        tab.number(),
-        tab.name(),
-        tab.close_btn(''), -- show a close button
-        line.sep("", hl, tokyonight_tabby.fill),
-        hl = hl,
-        margin = " ",
-      }
-    end),
-    line.spacer(),
-    {
-      line.sep("", tokyonight_tabby.tail, tokyonight_tabby.fill),
-      { "  ", hl = tokyonight_tabby.tail },
-    },
-    hl = tokyonight_tabby.fill,
-  }
+	return {
+		{
+			{ "  ", hl = tokyonight_tabby.head },
+			line.sep("", tokyonight_tabby.head, tokyonight_tabby.fill),
+		},
+		line.tabs().foreach(function(tab)
+			local hl = tab.is_current() and tokyonight_tabby.current_tab or tokyonight_tabby.tab
+			return {
+				line.sep("", hl, tokyonight_tabby.fill),
+				tab.is_current() and "" or "",
+				tab.number(),
+				tab.name(),
+				tab.close_btn(""), -- show a close button
+				line.sep("", hl, tokyonight_tabby.fill),
+				hl = hl,
+				margin = " ",
+			}
+		end),
+		line.spacer(),
+		{
+			line.sep("", tokyonight_tabby.tail, tokyonight_tabby.fill),
+			{ "  ", hl = tokyonight_tabby.tail },
+		},
+		hl = tokyonight_tabby.fill,
+	}
 end)
 
 -- Convert the Vimscript scrollbar autocmd block to Lua and execute it
@@ -1163,7 +1173,7 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			program = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
 			args = { "test:wf-executor:e2e" },
 			cwd = "${workspaceFolder}",
-			console = "integratedTerminal", 
+			console = "integratedTerminal",
 		},
 		{
 			name = "Debug:Server:Internal:Refresh",
@@ -1179,7 +1189,7 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			type = "pwa-node",
 			request = "launch",
 			runtimeExecutable = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
-			runtimeArgs = { "test:server:module:local"},
+			runtimeArgs = { "test:server:module:local" },
 			cwd = "${workspaceFolder}/packages/main-backend",
 		},
 		{
