@@ -325,11 +325,6 @@ vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = "a"
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = "unnamedplus"
-
 -- Enable break indent
 vim.o.breakindent = true
 -- Save undo history
@@ -462,7 +457,7 @@ vim.opt.background = "dark"
 vim.opt.backspace = "indent,eol,start"
 
 -- clipboard
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 
 -- split windows
 vim.opt.splitright = true
@@ -520,7 +515,7 @@ end)
 vim.keymap.set("n", "<leader>h4", function()
 	ui.nav_file(4)
 end)
-vim.keymap.set("n", "<leader>p", '"_dP')
+vim.api.nvim_set_keymap("v", "<Leader>p", '"_dp`]P', { noremap = true }) -- paste over visual selection without changing clipboard contents
 
 vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<cr>", { silent = true })
 -- [[ Basic Keymaps ]]
@@ -765,6 +760,19 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>wl", function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
+
+    -- Create a command `:Format` local to the LSP buffer
+    vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+        vim.lsp.buf.format({
+            timeout_ms = 5000,
+            filter = function(client)
+                return client.name == "null-ls"
+            end,
+        })
+    end, { desc = "Format current buffer with LSP" })
+
+    -- Add keymap for format command
+    nmap("<leader>for", ":Format<CR>", "Format current buffer with LSP")
 end
 
 -- Enable the following language servers
