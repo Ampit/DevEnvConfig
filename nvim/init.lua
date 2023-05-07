@@ -92,7 +92,6 @@ require("lazy").setup({
 		priority = 1000,
 		config = function()
 			vim.cmd.colorscheme("tokyonight")
-			vim.g.tokyonight_style = "storm"
 			vim.cmd("autocmd ColorScheme * highlight Normal guibg=NONE")
 			vim.cmd("autocmd ColorScheme * highlight NotifyBackground guibg=#282c34")
 		end,
@@ -761,18 +760,18 @@ local on_attach = function(_, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
 
-    -- Create a command `:Format` local to the LSP buffer
-    vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-        vim.lsp.buf.format({
-            timeout_ms = 5000,
-            filter = function(client)
-                return client.name == "null-ls"
-            end,
-        })
-    end, { desc = "Format current buffer with LSP" })
+	-- Create a command `:Format` local to the LSP buffer
+	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+		vim.lsp.buf.format({
+			timeout_ms = 5000,
+			filter = function(client)
+				return client.name == "null-ls"
+			end,
+		})
+	end, { desc = "Format current buffer with LSP" })
 
-    -- Add keymap for format command
-    nmap("<leader>for", ":Format<CR>", "Format current buffer with LSP")
+	-- Add keymap for format command
+	nmap("<leader>for", ":Format<CR>", "Format current buffer with LSP")
 end
 
 -- Enable the following language servers
