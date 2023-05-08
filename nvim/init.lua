@@ -168,7 +168,7 @@ require("lazy").setup({
 	-- Surround text helper plugin
 	"tpope/vim-surround",
 	-- Replace and keep the copied text in the buffer
-	-- { "vim-scripts/ReplaceWithRegister" },
+	{ "vim-scripts/ReplaceWithRegister" },
 	-- File explorer, see below for setup
 	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons", opts = {} } },
 	-- friendly snippets
@@ -456,7 +456,7 @@ vim.opt.background = "dark"
 vim.opt.backspace = "indent,eol,start"
 
 -- clipboard
-vim.opt.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamedplus"
 
 -- split windows
 vim.opt.splitright = true
