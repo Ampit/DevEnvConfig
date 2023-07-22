@@ -1163,11 +1163,11 @@ require("dap-vscode-js").setup({
 for _, language in ipairs({ "typescript", "javascript" }) do
 	require("dap").configurations[language] = {
 		{
-			name = "Wf Executor E2E",
+			name = "Wf Executor",
 			type = "pwa-node",
 			request = "launch",
 			program = "/opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js",
-			args = { "test:wf-executor:e2e" },
+			args = { "test:wf-executor" },
 			cwd = "${workspaceFolder}",
 			console = "integratedTerminal",
 		},
