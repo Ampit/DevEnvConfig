@@ -91,6 +91,7 @@ require("lazy").setup({
 			vim.cmd.colorscheme("tokyonight")
 			vim.cmd("autocmd ColorScheme * highlight Normal guibg=NONE")
 			vim.cmd("autocmd ColorScheme * highlight NotifyBackground guibg=#282c34")
+			vim.cmd("autocmd ColorScheme * highlight Folded guibg=transparent")
 		end,
 	},
 	{
