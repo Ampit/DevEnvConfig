@@ -363,6 +363,12 @@ vim.cmd([[
   highlight GitSignsDelete guifg=#BF616A guibg=NONE gui=NONE
 ]])
 
+vim.filetype.add({
+	extension = {
+		mdx = "mdx",
+	},
+})
+
 -- UltiSnips configuration
 vim.g.UltiSnipsSnippetDirectories = { "UltiSnips" }
 -- vim-react-snippets configuration
@@ -699,6 +705,9 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
+
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.mdx = "markdown"
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
