@@ -36,3 +36,4 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
 yabai -m rule --add app="^WebStorm$" manage=off
 yabai -m rule --add app="^Tandem$" manage=off
+yabai -m rule --add app="^WhatsApp$" manage=off
