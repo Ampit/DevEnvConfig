@@ -94,4 +94,8 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+  {
+    -- Wakatime
+    "wakatime/vim-wakatime",
+  },
 }
