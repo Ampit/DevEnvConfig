@@ -41,11 +41,14 @@ keymap.set("n", "tx", ":tabclose<Return>")
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
 
--- Diagnostics
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
+-- Diagnostic keymaps
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
-keymap.set("n", "<leader>r", function()
-  require("craftzdog.utils").replaceHexWithHSL()
-end)
+-- DiffviewOpen
+keymap.set("n", "dv", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
+
+-- Undo Tree
+keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })

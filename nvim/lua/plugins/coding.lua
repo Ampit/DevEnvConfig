@@ -98,4 +98,42 @@ return {
     -- Wakatime
     "wakatime/vim-wakatime",
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = true },
+      panel = { enabled = true },
+      filetypes = {
+        markdown = true,
+        help = true,
+        yaml = true,
+      },
+    },
+  },
+  -- Git Blame
+  "f-person/git-blame.nvim",
+  -- Diff View
+  "sindrets/diffview.nvim",
+  -- Smooth Scroll
+  "karb94/neoscroll.nvim",
+  -- Scrollbar
+  "Xuyuanp/scrollbar.nvim",
+  -- Telescope file browser
+  -- Undotree
+  { "mbbill/undotree", config = function() end },
+  -- Peepsight
+  "koenverburg/peepsight.nvim",
+  -- Highlight words
+  "Mr-LLLLL/interestingwords.nvim",
+  -- Pretty Fold
+  { "anuvyklack/pretty-fold.nvim", opts = {} },
+  -- Fold Preview
+  {
+    "anuvyklack/fold-preview.nvim",
+    dependencies = { "anuvyklack/keymap-amend.nvim" },
+    opts = {},
+  },
 }
