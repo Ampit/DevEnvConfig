@@ -101,7 +101,7 @@ return {
     },
   },
 
-  -- filename
+  -- used for filename at the top of the tab
   {
     "b0o/incline.nvim",
     event = "BufReadPre",
