@@ -31,9 +31,9 @@ return {
         },
         tsserver = {
           root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
+            return require("lspconfig.util").root_pattern("tsconfig.json", ".git")(...)
           end,
-          single_file_support = false,
+          single_file_support = true,
           settings = {
             typescript = {
               inlayHints = {
