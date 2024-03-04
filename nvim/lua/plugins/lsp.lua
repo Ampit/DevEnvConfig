@@ -24,11 +24,11 @@ return {
       ---@type lspconfig.options
       servers = {
         cssls = {},
-        tailwindcss = {
-          root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
-          end,
-        },
+        -- tailwindcss = {
+        --   root_dir = function(...)
+        --     return require("lspconfig.util").root_pattern(".git")(...)
+        --   end,
+        -- },
         tsserver = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern("tsconfig.json", ".git")(...)
@@ -74,6 +74,12 @@ return {
             Lua = {
               workspace = {
                 checkThirdParty = false,
+                library = {
+                  "${3rd}/luv/library",
+                  unpack(vim.api.nvim_get_runtime_file("", true)),
+                },
+                -- If lua_ls is really slow on your computer, you can try this instead:
+                -- library = { vim.env.VIMRUNTIME },
               },
               completion = {
                 workspaceWord = true,
@@ -99,7 +105,7 @@ return {
                 castNumberToInteger = true,
               },
               diagnostics = {
-                disable = { "incomplete-signature-doc", "trailing-space" },
+                disable = { "incomplete-signature-doc", "trailing-space", "missing-fields" },
                 -- enable = false,
                 groupSeverity = {
                   strong = "Warning",
