@@ -153,6 +153,20 @@ return {
         end,
         desc = "Open File Browser with the path of the current buffer",
       },
+      {
+        ";h",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.help_tags()
+        end,
+      },
+      {
+        ";k",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.keymaps()
+        end,
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
