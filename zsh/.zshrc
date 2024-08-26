@@ -171,24 +171,24 @@ _fix_cursor() {
 precmd_functions+=(_fix_cursor)
 
 # Nvim Switcher
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
-alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+# alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+# alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+# alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 
-function nvims() {
-  items=("default" "LazyVim" "AstroNvim" "NvChad")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
+# function nvims() {
+#   items=("default" "LazyVim" "AstroNvim" "NvChad")
+#   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+#   if [[ -z $config ]]; then
+#     echo "Nothing selected"
+#     return 0
+#   elif [[ $config == "default" ]]; then
+#     config=""
+#   fi
+#   NVIM_APPNAME=$config nvim $@
+# }
 
-bindkey -s ^a "nvims\n"
-eval "$(jump shell)"
+# bindkey -s ^a "nvims\n"
+# eval "$(jump shell)"
 
 export TERM="xterm-256color"
 
