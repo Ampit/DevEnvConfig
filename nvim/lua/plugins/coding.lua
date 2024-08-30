@@ -98,7 +98,6 @@ return {
     -- Wakatime
     "wakatime/vim-wakatime",
   },
-
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -129,93 +128,12 @@ return {
   -- Highlight words
   "Mr-LLLLL/interestingwords.nvim",
   -- Pretty Fold
-  { "anuvyklack/pretty-fold.nvim", opts = {} },
+  -- { "anuvyklack/pretty-fold.nvim", opts = {} },
   -- Fold Preview
   {
     "anuvyklack/fold-preview.nvim",
     dependencies = { "anuvyklack/keymap-amend.nvim" },
     opts = {},
-  },
-  {
-    "robitx/gp.nvim",
-    config = function()
-      require("gp").setup({
-        openai_api_key = "YOUR_OPEN_API_KEY",
-        agents = {
-          {
-            name = "ChatGPT4o",
-            chat = true,
-            command = false,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-4o", temperature = 1.1, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
-            system_prompt = require("gp.defaults").chat_system_prompt,
-          },
-          {
-            name = "ChatGPT4",
-            chat = true,
-            command = false,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-4-turbo-preview", temperature = 1.1, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
-            system_prompt = "You are a general AI assistant.\n\n"
-              .. "The user provided the additional info about how they would like you to respond:\n\n"
-              .. "- If you're unsure don't guess and say you don't know instead.\n"
-              .. "- Ask question if you need clarification to provide better answer.\n"
-              .. "- Think deeply and carefully from first principles step by step.\n"
-              .. "- Zoom out first to see the big picture and then zoom in to details.\n"
-              .. "- Use Socratic method to improve your thinking and coding skills.\n"
-              .. "- Don't elide any code from your output if the answer requires coding.\n"
-              .. "- Take a deep breath; You've got this!\n",
-          },
-          {
-            name = "ChatGPT3-5",
-            chat = true,
-            command = false,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-3.5-turbo-1106", temperature = 1.1, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
-            system_prompt = "You are a general AI assistant.\n\n"
-              .. "The user provided the additional info about how they would like you to respond:\n\n"
-              .. "- If you're unsure don't guess and say you don't know instead.\n"
-              .. "- Ask question if you need clarification to provide better answer.\n"
-              .. "- Think deeply and carefully from first principles step by step.\n"
-              .. "- Zoom out first to see the big picture and then zoom in to details.\n"
-              .. "- Use Socratic method to improve your thinking and coding skills.\n"
-              .. "- Don't elide any code from your output if the answer requires coding.\n"
-              .. "- Take a deep breath; You've got this!\n",
-          },
-          {
-            name = "CodeGPT4",
-            chat = false,
-            command = true,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-4-turbo-preview", temperature = 0.8, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
-            system_prompt = "You are an AI working as a code editor.\n\n"
-              .. "Please AVOID COMMENTARY OUTSIDE OF THE SNIPPET RESPONSE.\n"
-              .. "START AND END YOUR ANSWER WITH:\n\n```",
-          },
-          {
-            name = "CodeGPT3-5",
-            chat = false,
-            command = true,
-            -- string with model name or table with model name and parameters
-            model = { model = "gpt-3.5-turbo-1106", temperature = 0.8, top_p = 1 },
-            -- system prompt (use this to specify the persona/role of the AI)
-            system_prompt = "You are an AI working as a code editor.\n\n"
-              .. "Please AVOID COMMENTARY OUTSIDE OF THE SNIPPET RESPONSE.\n"
-              .. "START AND END YOUR ANSWER WITH:\n\n```",
-          },
-        },
-      })
-
-      -- or setup with your own config (see Install > Configuration in Readme)
-      -- require("gp").setup(config)
-
-      -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
-      --
-    end,
   },
   {
     "christoomey/vim-tmux-navigator",
@@ -232,6 +150,71 @@ return {
       { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
       { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    opts = {
+      provider = "openai",
+    },
+    keys = {
+      {
+        "<leader>aa",
+        function()
+          require("avante.api").ask()
+        end,
+        desc = "avante: ask",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ar",
+        function()
+          require("avante.api").refresh()
+        end,
+        desc = "avante: refresh",
+      },
+      {
+        "<leader>ae",
+        function()
+          require("avante.api").edit()
+        end,
+        desc = "avante: edit",
+        mode = "v",
+      },
+    },
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      --- The below dependencies are optional,
+      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          -- recommended settings
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+            -- required for Windows users
+            use_absolute_path = true,
+          },
+        },
+      },
+      {
+        -- Make sure to setup it properly if you have lazy=true
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
     },
   },
 }
