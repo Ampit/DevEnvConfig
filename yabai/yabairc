@@ -33,7 +33,7 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 #yabai -m rule --add app="^Slack$" manage=off
-#yabai -m rule --add app="^WebStorm$" manage=off
+yabai -m rule --add app="^WebStorm$" manage=off
 yabai -m rule --add app="^WhatsApp$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 
@@ -41,7 +41,7 @@ yabai -m rule --add app="^FaceTime$" manage=off
 #DISPLAY_INDEX=2
 
 # Add a signal to change layout based on display index
-yabai -m signal --add event=display_changed action="if [ \$(yabai -m query --displays --display | jq '.index') -eq $DISPLAY_INDEX ]; then yabai -m config layout bsp; else yabai -m config layout float; fi"
+# yabai -m signal --add event=display_changed action="if [ \$(yabai -m query --displays --display | jq '.index') -eq $DISPLAY_INDEX ]; then yabai -m config layout bsp; else yabai -m config layout float; fi"
 
 # Optionally, you might want to disable window management on the specific display
 # yabai -m rule --add display=$DISPLAY_INDEX manage=off
