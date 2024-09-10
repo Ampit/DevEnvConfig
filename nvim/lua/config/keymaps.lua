@@ -2,9 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- local discipline = require("config.discipline")
+local discipline = require("config.discipline")
 
--- discipline.cowboy()
+discipline.cowboy()
 
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
@@ -53,3 +53,9 @@ keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", { desc = "Close Diffview" })
 
 -- Undo Tree
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
+
+-- Additional key mappings for multiple terminals
+keymap.set("n", "<leader>2", "<cmd>2ToggleTerm<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>3", "<cmd>3ToggleTerm<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>ts", "<cmd>TermSelect<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", { noremap = true, silent = true })
