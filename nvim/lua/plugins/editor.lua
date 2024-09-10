@@ -230,4 +230,24 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
+  {
+    {
+      "akinsho/toggleterm.nvim",
+      version = "*",
+      config = function()
+        require("toggleterm").setup({
+          open_mapping = [[<leader>1]],
+          insert_mappings = true,
+          terminal_mappings = true,
+          direction = "horizontal",
+          size = 20,
+        })
+
+        -- Additional key mappings for multiple terminals
+        vim.api.nvim_set_keymap("n", "<leader>2", "<cmd>2ToggleTerm<CR>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>3", "<cmd>3ToggleTerm<CR>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>ts", "<cmd>TermSelect<CR>", { noremap = true, silent = true })
+      end,
+    },
+  },
 }
