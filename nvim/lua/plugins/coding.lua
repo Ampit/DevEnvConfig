@@ -159,9 +159,6 @@ return {
     opts = {
       provider = "openai",
       auto_suggestions_provider = "openai",
-      openai = {
-        model = "gpt-4o-mini",
-      },
       mappings = {
         suggestion = {
           accept = "<C-a>",
