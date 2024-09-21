@@ -124,7 +124,7 @@ return {
       config = function()
         require("toggleterm").setup({
           open_mapping = [[<leader>1]],
-          insert_mappings = true,
+          insert_mappings = false,
           terminal_mappings = true,
           direction = "horizontal",
           size = 20,
