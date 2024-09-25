@@ -158,6 +158,9 @@ return {
     lazy = false,
     opts = {
       provider = "openai",
+      openai = {
+        model = "gpt-4o-mini",
+      },
       auto_suggestions_provider = "openai",
       mappings = {
         suggestion = {

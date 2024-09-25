@@ -54,7 +54,22 @@ return {
       },
       "nvim-telescope/telescope-file-browser.nvim",
     },
-    keys = {},
+    keys = {
+      {
+        "<Leader> ",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.git_files()
+        end,
+        desc = "Lists files in your current working directory, respects .gitignore",
+      },
+      {
+        "<Leader>tb",
+        function()
+          require("telescope").extensions.file_browser.file_browser()
+        end,
+      },
+    },
     config = function(_, opts)
       local telescope = require("telescope")
       local actions = require("telescope.actions")
