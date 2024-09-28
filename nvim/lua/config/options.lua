@@ -8,3 +8,5 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
+vim.opt.wrap = true
+vim.opt.linebreak = true
