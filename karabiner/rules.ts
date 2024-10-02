@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, shell } from "./utils";
+import { createHyperSubLayers, app, open, rectangle } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -64,27 +64,70 @@ const rules: KarabinerRules[] = [
       p: app("Spotify"),
     },
 
-    // w = "Window" via Raycast window management
+    // w = "Window" via rectangle.app
     w: {
-      semicolon: open(
-        "raycast://extensions/raycast/window-management/hide-current-window"
-      ),
-      y: open(
-        "raycast://extensions/raycast/window-management/move-window-to-previous-display"
-      ),
-      o: open(
-        "raycast://extensions/raycast/window-management/move-window-to-next-display"
-      ),
-      k: open("raycast://extensions/raycast/window-management/top-half"),
-      j: open("raycast://extensions/raycast/window-management/bottom-half"),
-      h: open("raycast://extensions/raycast/window-management/left-half"),
-      l: open("raycast://extensions/raycast/window-management/right-half"),
-      f: open("raycast://extensions/raycast/window-management/maximize"),
-      u: open("raycast://extensions/raycast/window-management/previous-tab"),
-      i: open("raycast://extensions/raycast/window-management/next-tab"),
-      n: open("raycast://extensions/raycast/window-management/next-window"),
-      b: open("raycast://extensions/raycast/window-management/back"),
-      m: open("raycast://extensions/raycast/window-management/forward"),
+      semicolon: {
+        description: "Window: Hide",
+        to: [
+          {
+            key_code: "h",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      y: rectangle("previous-display"),
+      o: rectangle("next-display"),
+      k: rectangle("top-half"),
+      j: rectangle("bottom-half"),
+      h: rectangle("left-half"),
+      l: rectangle("right-half"),
+      f: rectangle("maximize"),
+      u: {
+        description: "Window: Previous Tab",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["right_control", "right_shift"],
+          },
+        ],
+      },
+      i: {
+        description: "Window: Next Tab",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["right_control"],
+          },
+        ],
+      },
+      n: {
+        description: "Window: Next Window",
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      b: {
+        description: "Window: Back",
+        to: [
+          {
+            key_code: "open_bracket",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      // Note: No literal connection. Both f and n are already taken.
+      m: {
+        description: "Window: Forward",
+        to: [
+          {
+            key_code: "close_bracket",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
     },
 
     // s = "System"
