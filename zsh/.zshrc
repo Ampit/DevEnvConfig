@@ -1,3 +1,5 @@
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -118,7 +120,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="/usr/local/opt/python@3.7/bin:$PATH"
+export PATH="/opt/homebrew/Cellar/python@3.8/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/amar/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/amar/google-cloud-sdk/path.zsh.inc'; fi
@@ -186,20 +188,15 @@ precmd_functions+=(_fix_cursor)
 #   fi
 #   NVIM_APPNAME=$config nvim $@
 # }
-
+#
 # bindkey -s ^a "nvims\n"
-# eval "$(jump shell)"
-
-export TERM="xterm-256color"
+eval "$(jump shell)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 bindkey -v
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-# Mac setup for pomo
+# Mac setup for pomodoro
 alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
         -title 'Work Timer is up! Take a Break �'\
         -appIcon '~/Pictures/pumpkin.png'\
@@ -210,8 +207,23 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -appIcon '~/Pictures/pumpkin.png'\
         -sound Crystal"
 
+alias tmuxs='~/.config/scripts/tmux-sessionizer.sh'
+
 # set nvim as default editor
 export EDITOR="nvim"
 
 # set vim as alias for nvim
 alias vim="nvim"
+
+# set cls as alias for clear
+alias cls="clear"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform# Increase history size to 10000
+HISTSIZE=10000
+
+export TERM=xterm-256color
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
