@@ -61,7 +61,8 @@ const rules: KarabinerRules[] = [
       n: app("Notion"),
       w: app("Warp"),
       f: app("Finder"),
-      p: app("Spotify"),
+      m: app("Spotify"),
+      r: app("Linear"),
     },
 
     // w = "Window" via rectangle.app
