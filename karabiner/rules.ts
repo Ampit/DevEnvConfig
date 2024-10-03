@@ -42,7 +42,6 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
     // spacebar: open(
-    //   "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
     // ),
     // b = "B"rowse
     b: {
@@ -62,7 +61,13 @@ const rules: KarabinerRules[] = [
       w: app("Warp"),
       f: app("Finder"),
       m: app("Spotify"),
-      r: app("Linear"),
+      r: app("Linear"), // r because we want it to be on the left hand
+      g: app("Figma"), // f is taken by "Finder"
+      t: app("Postman"), // can't do p as we want the key to be on the left
+      b: app("Obsidian"), // o is taken by "Open"
+      j: app("Webstorm"), // j for JetBrains
+      z: app("zoom.us"),
+      q: app("WhatsApp"),
     },
 
     // w = "Window" via rectangle.app
