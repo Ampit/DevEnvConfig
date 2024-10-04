@@ -10,7 +10,7 @@ return {
         "shellcheck",
         "shfmt",
         "typescript-language-server",
-        "css-lsp",
+        "css-lsp"
       })
     end,
   },
@@ -52,6 +52,9 @@ return {
               },
             },
           },
+        },
+        sourcekit = {
+          filetypes = {"swift", "objective-c", "objective-cpp"},
         },
         html = {},
         yamlls = {

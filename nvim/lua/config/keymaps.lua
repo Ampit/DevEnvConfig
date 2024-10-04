@@ -56,3 +56,7 @@ keymap.set("n", "<leader>2", "<cmd>2ToggleTerm<CR>", { noremap = true, silent = 
 keymap.set("n", "<leader>3", "<cmd>3ToggleTerm<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>ts", "<cmd>TermSelect<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", { noremap = true, silent = true })
+
+-- Swift-specific keymaps
+vim.keymap.set("n", "<leader>sr", ":!swift run<CR>", { buffer = true, desc = "Swift Run" })
+vim.keymap.set("n", "<leader>sb", ":!swift build<CR>", { buffer = true, desc = "Swift Build" })

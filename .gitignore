@@ -71,3 +71,4 @@ vifm
 yarn
 zed/*
 !zed/settings.json
+karabiner/.DS_Store

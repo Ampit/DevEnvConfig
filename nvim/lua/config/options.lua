@@ -10,3 +10,8 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.opt.laststatus = 3
 vim.opt.wrap = true
 vim.opt.linebreak = true
+
+-- Swift-specific settings
+vim.bo.expandtab = true
+vim.bo.shiftwidth = 4
+vim.bo.softtabstop = 4

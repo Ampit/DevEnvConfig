@@ -55,6 +55,7 @@ const rules: KarabinerRules[] = [
       3: app("TablePlus"),
       4: app("PgAdmin 4"),
       5: app("WhatsApp"),
+      6: app("Xcode"),
       a: app("Arc"),
       c: app("Notion Calendar"),
       v: app("Cursor"),
