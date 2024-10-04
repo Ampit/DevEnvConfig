@@ -68,6 +68,7 @@ const rules: KarabinerRules[] = [
       j: app("Webstorm"), // j for JetBrains
       z: app("zoom.us"),
       q: app("WhatsApp"),
+      x: app("ChatGPT"),
     },
 
     // w = "Window" via rectangle.app
