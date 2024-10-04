@@ -51,6 +51,10 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       1: app("1Password"),
+      2: app("Google Chrome"),
+      3: app("TablePlus"),
+      4: app("PgAdmin 4"),
+      5: app("WhatsApp"),
       a: app("Arc"),
       c: app("Notion Calendar"),
       v: app("Cursor"),
@@ -67,7 +71,6 @@ const rules: KarabinerRules[] = [
       b: app("Obsidian"), // o is taken by "Open"
       j: app("Webstorm"), // j for JetBrains
       z: app("zoom.us"),
-      q: app("WhatsApp"),
       x: app("ChatGPT"),
     },
 
@@ -232,7 +235,7 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
-      c: open("raycast://extensions/raycast/color-picker/pick-color"),
+      c: open("raycast://extensions/thomas/color-picker/pick-color"),
       n: open("raycast://script-commands/dismiss-notifications"),
       e: open(
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"

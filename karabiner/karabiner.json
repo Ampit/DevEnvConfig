@@ -234,6 +234,102 @@
               {
                 "to": [
                   {
+                    "shell_command": "open -a 'Google Chrome.app'"
+                  }
+                ],
+                "description": "Open -a 'Google Chrome.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'TablePlus.app'"
+                  }
+                ],
+                "description": "Open -a 'TablePlus.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'PgAdmin 4.app'"
+                  }
+                ],
+                "description": "Open -a 'PgAdmin 4.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'WhatsApp.app'"
+                  }
+                ],
+                "description": "Open -a 'WhatsApp.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open -a 'Arc.app'"
                   }
                 ],
@@ -601,30 +697,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "z",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'WhatsApp.app'"
-                  }
-                ],
-                "description": "Open -a 'WhatsApp.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "q",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1791,10 +1863,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/color-picker/pick-color"
+                    "shell_command": "open raycast://extensions/thomas/color-picker/pick-color"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/color-picker/pick-color",
+                "description": "Open raycast://extensions/thomas/color-picker/pick-color",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
