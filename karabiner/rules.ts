@@ -41,21 +41,17 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    // spacebar: open(
-    // ),
+    spacebar: open(
+      "raycast://extensions/asubbotin/pomodoro/pomodoro-control-timer"
+    ),
     // b = "B"rowse
     b: {
-      // Quarterly "P"lan
-      y: open("https://news.ycombinator.com"),
+      w: open("https://wakatime.com/dashboard"),
+      g: open("https://github.com/ampit"),
     },
     // o = "Open" applications
     o: {
       1: app("1Password"),
-      2: app("Google Chrome"),
-      3: app("TablePlus"),
-      4: app("PgAdmin 4"),
-      5: app("WhatsApp"),
-      6: app("Xcode"),
       a: app("Arc"),
       c: app("Notion Calendar"),
       v: app("Cursor"),
@@ -64,15 +60,21 @@ const rules: KarabinerRules[] = [
       e: app("Superhuman"),
       n: app("Notion"),
       w: app("Warp"),
+      i: app("iTerm"),
       f: app("Finder"),
       m: app("Spotify"),
       r: app("Linear"), // r because we want it to be on the left hand
       g: app("Figma"), // f is taken by "Finder"
-      t: app("Postman"), // can't do p as we want the key to be on the left
+      p: app("Postman"), // can't do p as we want the key to be on the left
+      t: app("TablePlus"),
       b: app("Obsidian"), // o is taken by "Open"
       j: app("Webstorm"), // j for JetBrains
       z: app("zoom.us"),
       x: app("ChatGPT"),
+      h: app("Google Chrome"),
+      k: app("WhatsApp"),
+      y: app("Xcode"),
+      u: app("PgAdmin 4"),
     },
 
     // w = "Window" via rectangle.app
