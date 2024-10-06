@@ -58,5 +58,9 @@ keymap.set("n", "<leader>ts", "<cmd>TermSelect<CR>", { noremap = true, silent = 
 keymap.set("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", { noremap = true, silent = true })
 
 -- Swift-specific keymaps
-vim.keymap.set("n", "<leader>sr", ":!swift run<CR>", { buffer = true, desc = "Swift Run" })
-vim.keymap.set("n", "<leader>sb", ":!swift build<CR>", { buffer = true, desc = "Swift Build" })
+keymap.set("n", "<leader>sr", ":!swift run<CR>", { buffer = true, desc = "Swift Run" })
+keymap.set("n", "<leader>sb", ":!swift build<CR>", { buffer = true, desc = "Swift Build" })
+
+-- Set Ctrl n to forward jump list
+keymap.set("n", "<C-n>", "<C-i>", { noremap = true, silent = true })
+
