@@ -63,9 +63,9 @@ const rules: KarabinerRules[] = [
       i: app("iTerm"),
       f: app("Finder"),
       m: app("Spotify"),
-      r: app("Linear"), // r because we want it to be on the left hand
+      r: app("Linear"), // l is hard to press with o "Open"
       g: app("Figma"), // f is taken by "Finder"
-      p: app("Postman"), // can't do p as we want the key to be on the left
+      p: app("Postman"),
       t: app("TablePlus"),
       b: app("Obsidian"), // o is taken by "Open"
       j: app("Webstorm"), // j for JetBrains
