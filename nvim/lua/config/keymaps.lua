@@ -45,8 +45,8 @@ keymap.set("n", "<leader>fd", vim.diagnostic.open_float, { desc = "Open floating
 keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- DiffviewOpen
-keymap.set("n", "<leader>dv", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
-keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", { desc = "Close Diffview" })
+keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
+keymap.set("n", "<leader>dvc", ":DiffviewClose<CR>", { desc = "Close Diffview" })
 
 -- Undo Tree
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
