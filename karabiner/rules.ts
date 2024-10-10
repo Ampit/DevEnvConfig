@@ -75,6 +75,7 @@ const rules: KarabinerRules[] = [
       k: app("WhatsApp"),
       y: app("Xcode"),
       u: app("PgAdmin 4"),
+      l: app("RunJS"),
     },
 
     // w = "Window" via rectangle.app
