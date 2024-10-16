@@ -44,6 +44,40 @@ const rules: KarabinerRules[] = [
     spacebar: open(
       "raycast://extensions/asubbotin/pomodoro/pomodoro-control-timer"
     ),
+    // Mouse controls
+    f: { // Fast mouse controls
+      h: {
+        to: [{ mouse_key: { x: -5000 } }], // Move mouse left
+      },
+      j: {
+        to: [{ mouse_key: { y: 5000 } }], // Move mouse down
+      },
+      k: {
+        to: [{ mouse_key: { y: -5000 } }], // Move mouse up
+      },
+      l: {
+        to: [{ mouse_key: { x: 5000 } }], // Move mouse right
+      },
+    },
+    // Slow mouse controls for when f is not held
+    h: {
+      to: [{ mouse_key: { x: -1000 } }], // Move mouse left
+    },
+    j: {
+      to: [{ mouse_key: { y: 1000 } }], // Move mouse down
+    },
+    k: {
+      to: [{ mouse_key: { y: -1000 } }], // Move mouse up
+    },
+    l: {
+      to: [{ mouse_key: { x: 1000 } }], // Move mouse right
+    },
+    n: {
+      to: [{ pointing_button: "button1" }], // Left click
+    },
+    m: {
+      to: [{ pointing_button: "button2" }], // Right click
+    },
     // b = "B"rowse
     b: {
       w: open("https://wakatime.com/dashboard"),
@@ -138,6 +172,15 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "close_bracket",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      // Press q to quit application, can also do command + q
+      q: {
+        to: [
+          {
+            key_code: "q",
             modifiers: ["right_command"],
           },
         ],
