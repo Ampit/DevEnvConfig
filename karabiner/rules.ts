@@ -45,7 +45,23 @@ const rules: KarabinerRules[] = [
       "raycast://extensions/asubbotin/pomodoro/pomodoro-control-timer"
     ),
     // Mouse controls
-    f: { // Fast mouse controls
+    d: {
+      // Slow mouse controls
+      h: {
+        to: [{ mouse_key: { x: -500 } }], // Move mouse left
+      },
+      j: {
+        to: [{ mouse_key: { y: 500 } }], // Move mouse down
+      },
+      k: {
+        to: [{ mouse_key: { y: -500 } }], // Move mouse up
+      },
+      l: {
+        to: [{ mouse_key: { x: 500 } }], // Move mouse right
+      },
+    },
+    f: {
+      // Fast mouse controls
       h: {
         to: [{ mouse_key: { x: -5000 } }], // Move mouse left
       },
@@ -59,18 +75,18 @@ const rules: KarabinerRules[] = [
         to: [{ mouse_key: { x: 5000 } }], // Move mouse right
       },
     },
-    // Slow mouse controls for when f is not held
+    // Normal mouse controls for when f is not held
     h: {
-      to: [{ mouse_key: { x: -1000 } }], // Move mouse left
+      to: [{ mouse_key: { x: -1500 } }], // Move mouse left
     },
     j: {
-      to: [{ mouse_key: { y: 1000 } }], // Move mouse down
+      to: [{ mouse_key: { y: 1500 } }], // Move mouse down
     },
     k: {
-      to: [{ mouse_key: { y: -1000 } }], // Move mouse up
+      to: [{ mouse_key: { y: -1500 } }], // Move mouse up
     },
     l: {
-      to: [{ mouse_key: { x: 1000 } }], // Move mouse right
+      to: [{ mouse_key: { x: 1500 } }], // Move mouse right
     },
     n: {
       to: [{ pointing_button: "button1" }], // Left click
