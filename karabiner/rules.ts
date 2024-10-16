@@ -192,12 +192,12 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      // Press q to quit application, can also do command + q
-      q: {
+      // x to quit application, can also do command + q
+      x: {
         to: [
           {
             key_code: "q",
-            modifiers: ["right_command"],
+            modifiers: ["left_command"],
           },
         ],
       },
