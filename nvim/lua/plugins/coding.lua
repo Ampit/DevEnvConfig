@@ -115,7 +115,18 @@ return {
   -- Git Blame
   "f-person/git-blame.nvim",
   -- Diff View
-  "sindrets/diffview.nvim",
+  {
+    "sindrets/diffview.nvim",
+    opts = {
+      keymaps = {
+        view = {
+          ["<tab>"] = false, -- Disable the default tab keymap
+          ["<S-tab>"] = "select_next_entry", -- Use <S-tab> for previous entry
+          ["<C-S-tab>"] = "select_prev_entry", -- Use <C-S-tab> for next entry
+        },
+      },
+    },
+  },
   -- Smooth Scroll
   "karb94/neoscroll.nvim",
   -- Scrollbar
