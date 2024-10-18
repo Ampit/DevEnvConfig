@@ -88,10 +88,10 @@ const rules: KarabinerRules[] = [
     l: {
       to: [{ mouse_key: { x: 1500 } }], // Move mouse right
     },
-    n: {
+    e: {
       to: [{ pointing_button: "button1" }], // Left click
     },
-    m: {
+    t: {
       to: [{ pointing_button: "button2" }], // Right click
     },
     // b = "B"rowse
