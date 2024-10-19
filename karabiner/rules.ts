@@ -102,30 +102,31 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       1: app("1Password"),
+      2: app("Telegram"),
       a: app("Arc"),
-      c: app("Notion Calendar"),
-      v: app("Cursor"),
-      d: app("Discord"),
-      s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
-      w: app("Warp"),
-      i: app("iTerm"),
-      f: app("Finder"),
-      m: app("Spotify"),
-      r: app("Linear"), // l is hard to press with o "Open"
-      g: app("Figma"), // f is taken by "Finder"
-      p: app("Postman"),
-      t: app("TablePlus"),
       b: app("Obsidian"), // o is taken by "Open"
-      j: app("Webstorm"), // j for JetBrains
-      z: app("zoom.us"),
-      x: app("ChatGPT"),
+      c: app("Notion Calendar"),
+      d: app("Discord"),
+      e: app("Superhuman"),
+      f: app("Finder"),
+      g: app("Figma"), // f is taken by "Finder"
       h: app("Google Chrome"),
+      i: app("iTerm"),
+      j: app("Webstorm"), // j for JetBrains
       k: app("WhatsApp"),
-      y: app("Xcode"),
-      u: app("PgAdmin 4"),
       l: app("RunJS"),
+      m: app("Spotify"),
+      n: app("Notion"),
+      p: app("Postman"),
+      r: app("Linear"), // l is hard to press with o "Open"
+      s: app("Slack"),
+      t: app("TablePlus"),
+      u: app("PgAdmin 4"),
+      v: app("Cursor"),
+      w: app("Warp"),
+      x: app("ChatGPT"),
+      y: app("Xcode"),
+      z: app("zoom.us"),
     },
 
     // w = "Window" via rectangle.app
