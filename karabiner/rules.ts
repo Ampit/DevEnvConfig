@@ -282,6 +282,12 @@ const rules: KarabinerRules[] = [
       i: {
         to: [{ key_code: "page_up" }],
       },
+      n: {
+        to: [{ mouse_key: { vertical_wheel: 50 } }],
+      },
+      m: {
+        to: [{ mouse_key: { vertical_wheel: -50 } }],
+      },
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
