@@ -144,9 +144,11 @@ const rules: KarabinerRules[] = [
       o: rectangle("next-display"),
       k: rectangle("top-half"),
       j: rectangle("bottom-half"),
-      h: rectangle("left-half"),
       l: rectangle("right-half"),
+      h: rectangle("left-half"),
       f: rectangle("maximize"),
+      c: rectangle("center"),
+      g: rectangle("almost-maximize"),
       u: {
         description: "Window: Previous Tab",
         to: [

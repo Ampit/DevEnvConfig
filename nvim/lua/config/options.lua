@@ -15,3 +15,7 @@ vim.opt.linebreak = true
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
+
+-- Show whitespace for fillchars
+vim.opt.fillchars:append("diff: ")
+
