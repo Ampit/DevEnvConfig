@@ -104,6 +104,7 @@ const rules: KarabinerRules[] = [
       1: app("1Password"),
       2: app("Telegram"),
       3: app("Firefox"),
+      4: app("Zed"),
       a: app("Arc"),
       b: app("Obsidian"), // o is taken by "Open"
       c: app("Notion Calendar"),
