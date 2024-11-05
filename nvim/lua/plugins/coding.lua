@@ -110,36 +110,37 @@ return {
 			position = "right",
 		},
 	},
-	{
-		"nvim-cmp",
-		dependencies = { "hrsh7th/cmp-emoji" },
-		opts = function(_, opts)
-			table.insert(opts.sources, {
-				name = "emoji",
-			})
-		end,
-	},
 	{ -- Wakatime
 		"wakatime/vim-wakatime",
 	},
+	-- {
+	-- 	-- Copilot
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "Copilot",
+	-- 	build = ":Copilot auth",
+	-- 	opts = {
+	-- 		suggestion = {
+	-- 			enabled = true,
+	-- 		},
+	-- 		panel = {
+	-- 			enabled = true,
+	-- 		},
+	-- 		filetypes = {
+	-- 			markdown = true,
+	-- 			help = true,
+	-- 			yaml = true,
+	-- 		},
+	-- 	},
+	-- },
 	{
-		-- Copilot
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		build = ":Copilot auth",
-		opts = {
-			suggestion = {
-				enabled = true,
-			},
-			panel = {
-				enabled = true,
-			},
-			filetypes = {
-				markdown = true,
-				help = true,
-				yaml = true,
-			},
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
 		},
+		config = function()
+			require("codeium").setup({})
+		end,
 	},
 	{ -- Git Blame
 		"f-person/git-blame.nvim",
@@ -180,5 +181,26 @@ return {
 			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
+	},
+	{
+		"nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-emoji",
+			"Exafunction/codeium.nvim",
+		},
+		opts = function(_, opts)
+			local cmp = require("cmp")
+
+			-- Add codeium to sources
+			table.insert(opts.sources, {
+				name = "codeium",
+				priority = 1000, -- Set high priority to show suggestions first
+			})
+
+			-- Add emoji source
+			table.insert(opts.sources, {
+				name = "emoji",
+			})
+		end,
 	},
 }
