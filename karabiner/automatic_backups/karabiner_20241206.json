@@ -3063,14 +3063,14 @@
             },
             "devices": [
                 {
-                    "disable_built_in_keyboard_if_exists": true,
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": true,
                         "product_id": 45919,
                         "vendor_id": 1133
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
                 },
                 {
                     "identifiers": {
@@ -3080,14 +3080,6 @@
                         "vendor_id": 9390
                     },
                     "ignore": false
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 50503,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true
                 }
             ],
             "name": "Default",
