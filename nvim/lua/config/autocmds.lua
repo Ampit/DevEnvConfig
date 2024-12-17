@@ -31,4 +31,4 @@ function _G.format_save_current_buffer()
   end
 end
 
-vim.cmd("au BufLeave,FocusLost * lua format_save_current_buffer()")
+-- vim.cmd("au BufLeave,FocusLost * lua format_save_current_buffer()")

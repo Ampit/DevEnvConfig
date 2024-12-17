@@ -3815,7 +3815,7 @@
                 "description": "Open raycast://extensions/raycast/clipboard-history/clipboard-history",
                 "type": "basic",
                 "from": {
-                  "key_code": "h",
+                  "key_code": "y",
                   "modifiers": {
                     "optional": [
                       "any"
