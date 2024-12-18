@@ -9,7 +9,7 @@ return {
         "luacheck",
         "shellcheck",
         "shfmt",
-        "typescript-language-server",
+        "vtsls",
         "css-lsp",
       })
     end,
