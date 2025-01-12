@@ -1353,9 +1353,44 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Telegram.app'",
                                 "from": {
                                     "key_code": "2",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "pressed_2",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "pressed_2",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Telegram.app'",
+                                "from": {
+                                    "key_code": "t",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Telegram.app'" }],
@@ -1367,11 +1402,16 @@
                                         "name": "hyper_sublayer_o",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "description": "Open -a 'Firefox.app'",
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "f",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Firefox.app'" }],
@@ -1383,11 +1423,16 @@
                                         "name": "hyper_sublayer_o",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "description": "Open -a 'Zed.app'",
                                 "from": {
-                                    "key_code": "4",
+                                    "key_code": "z",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Zed.app'" }],
@@ -1399,14 +1444,40 @@
                                         "name": "hyper_sublayer_o",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "description": "Open -a 'Webull Desktop.app'",
                                 "from": {
-                                    "key_code": "5",
+                                    "key_code": "w",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Webull Desktop.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Ghostty.app'",
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Ghostty.app'" }],
                                 "type": "basic"
                             },
                             {
@@ -3061,24 +3132,6 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 6256,
-                        "vendor_id": 9390
-                    },
-                    "manipulate_caps_lock_led": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": true,
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 50503,
-                        "vendor_id": 1133
-                    }
-                }
-            ],
             "name": "Default",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }

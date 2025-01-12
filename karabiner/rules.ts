@@ -102,10 +102,6 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       1: app("1Password"),
-      2: app("Telegram"),
-      3: app("Firefox"),
-      4: app("Zed"),
-      5: app("Webull Desktop"),
       a: app("Arc"),
       b: app("Obsidian"), // o is taken by "Open"
       c: app("Notion Calendar"),
@@ -130,6 +126,13 @@ const rules: KarabinerRules[] = [
       x: app("ChatGPT"),
       y: app("Xcode"),
       z: app("zoom.us"),
+      2: { // Nested sublayer
+        t: app("Telegram"),
+        f: app("Firefox"),
+        z: app("Zed"),
+        w: app("Webull Desktop"),
+        g: app("Ghostty"),
+      },
     },
 
     // w = "Window" via rectangle.app
