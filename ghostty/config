@@ -4,9 +4,9 @@ keybind = ctrl+l=goto_split:right
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
-keybind = ctrl+shift+j=resize_split:down,10
-keybind = ctrl+shift+k=resize_split:up,10
-keybind = ctrl+shift+h=resize_split:left,10
-keybind = ctrl+shift+h=resize_split:right,10
-theme = dark:tokyonight,light:tokyonight-day,tokyonight
+keybind = ctrl+alt+j=resize_split:down,10
+keybind = ctrl+alt+k=resize_split:up,10
+keybind = ctrl+alt+h=resize_split:left,10
+keybind = ctrl+alt+l=resize_split:right,10
+theme = dark:tokyonight,light:tokyonight-day
 unfocused-split-opacity=1
