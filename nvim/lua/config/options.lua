@@ -18,4 +18,4 @@ vim.bo.softtabstop = 4
 
 -- Show whitespace for fillchars
 vim.opt.fillchars:append("diff: ")
-
+vim.g.lazyvim_eslint_auto_format = true

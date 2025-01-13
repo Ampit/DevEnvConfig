@@ -116,6 +116,7 @@ type ModifiersKeys =
 
 export interface From {
   key_code?: KeyCode;
+  pointing_button?: "button1" | "button2" | "button3" | "button4" | "button5";
   simultaneous?: SimultaneousFrom[];
   simultaneous_options?: SimultaneousOptions;
   modifiers?: Modifiers;

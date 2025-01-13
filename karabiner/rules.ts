@@ -40,6 +40,18 @@ const rules: KarabinerRules[] = [
       },
     ],
   },
+  {
+    description: "Block Mouse Button 5",
+    manipulators: [
+      {
+        type: "basic",
+        from: {
+          pointing_button: "button5",
+        },
+        to: [],
+      },
+    ],
+  },
   ...createHyperSubLayers({
     spacebar: open(
       "raycast://extensions/asubbotin/pomodoro/pomodoro-control-timer"

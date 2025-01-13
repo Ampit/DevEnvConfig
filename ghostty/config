@@ -8,5 +8,5 @@ keybind = ctrl+shift+j=resize_split:down,10
 keybind = ctrl+shift+k=resize_split:up,10
 keybind = ctrl+shift+h=resize_split:left,10
 keybind = ctrl+shift+h=resize_split:right,10
-theme = dark:tokyonight,light:tokyonight-day
+theme = dark:tokyonight,light:tokyonight-day,tokyonight
 unfocused-split-opacity=1

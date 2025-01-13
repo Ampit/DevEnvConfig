@@ -35,16 +35,6 @@
                         ]
                     },
                     {
-                        "description": "Block Mouse Button 5",
-                        "manipulators": [
-                            {
-                                "from": { "pointing_button": "button5" },
-                                "to": [],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Hyper Key + spacebar",
                         "manipulators": [
                             {
@@ -3145,11 +3135,11 @@
             "devices": [
                 {
                     "identifiers": {
-                        "is_pointing_device": true,
+                        "is_keyboard": true,
                         "product_id": 6256,
                         "vendor_id": 9390
                     },
-                    "ignore": false
+                    "ignore": true
                 }
             ],
             "name": "Default",
