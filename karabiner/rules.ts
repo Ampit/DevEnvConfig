@@ -138,12 +138,14 @@ const rules: KarabinerRules[] = [
       x: app("ChatGPT"),
       y: app("Xcode"),
       z: app("zoom.us"),
-      2: { // Nested sublayer
+      2: {
+        // Nested sublayer
         t: app("Telegram"),
         f: app("Firefox"),
         z: app("Zed"),
         w: app("Webull Desktop"),
         g: app("Ghostty"),
+        v: app("Windsurf"),
       },
     },
 
