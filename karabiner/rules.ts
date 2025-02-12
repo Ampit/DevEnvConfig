@@ -146,6 +146,7 @@ const rules: KarabinerRules[] = [
         w: app("Webull Desktop"),
         g: app("Ghostty"),
         v: app("Windsurf"),
+        b: app("Zen Browser"),
       },
     },
 
