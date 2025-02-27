@@ -147,6 +147,7 @@ const rules: KarabinerRules[] = [
         g: app("Ghostty"),
         v: app("Windsurf"),
         b: app("Zen Browser"),
+        d: app("TradingView"),
       },
     },
 
@@ -228,11 +229,21 @@ const rules: KarabinerRules[] = [
       // Hide/Show all windows (e = empty/hide, r = restore/show)
       e: {
         description: "Window: Hide All",
-        to: [{ shell_command: "osascript -e 'tell application \"System Events\" to set visible of every process to false'" }],
+        to: [
+          {
+            shell_command:
+              "osascript -e 'tell application \"System Events\" to set visible of every process to false'",
+          },
+        ],
       },
       r: {
         description: "Window: Show All",
-        to: [{ shell_command: "osascript -e 'tell application \"System Events\" to set visible of every process to true'" }],
+        to: [
+          {
+            shell_command:
+              "osascript -e 'tell application \"System Events\" to set visible of every process to true'",
+          },
+        ],
       },
     },
 
