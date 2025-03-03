@@ -148,6 +148,7 @@ const rules: KarabinerRules[] = [
         v: app("Windsurf"),
         b: app("Zen Browser"),
         d: app("TradingView"),
+        p: app("PokerBaazi - Online Poker"),
       },
     },
 
