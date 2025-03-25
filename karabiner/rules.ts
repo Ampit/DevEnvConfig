@@ -147,7 +147,7 @@ const rules: KarabinerRules[] = [
         g: app("Ghostty"),
         v: app("Windsurf"),
         b: app("Zen Browser"),
-        e: app("Brave Browser"),
+        r: app("Brave Browser"),
         d: app("TradingView"),
         p: app("PokerBaazi - Online Poker"),
       },
