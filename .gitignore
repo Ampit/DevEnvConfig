@@ -73,3 +73,4 @@ zed/*
 !zed/settings.json
 karabiner/.DS_Store
 Webull Desktop
+simple-update-notifier
