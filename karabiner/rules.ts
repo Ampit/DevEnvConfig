@@ -129,7 +129,6 @@ const rules: KarabinerRules[] = [
       m: app("Spotify"),
       n: app("Notion"),
       p: app("Postman"),
-      q: app("Sunsama"),
       r: app("Linear"), // l is hard to press with o "Open"
       s: app("Slack"),
       t: app("TablePlus"),
@@ -151,6 +150,7 @@ const rules: KarabinerRules[] = [
         r: app("Brave Browser"),
         d: app("TradingView"),
         p: app("PokerBaazi - Online Poker"),
+        s: app("Sunsama"),
       },
     },
 

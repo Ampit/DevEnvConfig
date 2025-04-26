@@ -1601,6 +1601,27 @@
                                         "name": "hyper_sublayer_o",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Sunsama.app'",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Sunsama.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "description": "Open -a 'Arc.app'",
@@ -1833,22 +1854,6 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Postman.app'" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper_sublayer_o",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Open -a 'Sunsama.app'",
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Sunsama.app'" }],
                                 "type": "basic"
                             },
                             {
@@ -3295,16 +3300,6 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 833,
-                        "vendor_id": 1452
-                    },
-                    "manipulate_caps_lock_led": false
-                }
-            ],
             "name": "Default",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
