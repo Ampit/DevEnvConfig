@@ -126,10 +126,10 @@ const rules: KarabinerRules[] = [
       j: app("Webstorm"), // j for JetBrains
       k: app("WhatsApp"),
       l: app("RunJS"),
-      m: app("Spotify"),
+      m: app("Spotify"), // m for music
       n: app("Notion"),
       p: app("Postman"),
-      r: app("Linear"), // l is hard to press with o "Open"
+      r: app("Linear"), // l is hard to press with o "Open", so we assign l less used app i.e RunJS
       s: app("Slack"),
       t: app("TablePlus"),
       u: app("PgAdmin 4"),
@@ -146,10 +146,10 @@ const rules: KarabinerRules[] = [
         w: app("Webull Desktop"),
         g: app("Ghostty"),
         v: app("Windsurf"),
-        b: app("Zen Browser"),
+        b: app("Zen Browser"), // z is taken by Zed
         r: app("Brave Browser"),
-        d: app("TradingView"),
-        p: app("PokerBaazi - Online Poker"),
+        d: app("TradingView"), // t is taken by Telegram
+        i: app("Questrade IQ Edge"),
         s: app("Sunsama"),
       },
     },
