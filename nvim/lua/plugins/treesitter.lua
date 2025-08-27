@@ -15,6 +15,7 @@ return {
         "graphql",
         "http",
         "java",
+        "markdown",
         "php",
         "rust",
         "scss",
@@ -32,6 +33,7 @@ return {
         enable = true,
         use_virtual_text = true,
         lint_events = { "BufWrite", "CursorHold" },
+        disable = { "markdown" },
       },
 
       playground = {
