@@ -56,7 +56,8 @@ return {
       },
     },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      -- Use the new nvim-treesitter API
+      require("nvim-treesitter").setup(opts)
 
       -- MDX
       vim.filetype.add({

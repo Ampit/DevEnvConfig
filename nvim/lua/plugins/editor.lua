@@ -14,7 +14,7 @@ return {
   },
 
   {
-    "echasnovski/mini.hipatterns",
+    "nvim-mini/mini.hipatterns",
     event = "BufReadPre",
     opts = {
       highlighters = {
@@ -163,7 +163,7 @@ return {
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
       -- or if using `mini.icons`
-      -- { "echasnovski/mini.icons" },
+      -- { "nvim-mini/mini.icons" },
     },
     opts = {
       show_icons = true,
