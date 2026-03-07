@@ -21,4 +21,18 @@ return {
       })
     end,
   },
+
+  -- Override markdownlint-cli2 to use a global config from nvim config dir
+  {
+    "mfussenegger/nvim-lint",
+    opts = function(_, opts)
+      local config_path = vim.fn.stdpath("config") .. "/.markdownlint.jsonc"
+      local lint = require("lint")
+      lint.linters["markdownlint-cli2"] = lint.linters["markdownlint-cli2"] or {}
+      lint.linters["markdownlint-cli2"].args = {
+        "--config",
+        config_path,
+      }
+    end,
+  },
 }

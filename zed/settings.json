@@ -91,5 +91,14 @@
   },
   "chat_panel": {
     "dock": "right"
+  },
+  "context_servers": {
+    "posthog": {
+      "enabled": true,
+      "url": "https://mcp.posthog.com/mcp",
+      "headers": {
+        "Authorization": "Bearer undefined"
+      }
+    }
   }
 }
