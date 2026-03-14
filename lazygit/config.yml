@@ -1,0 +1,6 @@
+gui:
+  sidePanelWidth: 0.2
+git:
+  paging:
+    colorArg: never
+    pager: /Users/amar/Library/Python/3.9/bin/ydiff -p cat -s --wrap --width={{columnWidth}}
