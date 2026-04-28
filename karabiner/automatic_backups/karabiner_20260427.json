@@ -1743,10 +1743,155 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Windsurf.app'"
+                    "shell_command": "open -a 'Windsurf - Next.app'"
                   }
                 ],
-                "description": "Open -a 'Windsurf.app'",
+                "description": "Open -a 'Windsurf - Next.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Brave Browser.app'"
+                  }
+                ],
+                "description": "Open -a 'Brave Browser.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Claude.app'"
+                  }
+                ],
+                "description": "Open -a 'Claude.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'TradingView.app'"
+                  }
+                ],
+                "description": "Open -a 'TradingView.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Sunsama.app'"
+                  }
+                ],
+                "description": "Open -a 'Sunsama.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Kiro.app'"
+                  }
+                ],
+                "description": "Open -a 'Kiro.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -2846,6 +2991,54 @@
                     "modifiers": [
                       "left_command"
                     ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "description": "Window: Hide All",
+                "to": [
+                  {
+                    "shell_command": "osascript -e 'tell application \"System Events\" to set visible of every process to false'"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "description": "Window: Show All",
+                "to": [
+                  {
+                    "shell_command": "osascript -e 'tell application \"System Events\" to set visible of every process to true'"
                   }
                 ],
                 "conditions": [
