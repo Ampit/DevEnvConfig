@@ -148,7 +148,7 @@ const rules: KarabinerRules[] = [
         v: app("Windsurf - Next"),
         b: app("Brave Browser"),
         d: app("TradingView"), // t is taken by Telegram
-        s: app("Todoist"),
+        s: app("Todoist"), // t is taken by telegram
       },
     },
 
