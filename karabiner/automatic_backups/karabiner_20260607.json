@@ -1503,12 +1503,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Windsurf.app'",
+                                "description": "Open -a 'Windsurf - Next.app'",
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Windsurf.app'" }],
+                                "to": [{ "shell_command": "open -a 'Windsurf - Next.app'" }],
                                 "type": "basic"
                             },
                             {
@@ -1524,12 +1524,33 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Zen Browser.app'",
+                                "description": "Open -a 'Brave Browser.app'",
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Zen Browser.app'" }],
+                                "to": [{ "shell_command": "open -a 'Brave Browser.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Claude.app'",
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Claude.app'" }],
                                 "type": "basic"
                             },
                             {
@@ -1551,6 +1572,48 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'TradingView.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Todoist.app'",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Todoist.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "pressed_2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Kiro.app'",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Kiro.app'" }],
                                 "type": "basic"
                             },
                             {
@@ -3237,6 +3300,25 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 1,
+                        "vendor_id": 12994
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 45919,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false
+                }
+            ],
             "name": "Default",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
