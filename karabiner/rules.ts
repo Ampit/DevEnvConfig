@@ -140,6 +140,7 @@ const rules: KarabinerRules[] = [
       z: app("zoom.us"),
       2: {
         // Nested sublayer
+        c: app("Codex"),
         t: app("Telegram"),
         f: app("Firefox"),
         z: app("Zed"),
