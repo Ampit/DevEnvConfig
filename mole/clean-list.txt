@@ -1,0 +1,10 @@
+# Mole Cleanup Preview - 2026-07-26 22:23:32
+#
+# How to protect files:
+# 1. Copy any path below to ~/.config/mole/whitelist
+# 2. Run: mo clean --whitelist
+#
+# Example:
+#   /Users/*/Library/Caches/com.example.app
+#
+

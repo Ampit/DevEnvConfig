@@ -46,6 +46,49 @@
             ]
           },
           {
+            "description": "Terminal apps: Hyper+R -> Ctrl-R history search",
+            "manipulators": [
+              {
+                "description": "Let Caps/Hyper+R open shell history search in terminal apps",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": [
+                      "left_control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "^dev\\.warp\\.Warp",
+                      "^com\\.mitchellh\\.ghostty",
+                      "^com\\.todesktop\\.230313mzl4w4u92",
+                      "^com\\.microsoft\\.VSCode",
+                      "^com\\.apple\\.Terminal",
+                      "^com\\.googlecode\\.iterm2"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Block Mouse Button 5",
             "manipulators": [
               {
@@ -1589,6 +1632,35 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Codex.app'"
+                  }
+                ],
+                "description": "Open -a 'Codex.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "t",
                   "modifiers": {
                     "optional": [
@@ -1743,10 +1815,10 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Windsurf.app'"
+                    "shell_command": "open -a 'Windsurf - Next.app'"
                   }
                 ],
-                "description": "Open -a 'Windsurf.app'",
+                "description": "Open -a 'Windsurf - Next.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -1764,35 +1836,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Zen Browser.app'"
-                  }
-                ],
-                "description": "Open -a 'Zen Browser.app'",
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "pressed_2",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1850,7 +1893,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "p",
+                  "key_code": "s",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1859,10 +1902,10 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'PokerBaazi - Online Poker.app'"
+                    "shell_command": "open -a 'Todoist.app'"
                   }
                 ],
-                "description": "Open -a 'PokerBaazi - Online Poker.app'",
+                "description": "Open -a 'Todoist.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
