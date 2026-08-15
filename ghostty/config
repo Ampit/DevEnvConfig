@@ -1,14 +1,45 @@
-keybind = ctrl+\=new_split:right
-keybind = ctrl+-=new_split:down
-keybind = ctrl+l=goto_split:right 
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+shift+j=resize_split:down,10
-keybind = ctrl+shift+k=resize_split:up,10
-keybind = ctrl+shift+h=resize_split:left,10
-keybind = ctrl+shift+l=resize_split:right,10
-theme = dark:tokyonight,light:tokyonight-day
-unfocused-split-opacity=1
-font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+# Font
+font-family = "Hack Nerd Font Mono"
+font-family = "Menlo"
+font-size = 15
+adjust-cell-height = 6%
+
+# Theme & Window
+macos-titlebar-style = tabs
+# Follow macOS appearance: Tokyo Night at night, its matching Day palette in daylight.
+theme = light:TokyoNight Day,dark:TokyoNight
+background-opacity = 1
+background-opacity-cells = false
+background-blur = false
+unfocused-split-opacity = 1
+window-padding-x = 16
+window-padding-y = 12
+window-padding-balance = true
+minimum-contrast = 1
+
+# Quality-of-life
+mouse-hide-while-typing = true
+clipboard-write = allow
+clipboard-read = allow
+copy-on-select = clipboard
+confirm-close-surface = true
+shell-integration-features = cursor,sudo,title
+
+# Splits
+keybind = super+\=new_split:right
+keybind = super+|=new_split:down
+keybind = super+h=goto_split:left
+keybind = super+l=goto_split:right
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+shift+h=resize_split:left,10
+keybind = super+shift+l=resize_split:right,10
+keybind = super+shift+j=resize_split:down,10
+keybind = super+shift+k=resize_split:up,10
+keybind = super+shift+enter=toggle_split_zoom
+keybind = super+ctrl+equal=equalize_splits
+
+# Font size
+keybind = super+equal=increase_font_size:1
+keybind = super+minus=decrease_font_size:1
+keybind = super+0=reset_font_size

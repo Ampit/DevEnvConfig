@@ -1,0 +1,82 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w1",
+      "custom_name": null,
+      "identity_cwd": "/Users/amar/workspace/herdr",
+      "public_pane_numbers": {
+        "2": 2
+      },
+      "next_public_pane_number": 7,
+      "public_tab_numbers": [
+        2
+      ],
+      "next_public_tab_number": 7,
+      "tabs": [
+        {
+          "custom_name": "Firstmate",
+          "layout": {
+            "Pane": 2
+          },
+          "panes": {
+            "2": {
+              "cwd": "/Users/amar/workspace/herdr",
+              "agent_session": {
+                "source": "herdr:pi",
+                "agent": "pi",
+                "kind": "path",
+                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-herdr--/2026-08-14T02-08-43-951Z_019ffe07-5faf-7cbb-91ba-a16bdf25a0b2.jsonl"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 2,
+          "root_pane": 2
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wB",
+      "custom_name": "fm-sequence-integration-continuation-p6",
+      "identity_cwd": "/Users/amar/.treehouse/sequence-6a32b7/1/sequence",
+      "public_pane_numbers": {
+        "23": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 23
+          },
+          "panes": {
+            "23": {
+              "cwd": "/Users/amar/.treehouse/sequence-6a32b7/1/sequence",
+              "agent_session": {
+                "source": "herdr:pi",
+                "agent": "pi",
+                "kind": "path",
+                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-.treehouse-sequence-6a32b7-1-sequence--/2026-08-15T19-17-41-839Z_01a006db-c74f-7565-afa8-4d587cd89556.jsonl"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 23,
+          "root_pane": 23
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 0,
+  "selected": 0,
+  "sidebar_width": 30,
+  "sidebar_section_split": 0.5,
+  "collapsed_space_keys": []
+}
