@@ -1,0 +1,11 @@
+version = 1
+
+[[mapping]]
+dir = "/Users/amar/workspace/"
+profile = "personal"
+case_insensitive = true
+
+[[mapping]]
+dir = "/Users/amar/workspace/speer/"
+profile = "dev-speer"
+case_insensitive = true

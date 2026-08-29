@@ -4,15 +4,17 @@
     {
       "id": "w1",
       "custom_name": null,
-      "identity_cwd": "/Users/amar/workspace/herdr",
+      "identity_cwd": "/Users/amar/workspace/firstmate",
       "public_pane_numbers": {
-        "2": 2
+        "2": 2,
+        "121": 35
       },
-      "next_public_pane_number": 7,
+      "next_public_pane_number": 36,
       "public_tab_numbers": [
-        2
+        2,
+        35
       ],
-      "next_public_tab_number": 7,
+      "next_public_tab_number": 36,
       "tabs": [
         {
           "custom_name": "Firstmate",
@@ -21,54 +23,70 @@
           },
           "panes": {
             "2": {
-              "cwd": "/Users/amar/workspace/herdr",
+              "cwd": "/Users/amar/workspace/firstmate",
               "agent_session": {
                 "source": "herdr:pi",
                 "agent": "pi",
                 "kind": "path",
-                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-herdr--/2026-08-14T02-08-43-951Z_019ffe07-5faf-7cbb-91ba-a16bdf25a0b2.jsonl"
+                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-herdr--/2026-08-16T02-53-36-899Z_01a0087d-2f03-7a8e-88a4-be9c16ef09d8.jsonl"
               }
             }
           },
           "zoomed": false,
           "focused": 2,
           "root_pane": 2
+        },
+        {
+          "custom_name": "Verily Prep",
+          "layout": {
+            "Pane": 121
+          },
+          "panes": {
+            "121": {
+              "cwd": "/Users/amar/workspace/verily-interview-prep",
+              "agent_name": "verily-prep",
+              "managed_agent_kind": "pi",
+              "agent_session": {
+                "source": "herdr:pi",
+                "agent": "pi",
+                "kind": "path",
+                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-verily-interview-prep--/2026-08-26T23-56-45-101Z_01a04081-36ad-7db6-ab3b-dc85366ae153.jsonl"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 121,
+          "root_pane": 121
         }
       ],
       "active_tab": 0
     },
     {
-      "id": "wB",
-      "custom_name": "fm-sequence-integration-continuation-p6",
-      "identity_cwd": "/Users/amar/.treehouse/sequence-6a32b7/1/sequence",
+      "id": "w1R",
+      "custom_name": "└ alignfive-production-matchmaking-transition-regression-r1 · p:cRV-goTBq3Kp92Khk-qXQQ",
+      "identity_cwd": "/Users/amar/workspace/firstmate/projects/sequence",
       "public_pane_numbers": {
-        "23": 1
+        "133": 2
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 3,
       "public_tab_numbers": [
-        1
+        2
       ],
-      "next_public_tab_number": 2,
+      "next_public_tab_number": 3,
       "tabs": [
         {
-          "custom_name": null,
+          "custom_name": "fm-alignfive-production-matchmaking-transition-regression-r1",
           "layout": {
-            "Pane": 23
+            "Pane": 133
           },
           "panes": {
-            "23": {
-              "cwd": "/Users/amar/.treehouse/sequence-6a32b7/1/sequence",
-              "agent_session": {
-                "source": "herdr:pi",
-                "agent": "pi",
-                "kind": "path",
-                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-.treehouse-sequence-6a32b7-1-sequence--/2026-08-15T19-17-41-839Z_01a006db-c74f-7565-afa8-4d587cd89556.jsonl"
-              }
+            "133": {
+              "cwd": "/Users/amar/workspace/firstmate/projects/sequence"
             }
           },
           "zoomed": false,
-          "focused": 23,
-          "root_pane": 23
+          "focused": 133,
+          "root_pane": 133
         }
       ],
       "active_tab": 0

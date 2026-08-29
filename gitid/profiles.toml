@@ -1,0 +1,14 @@
+# gitid profiles — edit freely; run `gitid sync` afterwards.
+version = 1
+
+[profiles.personal]
+name = "Amarpreet Singh"
+email = "ampit.xd@gmail.com"
+ssh = { key = "/Users/amar/.ssh/id_ed25519" }
+signing = { format = "ssh", key = "/Users/amar/.ssh/id_ed25519.pub", commits = true }
+
+[profiles.dev-speer]
+name = "developer-at-speer"
+email = "developer@speer.io"
+ssh = { key = "/Users/amar/.ssh/id_ed25519_dev_work" }
+signing = { format = "ssh", key = "/Users/amar/.ssh/id_ed25519_dev_work.pub", commits = true }
