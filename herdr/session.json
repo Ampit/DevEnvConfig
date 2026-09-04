@@ -6,8 +6,8 @@
       "custom_name": null,
       "identity_cwd": "/Users/amar/workspace/firstmate",
       "public_pane_numbers": {
-        "2": 2,
-        "121": 35
+        "1": 2,
+        "2": 35
       },
       "next_public_pane_number": 36,
       "public_tab_numbers": [
@@ -19,10 +19,10 @@
         {
           "custom_name": "Firstmate",
           "layout": {
-            "Pane": 2
+            "Pane": 1
           },
           "panes": {
-            "2": {
+            "1": {
               "cwd": "/Users/amar/workspace/firstmate",
               "agent_session": {
                 "source": "herdr:pi",
@@ -33,17 +33,17 @@
             }
           },
           "zoomed": false,
-          "focused": 2,
-          "root_pane": 2
+          "focused": 1,
+          "root_pane": 1
         },
         {
           "custom_name": "Verily Prep",
           "layout": {
-            "Pane": 121
+            "Pane": 2
           },
           "panes": {
-            "121": {
-              "cwd": "/Users/amar/workspace/verily-interview-prep",
+            "2": {
+              "cwd": "/Users/amar",
               "agent_name": "verily-prep",
               "managed_agent_kind": "pi",
               "agent_session": {
@@ -55,8 +55,8 @@
             }
           },
           "zoomed": false,
-          "focused": 121,
-          "root_pane": 121
+          "focused": 2,
+          "root_pane": 2
         }
       ],
       "active_tab": 0
@@ -64,9 +64,9 @@
     {
       "id": "w1R",
       "custom_name": "└ alignfive-production-matchmaking-transition-regression-r1 · p:cRV-goTBq3Kp92Khk-qXQQ",
-      "identity_cwd": "/Users/amar/workspace/firstmate/projects/sequence",
+      "identity_cwd": "/Users/amar",
       "public_pane_numbers": {
-        "133": 2
+        "3": 2
       },
       "next_public_pane_number": 3,
       "public_tab_numbers": [
@@ -77,16 +77,16 @@
         {
           "custom_name": "fm-alignfive-production-matchmaking-transition-regression-r1",
           "layout": {
-            "Pane": 133
+            "Pane": 3
           },
           "panes": {
-            "133": {
-              "cwd": "/Users/amar/workspace/firstmate/projects/sequence"
+            "3": {
+              "cwd": "/Users/amar"
             }
           },
           "zoomed": false,
-          "focused": 133,
-          "root_pane": 133
+          "focused": 3,
+          "root_pane": 3
         }
       ],
       "active_tab": 0
