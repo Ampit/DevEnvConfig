@@ -1,0 +1,46 @@
+# Font
+font-family = "Hack Nerd Font"
+font-size = 16
+font-thicken = true
+
+# Theme & Window
+macos-titlebar-style = tabs
+theme = dark:TokyoNight,light:TokyoNight
+unfocused-split-opacity = 1
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+
+# Enforce WCAG 4.5:1 minimum contrast to prevent invisible/washed-out TrueColor text from agy & CLI tools
+minimum-contrast = 4.5
+
+# Light Mode ANSI text contrast fix
+palette = 7=#4c4f69
+palette = 15=#1e1e2e
+
+# Quality-of-life
+mouse-hide-while-typing = true
+clipboard-write = allow
+clipboard-read = allow
+copy-on-select = clipboard
+confirm-close-surface = true
+shell-integration-features = cursor,sudo,title
+
+# Splits
+keybind = super+\=new_split:right
+keybind = super+|=new_split:down
+keybind = super+h=goto_split:left
+keybind = super+l=goto_split:right
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+shift+h=resize_split:left,10
+keybind = super+shift+l=resize_split:right,10
+keybind = super+shift+j=resize_split:down,10
+keybind = super+shift+k=resize_split:up,10
+keybind = super+shift+enter=toggle_split_zoom
+keybind = super+ctrl+equal=equalize_splits
+
+# Font size
+keybind = super+equal=increase_font_size:1
+keybind = super+minus=decrease_font_size:1
+keybind = super+0=reset_font_size
