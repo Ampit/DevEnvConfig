@@ -146,7 +146,7 @@ const rules: KarabinerRules[] = [
         z: app("Zed"),
         w: app("Webull Desktop"),
         g: app("Ghostty"),
-        v: app("Windsurf - Next"),
+        v: app("Agent Orchestrator"),
         b: app("Brave Browser"),
         d: app("TradingView"), // t is taken by Telegram
         s: app("Todoist"), // t is taken by telegram

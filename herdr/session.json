@@ -7,14 +7,14 @@
       "identity_cwd": "/Users/amar/workspace/firstmate",
       "public_pane_numbers": {
         "2": 2,
-        "121": 35
+        "170": 38
       },
-      "next_public_pane_number": 36,
+      "next_public_pane_number": 39,
       "public_tab_numbers": [
         2,
-        35
+        38
       ],
-      "next_public_tab_number": 36,
+      "next_public_tab_number": 39,
       "tabs": [
         {
           "custom_name": "Firstmate",
@@ -28,7 +28,7 @@
                 "source": "herdr:pi",
                 "agent": "pi",
                 "kind": "path",
-                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-herdr--/2026-08-16T02-53-36-899Z_01a0087d-2f03-7a8e-88a4-be9c16ef09d8.jsonl"
+                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-firstmate--/2026-09-04T03-21-49-470Z_01a06a6f-d69e-7b4f-ac01-9f37cd8c1033.jsonl"
               }
             }
           },
@@ -37,64 +37,26 @@
           "root_pane": 2
         },
         {
-          "custom_name": "Verily Prep",
+          "custom_name": "terminal",
           "layout": {
-            "Pane": 121
+            "Pane": 170
           },
           "panes": {
-            "121": {
-              "cwd": "/Users/amar/workspace/verily-interview-prep",
-              "agent_name": "verily-prep",
-              "managed_agent_kind": "pi",
-              "agent_session": {
-                "source": "herdr:pi",
-                "agent": "pi",
-                "kind": "path",
-                "value": "/Users/amar/.pi/agent/sessions/--Users-amar-workspace-verily-interview-prep--/2026-08-26T23-56-45-101Z_01a04081-36ad-7db6-ab3b-dc85366ae153.jsonl"
-              }
+            "170": {
+              "cwd": "/Users/amar/workspace/firstmate"
             }
           },
           "zoomed": false,
-          "focused": 121,
-          "root_pane": 121
+          "focused": 170,
+          "root_pane": 170
         }
       ],
-      "active_tab": 0
-    },
-    {
-      "id": "w1R",
-      "custom_name": "└ alignfive-production-matchmaking-transition-regression-r1 · p:cRV-goTBq3Kp92Khk-qXQQ",
-      "identity_cwd": "/Users/amar/workspace/firstmate/projects/sequence",
-      "public_pane_numbers": {
-        "133": 2
-      },
-      "next_public_pane_number": 3,
-      "public_tab_numbers": [
-        2
-      ],
-      "next_public_tab_number": 3,
-      "tabs": [
-        {
-          "custom_name": "fm-alignfive-production-matchmaking-transition-regression-r1",
-          "layout": {
-            "Pane": 133
-          },
-          "panes": {
-            "133": {
-              "cwd": "/Users/amar/workspace/firstmate/projects/sequence"
-            }
-          },
-          "zoomed": false,
-          "focused": 133,
-          "root_pane": 133
-        }
-      ],
-      "active_tab": 0
+      "active_tab": 1
     }
   ],
   "active": 0,
   "selected": 0,
-  "sidebar_width": 30,
+  "sidebar_width": 31,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []
 }
