@@ -100,3 +100,13 @@ keymap.set("n", "<C-n>", "<C-i>", {
 })
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Leave terminal input mode, or move directly to the code window above.
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Leave terminal input" })
+vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { desc = "Go to window above terminal" })
+
+-- Resize splits without macOS Control-arrow shortcuts.
+vim.keymap.set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-S-j>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-S-k>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })

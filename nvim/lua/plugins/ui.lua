@@ -65,6 +65,7 @@ return {
     "nvim-mini/mini.animate",
     event = "VeryLazy",
     opts = function(_, opts)
+      opts.resize = { enable = false }
       opts.scroll = {
         enable = false,
       }
