@@ -75,3 +75,6 @@ karabiner/.DS_Store
 Webull Desktop
 simple-update-notifier
 stripe
+
+# Machine-local Herdr session state
+/herdr/session.json
