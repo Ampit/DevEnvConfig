@@ -35,9 +35,7 @@
                   {
                     "key_code": "f14",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -65,9 +63,7 @@
                   {
                     "key_code": "f13",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -95,9 +91,7 @@
                   {
                     "key_code": "f16",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -125,9 +119,7 @@
                   {
                     "key_code": "f15",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -1682,9 +1674,7 @@
                   {
                     "key_code": "f17",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -1744,11 +1734,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f14",
+                    "key_code": "f16",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_option",
+                      "left_shift"
                     ]
                   }
                 ],
@@ -1812,11 +1801,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f19",
+                    "key_code": "f13",
                     "modifiers": [
                       "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -1914,11 +1902,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f20",
+                    "key_code": "f14",
                     "modifiers": [
                       "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -1950,9 +1937,7 @@
                   {
                     "key_code": "f18",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -1985,9 +1970,7 @@
                   {
                     "key_code": "f20",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -2088,9 +2071,7 @@
                   {
                     "key_code": "f19",
                     "modifiers": [
-                      "left_command",
                       "left_control",
-                      "left_option",
                       "left_shift"
                     ]
                   }
@@ -2116,10 +2097,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f17",
+                    "key_code": "f19",
                     "modifiers": [
                       "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2145,10 +2125,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f15",
+                    "key_code": "f17",
                     "modifiers": [
                       "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2174,11 +2153,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f16",
+                    "key_code": "f18",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_option",
+                      "left_shift"
                     ]
                   }
                 ],
@@ -2232,11 +2210,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f18",
+                    "key_code": "f20",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_option",
+                      "left_shift"
                     ]
                   }
                 ],
@@ -2261,11 +2238,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f17",
+                    "key_code": "f19",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_option",
+                      "left_shift"
                     ]
                   }
                 ],
@@ -2290,10 +2266,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f13",
+                    "key_code": "f15",
                     "modifiers": [
                       "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2406,10 +2381,8 @@
                 },
                 "to": [
                   {
-                    "key_code": "f20",
+                    "key_code": "f14",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2464,10 +2437,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f16",
+                    "key_code": "f18",
                     "modifiers": [
                       "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2493,10 +2465,8 @@
                 },
                 "to": [
                   {
-                    "key_code": "f19",
+                    "key_code": "f13",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2522,10 +2492,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f14",
+                    "key_code": "f16",
                     "modifiers": [
                       "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2609,10 +2578,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f18",
+                    "key_code": "f20",
                     "modifiers": [
                       "left_command",
-                      "left_control",
                       "left_shift"
                     ]
                   }
@@ -2638,11 +2606,10 @@
                 },
                 "to": [
                   {
-                    "key_code": "f15",
+                    "key_code": "f17",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_option",
+                      "left_shift"
                     ]
                   }
                 ],
@@ -2698,9 +2665,8 @@
                   {
                     "key_code": "f13",
                     "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
+                      "left_option",
+                      "left_shift"
                     ]
                   }
                 ],
@@ -2754,10 +2720,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f13",
+                    "key_code": "f15",
                     "modifiers": [
-                      "left_command",
-                      "left_control"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -2924,9 +2889,8 @@
                 },
                 "to": [
                   {
-                    "key_code": "f20",
+                    "key_code": "f16",
                     "modifiers": [
-                      "left_command",
                       "left_control"
                     ]
                   }
@@ -2952,9 +2916,8 @@
                 },
                 "to": [
                   {
-                    "key_code": "f19",
+                    "key_code": "f13",
                     "modifiers": [
-                      "left_command",
                       "left_control"
                     ]
                   }
@@ -3008,10 +2971,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f15",
+                    "key_code": "f17",
                     "modifiers": [
-                      "left_command",
-                      "left_control"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -3064,10 +3026,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f17",
+                    "key_code": "f19",
                     "modifiers": [
-                      "left_command",
-                      "left_control"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -3092,10 +3053,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f18",
+                    "key_code": "f20",
                     "modifiers": [
-                      "left_command",
-                      "left_control"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -3120,10 +3080,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f16",
+                    "key_code": "f18",
                     "modifiers": [
-                      "left_command",
-                      "left_control"
+                      "left_shift"
                     ]
                   }
                 ],
@@ -3148,10 +3107,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f14",
+                    "key_code": "f16",
                     "modifiers": [
-                      "left_command",
-                      "left_control"
+                      "left_shift"
                     ]
                   }
                 ],

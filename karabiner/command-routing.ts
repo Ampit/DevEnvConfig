@@ -13,15 +13,11 @@ const bindings: CommandBinding[] = [
     "command": "/usr/bin/open -g 'hammerspoon://focus-down'",
     "key": "f13",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -29,15 +25,11 @@ const bindings: CommandBinding[] = [
     "command": "/usr/bin/open -g 'hammerspoon://focus-left'",
     "key": "f14",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -45,15 +37,11 @@ const bindings: CommandBinding[] = [
     "command": "/usr/bin/open -g 'hammerspoon://focus-right'",
     "key": "f15",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -61,15 +49,11 @@ const bindings: CommandBinding[] = [
     "command": "/usr/bin/open -g 'hammerspoon://focus-up'",
     "key": "f16",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -77,15 +61,11 @@ const bindings: CommandBinding[] = [
     "command": "open -a '1Password.app'",
     "key": "f17",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -93,15 +73,11 @@ const bindings: CommandBinding[] = [
     "command": "open -a 'Agent Orchestrator.app'",
     "key": "f18",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -109,15 +85,11 @@ const bindings: CommandBinding[] = [
     "command": "open -a 'Arc.app'",
     "key": "f19",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -125,15 +97,11 @@ const bindings: CommandBinding[] = [
     "command": "open -a 'Brave Browser.app'",
     "key": "f20",
     "modifiers": [
-      "left_command",
       "left_control",
-      "left_option",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl",
-      "alt",
       "shift"
     ]
   },
@@ -141,223 +109,187 @@ const bindings: CommandBinding[] = [
     "command": "open -a 'ChatGPT.app'",
     "key": "f13",
     "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
+      "left_option",
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
+      "alt",
+      "shift"
     ]
   },
   {
     "command": "open -a 'Codex.app'",
-    "key": "f14",
+    "key": "f16",
     "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
+      "left_option",
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
+      "alt",
+      "shift"
     ]
   },
   {
     "command": "open -a 'Cursor.app'",
-    "key": "f15",
+    "key": "f17",
     "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
+      "left_option",
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
+      "alt",
+      "shift"
     ]
   },
   {
     "command": "open -a 'Discord.app'",
-    "key": "f16",
+    "key": "f18",
     "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
+      "left_option",
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
+      "alt",
+      "shift"
     ]
   },
   {
     "command": "open -a 'Figma.app'",
-    "key": "f17",
+    "key": "f19",
     "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
+      "left_option",
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
+      "alt",
+      "shift"
     ]
   },
   {
     "command": "open -a 'Finder.app'",
-    "key": "f18",
+    "key": "f20",
     "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
+      "left_option",
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
+      "alt",
+      "shift"
     ]
   },
   {
     "command": "open -a 'Firefox.app'",
-    "key": "f19",
-    "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
-    ],
-    "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
-    ]
-  },
-  {
-    "command": "open -a 'Ghostty.app'",
-    "key": "f20",
-    "modifiers": [
-      "left_command",
-      "left_control",
-      "left_option"
-    ],
-    "receiverModifiers": [
-      "cmd",
-      "ctrl",
-      "alt"
-    ]
-  },
-  {
-    "command": "open -a 'Google Chrome.app'",
     "key": "f13",
     "modifiers": [
       "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
       "cmd",
-      "ctrl",
+      "shift"
+    ]
+  },
+  {
+    "command": "open -a 'Ghostty.app'",
+    "key": "f14",
+    "modifiers": [
+      "left_command",
+      "left_shift"
+    ],
+    "receiverModifiers": [
+      "cmd",
+      "shift"
+    ]
+  },
+  {
+    "command": "open -a 'Google Chrome.app'",
+    "key": "f15",
+    "modifiers": [
+      "left_command",
+      "left_shift"
+    ],
+    "receiverModifiers": [
+      "cmd",
       "shift"
     ]
   },
   {
     "command": "open -a 'Linear.app'",
-    "key": "f14",
+    "key": "f16",
     "modifiers": [
       "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
       "cmd",
-      "ctrl",
       "shift"
     ]
   },
   {
     "command": "open -a 'Notion Calendar.app'",
-    "key": "f15",
+    "key": "f17",
     "modifiers": [
       "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
       "cmd",
-      "ctrl",
       "shift"
     ]
   },
   {
     "command": "open -a 'Notion.app'",
-    "key": "f16",
+    "key": "f18",
     "modifiers": [
       "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
       "cmd",
-      "ctrl",
       "shift"
     ]
   },
   {
     "command": "open -a 'Obsidian.app'",
-    "key": "f17",
+    "key": "f19",
     "modifiers": [
       "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
       "cmd",
-      "ctrl",
       "shift"
     ]
   },
   {
     "command": "open -a 'PgAdmin 4.app'",
-    "key": "f18",
+    "key": "f20",
     "modifiers": [
       "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
       "cmd",
-      "ctrl",
       "shift"
     ]
   },
   {
     "command": "open -a 'Postman.app'",
-    "key": "f19",
+    "key": "f13",
     "modifiers": [
-      "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
       "shift"
     ]
   },
   {
     "command": "open -a 'RunJS.app'",
-    "key": "f20",
+    "key": "f14",
     "modifiers": [
-      "left_command",
-      "left_control",
       "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl",
       "shift"
     ]
   },
@@ -559,97 +491,81 @@ const bindings: CommandBinding[] = [
   },
   {
     "command": "open -a 'zoom.us.app'",
-    "key": "f13",
+    "key": "f15",
     "modifiers": [
-      "left_command",
-      "left_control"
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl"
+      "shift"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=almost-maximize",
-    "key": "f14",
+    "key": "f16",
     "modifiers": [
-      "left_command",
-      "left_control"
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl"
+      "shift"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=bottom-half",
-    "key": "f15",
+    "key": "f17",
     "modifiers": [
-      "left_command",
-      "left_control"
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl"
+      "shift"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=center",
-    "key": "f16",
+    "key": "f18",
     "modifiers": [
-      "left_command",
-      "left_control"
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl"
+      "shift"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=left-half",
-    "key": "f17",
+    "key": "f19",
     "modifiers": [
-      "left_command",
-      "left_control"
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl"
+      "shift"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=maximize",
-    "key": "f18",
+    "key": "f20",
     "modifiers": [
-      "left_command",
-      "left_control"
+      "left_shift"
     ],
     "receiverModifiers": [
-      "cmd",
-      "ctrl"
+      "shift"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=next-display",
-    "key": "f19",
+    "key": "f13",
     "modifiers": [
-      "left_command",
       "left_control"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl"
     ]
   },
   {
     "command": "open -g rectangle://execute-action?name=previous-display",
-    "key": "f20",
+    "key": "f16",
     "modifiers": [
-      "left_command",
       "left_control"
     ],
     "receiverModifiers": [
-      "cmd",
       "ctrl"
     ]
   },
@@ -848,6 +764,14 @@ const bindings: CommandBinding[] = [
 ];
 
 export function routeCommands(rules: KarabinerRules[]): KarabinerRules[] {
+  for (const binding of bindings) {
+    if (!/^f(1[3-9]|20)$/.test(binding.key)) {
+      throw new Error("Receiver keys must use F13-F20 to avoid media-key translation");
+    }
+    if (binding.receiverModifiers.includes("cmd") && binding.receiverModifiers.includes("ctrl")) {
+      throw new Error("Receiver modifiers must not include both Command and Control: Wispr uses that chord for dictation");
+    }
+  }
   const byCommand = new Map(bindings.map(binding => [binding.command, binding]));
   const used = new Set<string>();
   const route = (event: To): To => {
