@@ -1589,6 +1589,35 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Codex.app'"
+                  }
+                ],
+                "description": "Open -a 'Codex.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "pressed_2",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "t",
                   "modifiers": {
                     "optional": [
@@ -1743,10 +1772,10 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Windsurf.app'"
+                    "shell_command": "open -a 'Agent Orchestrator.app'"
                   }
                 ],
-                "description": "Open -a 'Windsurf.app'",
+                "description": "Open -a 'Agent Orchestrator.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -1764,35 +1793,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Zen Browser.app'"
-                  }
-                ],
-                "description": "Open -a 'Zen Browser.app'",
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "pressed_2",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1850,7 +1850,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "p",
+                  "key_code": "s",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1859,10 +1859,10 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'PokerBaazi - Online Poker.app'"
+                    "shell_command": "open -a 'Todoist.app'"
                   }
                 ],
-                "description": "Open -a 'PokerBaazi - Online Poker.app'",
+                "description": "Open -a 'Todoist.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -2228,30 +2228,6 @@
                   }
                 ],
                 "description": "Open -a 'Postman.app'",
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "q",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Sunsama.app'"
-                  }
-                ],
-                "description": "Open -a 'Sunsama.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
