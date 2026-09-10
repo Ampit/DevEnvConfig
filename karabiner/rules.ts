@@ -1,8 +1,50 @@
 import fs from "fs";
+import { routeCommands } from "./command-routing";
 import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle } from "./utils";
 
 const rules: KarabinerRules[] = [
+  {
+    description: "Option + Shift + HJKL: Focus windows across displays with wrap",
+    manipulators: [
+      {
+        type: "basic",
+        from: {
+          key_code: "h",
+          modifiers: { mandatory: ["option", "shift"] },
+        },
+        conditions: [{ type: "variable_unless", name: "hyper", value: 1 }],
+        to: [{ shell_command: "/usr/bin/open -g 'hammerspoon://focus-left'" }],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "j",
+          modifiers: { mandatory: ["option", "shift"] },
+        },
+        conditions: [{ type: "variable_unless", name: "hyper", value: 1 }],
+        to: [{ shell_command: "/usr/bin/open -g 'hammerspoon://focus-down'" }],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "k",
+          modifiers: { mandatory: ["option", "shift"] },
+        },
+        conditions: [{ type: "variable_unless", name: "hyper", value: 1 }],
+        to: [{ shell_command: "/usr/bin/open -g 'hammerspoon://focus-up'" }],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "l",
+          modifiers: { mandatory: ["option", "shift"] },
+        },
+        conditions: [{ type: "variable_unless", name: "hyper", value: 1 }],
+        to: [{ shell_command: "/usr/bin/open -g 'hammerspoon://focus-right'" }],
+      },
+    ],
+  },
   // Define the Hyper key itself
   {
     description: "Hyper Key (⌃⌥⇧⌘)",
@@ -374,8 +416,9 @@ fs.writeFileSync(
       profiles: [
         {
           name: "Default",
+          virtual_hid_keyboard: { keyboard_type_v2: "ansi" },
           complex_modifications: {
-            rules,
+            rules: routeCommands(rules),
           },
         },
       ],

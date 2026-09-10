@@ -78,3 +78,8 @@ stripe
 
 # Machine-local Herdr session state
 /herdr/session.json
+
+# Local Karabiner migration artifacts and automatic backups
+/karabiner/uc-*/
+/karabiner/window-focus-setup-*/
+/karabiner/automatic_backups/

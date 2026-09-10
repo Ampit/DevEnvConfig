@@ -110,3 +110,5 @@ vim.keymap.set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease
 vim.keymap.set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-S-k>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+
+vim.keymap.set("n", "<leader>i", "<C-i>", { desc = "Jump forward", noremap = true, silent = true })
