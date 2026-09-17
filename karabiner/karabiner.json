@@ -3053,9 +3053,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f20",
+                    "key_code": "f16",
                     "modifiers": [
-                      "left_shift"
+                      "left_command"
                     ]
                   }
                 ],

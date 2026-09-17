@@ -541,12 +541,12 @@ const bindings: CommandBinding[] = [
   },
   {
     "command": "open -g rectangle://execute-action?name=maximize",
-    "key": "f20",
+    "key": "f16",
     "modifiers": [
-      "left_shift"
+      "left_command"
     ],
     "receiverModifiers": [
-      "shift"
+      "cmd"
     ]
   },
   {
