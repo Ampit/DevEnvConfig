@@ -4,6 +4,7 @@ local bindings = assert(hs.json.read(os.getenv('HOME') .. '/.config/karabiner/co
 function M.run(command)
   M.lastCommand = command
   if M.dryRun then return end
+  require('pointer_navigation').keyboardSwitch()
   local direction = command:match("^/usr/bin/open %-g 'hammerspoon://focus%-(%a+)'$")
   if direction then return require('directional_focus').focus(direction) end
   local task

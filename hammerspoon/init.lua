@@ -6,3 +6,5 @@ end
 hs.autoLaunch(true)
 
 commandReceiver = require('command_receiver')
+
+pointerNavigation = require('pointer_navigation')

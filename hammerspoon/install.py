@@ -9,7 +9,7 @@ parser.add_argument('--check', action='store_true', help='verify links without c
 args = parser.parse_args()
 source = Path(__file__).resolve().parent
 runtime = Path.home() / '.hammerspoon'
-names = ['init.lua', 'command_receiver.lua', 'directional_focus.lua']
+names = ['init.lua', 'command_receiver.lua', 'directional_focus.lua', 'pointer_navigation.lua']
 pending = []
 for name in names:
     src, dst = source / name, runtime / name
@@ -25,10 +25,10 @@ if args.check:
         print(f'Link needed: {dst} -> {src}')
     if pending:
         raise SystemExit(1)
-    print('All three Hammerspoon links are correct.')
+    print('All Hammerspoon links are correct.')
     raise SystemExit(0)
 if not pending:
-    print('All three Hammerspoon links are already correct.')
+    print('All Hammerspoon links are already correct.')
     raise SystemExit(0)
 runtime.mkdir(parents=True, exist_ok=True)
 backup = runtime / 'backups' / datetime.now().strftime('%Y%m%d-%H%M%S-%f')
