@@ -156,6 +156,7 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       1: app("1Password"),
+      3: app("T3 Code (Nightly)"),
       a: app("Arc"),
       b: app("Obsidian"),
       c: app("Notion Calendar"),

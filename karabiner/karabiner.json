@@ -1776,6 +1776,35 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f13",
+                    "modifiers": [
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "description": "Open -a 'T3 Code (Nightly).app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "a",
                   "modifiers": {
                     "optional": [
