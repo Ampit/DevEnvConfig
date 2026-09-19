@@ -11,7 +11,7 @@
     "tsm": "^2.2.2"
   },
   "scripts": {
-    "build": "tsm rules.ts",
-    "watch": "nodemon --exec yarn build -e ts"
+    "build": "tsm rules.ts && python3 hyper-guide.py",
+    "watch": "nodemon --exec yarn build -e ts,py"
   }
 }

@@ -84,32 +84,8 @@
     ]
   },
   {
-    "command": "open -a 'Brave Browser.app'",
-    "key": "f20",
-    "modifiers": [
-      "left_control",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "ctrl",
-      "shift"
-    ]
-  },
-  {
     "command": "open -a 'ChatGPT.app'",
     "key": "f13",
-    "modifiers": [
-      "left_option",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "alt",
-      "shift"
-    ]
-  },
-  {
-    "command": "open -a 'Codex.app'",
-    "key": "f16",
     "modifiers": [
       "left_option",
       "left_shift"
@@ -134,18 +110,6 @@
   {
     "command": "open -a 'Discord.app'",
     "key": "f18",
-    "modifiers": [
-      "left_option",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "alt",
-      "shift"
-    ]
-  },
-  {
-    "command": "open -a 'Figma.app'",
-    "key": "f19",
     "modifiers": [
       "left_option",
       "left_shift"
@@ -264,26 +228,6 @@
     ]
   },
   {
-    "command": "open -a 'Postman.app'",
-    "key": "f13",
-    "modifiers": [
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "shift"
-    ]
-  },
-  {
-    "command": "open -a 'RunJS.app'",
-    "key": "f14",
-    "modifiers": [
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "shift"
-    ]
-  },
-  {
     "command": "open -a 'Slack.app'",
     "key": "f13",
     "modifiers": [
@@ -314,20 +258,6 @@
   {
     "command": "open -a 'Superhuman.app'",
     "key": "f15",
-    "modifiers": [
-      "left_command",
-      "left_option",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "cmd",
-      "alt",
-      "shift"
-    ]
-  },
-  {
-    "command": "open -a 'TablePlus.app'",
-    "key": "f16",
     "modifiers": [
       "left_command",
       "left_option",
@@ -396,20 +326,6 @@
     ]
   },
   {
-    "command": "open -a 'Webstorm.app'",
-    "key": "f13",
-    "modifiers": [
-      "left_control",
-      "left_option",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "ctrl",
-      "alt",
-      "shift"
-    ]
-  },
-  {
     "command": "open -a 'Webull Desktop.app'",
     "key": "f16",
     "modifiers": [
@@ -452,34 +368,6 @@
     ]
   },
   {
-    "command": "open -a 'Zed.app'",
-    "key": "f19",
-    "modifiers": [
-      "left_control",
-      "left_option",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "ctrl",
-      "alt",
-      "shift"
-    ]
-  },
-  {
-    "command": "open -a 'iTerm.app'",
-    "key": "f20",
-    "modifiers": [
-      "left_control",
-      "left_option",
-      "left_shift"
-    ],
-    "receiverModifiers": [
-      "ctrl",
-      "alt",
-      "shift"
-    ]
-  },
-  {
     "command": "open -a 'zoom.us.app'",
     "key": "f15",
     "modifiers": [
@@ -490,7 +378,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=almost-maximize",
+    "command": "open -g 'raycast://customWindowManagementCommand?position=center&relativeWidth=0.9&relativeHeight=0.9'",
     "key": "f16",
     "modifiers": [
       "left_shift"
@@ -500,7 +388,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=bottom-half",
+    "command": "open -g 'raycast://extensions/raycast/window-management/bottom-half?launchType=background'",
     "key": "f17",
     "modifiers": [
       "left_shift"
@@ -510,7 +398,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=center",
+    "command": "open -g 'raycast://extensions/raycast/window-management/center?launchType=background'",
     "key": "f18",
     "modifiers": [
       "left_shift"
@@ -520,7 +408,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=left-half",
+    "command": "open -g 'raycast://extensions/raycast/window-management/left-half?launchType=background'",
     "key": "f19",
     "modifiers": [
       "left_shift"
@@ -530,7 +418,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=maximize",
+    "command": "open -g 'raycast://extensions/raycast/window-management/maximize?launchType=background'",
     "key": "f16",
     "modifiers": [
       "left_command"
@@ -540,7 +428,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=next-display",
+    "command": "open -g 'raycast://extensions/raycast/window-management/move-to-next-display?launchType=background'",
     "key": "f13",
     "modifiers": [
       "left_control"
@@ -550,7 +438,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=previous-display",
+    "command": "open -g 'raycast://extensions/raycast/window-management/move-to-previous-display?launchType=background'",
     "key": "f16",
     "modifiers": [
       "left_control"
@@ -560,7 +448,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=right-half",
+    "command": "open -g 'raycast://extensions/raycast/window-management/right-half?launchType=background'",
     "key": "f13",
     "modifiers": [
       "left_command",
@@ -572,7 +460,7 @@
     ]
   },
   {
-    "command": "open -g rectangle://execute-action?name=top-half",
+    "command": "open -g 'raycast://extensions/raycast/window-management/top-half?launchType=background'",
     "key": "f14",
     "modifiers": [
       "left_command",

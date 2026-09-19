@@ -8,3 +8,5 @@ hs.autoLaunch(true)
 commandReceiver = require('command_receiver')
 
 pointerNavigation = require('pointer_navigation')
+
+hyperGuide = dofile(os.getenv('HOME') .. '/.config/hammerspoon/hyper_guide.lua')

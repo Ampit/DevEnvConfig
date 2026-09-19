@@ -220,16 +220,21 @@ export function shell(
   };
 }
 
-/**
- * Shortcut for managing window sizing with Rectangle
- */
-export function rectangle(name: string): LayerCommand {
+const windowManagementURLs = {
+  "previous-display": "raycast://extensions/raycast/window-management/move-to-previous-display?launchType=background",
+  "next-display": "raycast://extensions/raycast/window-management/move-to-next-display?launchType=background",
+  "top-half": "raycast://extensions/raycast/window-management/top-half?launchType=background",
+  "bottom-half": "raycast://extensions/raycast/window-management/bottom-half?launchType=background",
+  "right-half": "raycast://extensions/raycast/window-management/right-half?launchType=background",
+  "left-half": "raycast://extensions/raycast/window-management/left-half?launchType=background",
+  "maximize": "raycast://extensions/raycast/window-management/maximize?launchType=background",
+  "center": "raycast://extensions/raycast/window-management/center?launchType=background",
+  "almost-maximize": "raycast://customWindowManagementCommand?position=center&relativeWidth=0.9&relativeHeight=0.9"
+};
+
+export function windowManagement(name: keyof typeof windowManagementURLs): LayerCommand {
   return {
-    to: [
-      {
-        shell_command: `open -g rectangle://execute-action?name=${name}`,
-      },
-    ],
+    to: [{ shell_command: `open -g '${windowManagementURLs[name]}'` }],
     description: `Window: ${name}`,
   };
 }

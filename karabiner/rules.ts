@@ -1,7 +1,7 @@
 import fs from "fs";
 import { routeCommands } from "./command-routing";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle } from "./utils";
+import { createHyperSubLayers, app, open, windowManagement } from "./utils";
 
 const rules: KarabinerRules[] = [
   {
@@ -157,45 +157,35 @@ const rules: KarabinerRules[] = [
     o: {
       1: app("1Password"),
       a: app("Arc"),
-      b: app("Obsidian"), // o is taken by "Open"
+      b: app("Obsidian"),
       c: app("Notion Calendar"),
       d: app("Discord"),
       e: app("Superhuman"),
       f: app("Finder"),
-      g: app("Figma"), // f is taken by "Finder"
+      g: app("Ghostty"),
       h: app("Google Chrome"),
-      i: app("iTerm"),
-      j: app("Webstorm"), // j for JetBrains
       k: app("WhatsApp"),
-      l: app("RunJS"),
-      m: app("Spotify"), // m for music
+      l: app("Linear"),
+      m: app("Spotify"),
       n: app("Notion"),
-      p: app("Postman"),
-      r: app("Linear"), // l is hard to press with o "Open", so we assign l less used app i.e RunJS
       s: app("Slack"),
-      t: app("TablePlus"),
+      t: app("Telegram"),
       u: app("PgAdmin 4"),
-      v: app("Cursor"),
+      v: app("Agent Orchestrator"),
       w: app("Warp"),
       x: app("ChatGPT"),
       y: app("Xcode"),
       z: app("zoom.us"),
-      2: {
-        // Nested sublayer
-        c: app("Codex"),
-        t: app("Telegram"),
-        f: app("Firefox"),
-        z: app("Zed"),
-        w: app("Webull Desktop"),
-        g: app("Ghostty"),
-        v: app("Agent Orchestrator"),
-        b: app("Brave Browser"),
-        d: app("TradingView"), // t is taken by Telegram
-        s: app("Todoist"), // t is taken by telegram
-      },
+    },
+    i: {
+      d: app("TradingView"),
+      f: app("Firefox"),
+      s: app("Todoist"),
+      v: app("Cursor"),
+      w: app("Webull Desktop"),
     },
 
-    // w = "Window" via rectangle.app
+    // w = "Window" via Raycast
     w: {
       semicolon: {
         description: "Window: Hide",
@@ -206,15 +196,15 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: rectangle("previous-display"),
-      o: rectangle("next-display"),
-      k: rectangle("top-half"),
-      j: rectangle("bottom-half"),
-      l: rectangle("right-half"),
-      h: rectangle("left-half"),
-      f: rectangle("maximize"),
-      c: rectangle("center"),
-      g: rectangle("almost-maximize"),
+      y: windowManagement("previous-display"),
+      o: windowManagement("next-display"),
+      k: windowManagement("top-half"),
+      j: windowManagement("bottom-half"),
+      l: windowManagement("right-half"),
+      h: windowManagement("left-half"),
+      f: windowManagement("maximize"),
+      c: windowManagement("center"),
+      g: windowManagement("almost-maximize"),
       u: {
         description: "Window: Previous Tab",
         to: [

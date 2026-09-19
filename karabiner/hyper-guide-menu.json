@@ -1,0 +1,500 @@
+{
+  "root": {
+    "title": "Your next move",
+    "subtitle": "One key away.",
+    "items": [
+      {
+        "key": "b",
+        "label": "On the web",
+        "group": true
+      },
+      {
+        "key": "c",
+        "label": "Now playing",
+        "group": true
+      },
+      {
+        "key": "d",
+        "label": "Precise pointer",
+        "group": true
+      },
+      {
+        "key": "f",
+        "label": "Fast pointer",
+        "group": true
+      },
+      {
+        "key": "i",
+        "label": "More apps",
+        "group": true
+      },
+      {
+        "key": "o",
+        "label": "Daily apps",
+        "group": true
+      },
+      {
+        "key": "r",
+        "label": "Raycast tools",
+        "group": true
+      },
+      {
+        "key": "s",
+        "label": "System controls",
+        "group": true
+      },
+      {
+        "key": "v",
+        "label": "Navigation",
+        "group": true
+      },
+      {
+        "key": "w",
+        "label": "Window studio",
+        "group": true
+      },
+      {
+        "key": "e",
+        "label": "Left click"
+      },
+      {
+        "key": "h",
+        "label": "Pointer left"
+      },
+      {
+        "key": "j",
+        "label": "Pointer down"
+      },
+      {
+        "key": "k",
+        "label": "Pointer up"
+      },
+      {
+        "key": "l",
+        "label": "Pointer right"
+      },
+      {
+        "key": "slash",
+        "label": "Toggle Hyper Guide"
+      },
+      {
+        "key": "spacebar",
+        "label": "Pomodoro"
+      },
+      {
+        "key": "t",
+        "label": "Right click"
+      }
+    ]
+  },
+  "d": {
+    "title": "Precise pointer",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "h",
+        "label": "Pointer left"
+      },
+      {
+        "key": "j",
+        "label": "Pointer down"
+      },
+      {
+        "key": "k",
+        "label": "Pointer up"
+      },
+      {
+        "key": "l",
+        "label": "Pointer right"
+      }
+    ]
+  },
+  "f": {
+    "title": "Fast pointer",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "h",
+        "label": "Pointer left"
+      },
+      {
+        "key": "j",
+        "label": "Pointer down"
+      },
+      {
+        "key": "k",
+        "label": "Pointer up"
+      },
+      {
+        "key": "l",
+        "label": "Pointer right"
+      }
+    ]
+  },
+  "b": {
+    "title": "On the web",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "w",
+        "label": "Dashboard"
+      },
+      {
+        "key": "g",
+        "label": "Ampit"
+      }
+    ]
+  },
+  "o": {
+    "title": "Daily apps",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "1",
+        "label": "1Password",
+        "app": "1Password"
+      },
+      {
+        "key": "a",
+        "label": "Arc",
+        "app": "Arc"
+      },
+      {
+        "key": "b",
+        "label": "Obsidian",
+        "app": "Obsidian"
+      },
+      {
+        "key": "c",
+        "label": "Notion Calendar",
+        "app": "Notion Calendar"
+      },
+      {
+        "key": "d",
+        "label": "Discord",
+        "app": "Discord"
+      },
+      {
+        "key": "e",
+        "label": "Superhuman",
+        "app": "Superhuman"
+      },
+      {
+        "key": "f",
+        "label": "Finder",
+        "app": "Finder"
+      },
+      {
+        "key": "g",
+        "label": "Ghostty",
+        "app": "Ghostty"
+      },
+      {
+        "key": "h",
+        "label": "Google Chrome",
+        "app": "Google Chrome"
+      },
+      {
+        "key": "k",
+        "label": "WhatsApp",
+        "app": "WhatsApp"
+      },
+      {
+        "key": "l",
+        "label": "Linear",
+        "app": "Linear"
+      },
+      {
+        "key": "m",
+        "label": "Spotify",
+        "app": "Spotify"
+      },
+      {
+        "key": "n",
+        "label": "Notion",
+        "app": "Notion"
+      },
+      {
+        "key": "s",
+        "label": "Slack",
+        "app": "Slack"
+      },
+      {
+        "key": "t",
+        "label": "Telegram",
+        "app": "Telegram"
+      },
+      {
+        "key": "u",
+        "label": "PgAdmin 4",
+        "app": "PgAdmin 4"
+      },
+      {
+        "key": "v",
+        "label": "Agent Orchestrator",
+        "app": "Agent Orchestrator"
+      },
+      {
+        "key": "w",
+        "label": "Warp",
+        "app": "Warp"
+      },
+      {
+        "key": "x",
+        "label": "ChatGPT",
+        "app": "ChatGPT"
+      },
+      {
+        "key": "y",
+        "label": "Xcode",
+        "app": "Xcode"
+      },
+      {
+        "key": "z",
+        "label": "zoom.us",
+        "app": "zoom.us"
+      }
+    ]
+  },
+  "i": {
+    "title": "More apps",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "d",
+        "label": "TradingView",
+        "app": "TradingView"
+      },
+      {
+        "key": "f",
+        "label": "Firefox",
+        "app": "Firefox"
+      },
+      {
+        "key": "s",
+        "label": "Todoist",
+        "app": "Todoist"
+      },
+      {
+        "key": "v",
+        "label": "Cursor",
+        "app": "Cursor"
+      },
+      {
+        "key": "w",
+        "label": "Webull Desktop",
+        "app": "Webull Desktop"
+      }
+    ]
+  },
+  "w": {
+    "title": "Window studio",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "semicolon",
+        "label": "Hide"
+      },
+      {
+        "key": "y",
+        "label": "Previous display"
+      },
+      {
+        "key": "o",
+        "label": "Next display"
+      },
+      {
+        "key": "k",
+        "label": "Top half"
+      },
+      {
+        "key": "j",
+        "label": "Bottom half"
+      },
+      {
+        "key": "l",
+        "label": "Right half"
+      },
+      {
+        "key": "h",
+        "label": "Left half"
+      },
+      {
+        "key": "f",
+        "label": "Maximize"
+      },
+      {
+        "key": "c",
+        "label": "Center"
+      },
+      {
+        "key": "g",
+        "label": "Almost maximize"
+      },
+      {
+        "key": "u",
+        "label": "Previous tab"
+      },
+      {
+        "key": "i",
+        "label": "Next tab"
+      },
+      {
+        "key": "n",
+        "label": "Next window"
+      },
+      {
+        "key": "b",
+        "label": "Back"
+      },
+      {
+        "key": "m",
+        "label": "Forward"
+      },
+      {
+        "key": "x",
+        "label": "Quit app"
+      },
+      {
+        "key": "e",
+        "label": "Hide all"
+      },
+      {
+        "key": "r",
+        "label": "Show all"
+      }
+    ]
+  },
+  "s": {
+    "title": "System controls",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "u",
+        "label": "Volume up"
+      },
+      {
+        "key": "j",
+        "label": "Volume down"
+      },
+      {
+        "key": "i",
+        "label": "Brightness up"
+      },
+      {
+        "key": "k",
+        "label": "Brightness down"
+      },
+      {
+        "key": "l",
+        "label": "Lock screen"
+      },
+      {
+        "key": "p",
+        "label": "Play / pause"
+      },
+      {
+        "key": "semicolon",
+        "label": "Next track"
+      },
+      {
+        "key": "d",
+        "label": "Toggle do not disturb"
+      },
+      {
+        "key": "t",
+        "label": "Toggle system appearance"
+      },
+      {
+        "key": "c",
+        "label": "Open camera"
+      }
+    ]
+  },
+  "v": {
+    "title": "Navigation",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "h",
+        "label": "Left"
+      },
+      {
+        "key": "j",
+        "label": "Down"
+      },
+      {
+        "key": "k",
+        "label": "Up"
+      },
+      {
+        "key": "l",
+        "label": "Right"
+      },
+      {
+        "key": "u",
+        "label": "Page down"
+      },
+      {
+        "key": "i",
+        "label": "Page up"
+      },
+      {
+        "key": "n",
+        "label": "Scroll down"
+      },
+      {
+        "key": "m",
+        "label": "Scroll up"
+      }
+    ]
+  },
+  "c": {
+    "title": "Now playing",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "p",
+        "label": "Play / pause"
+      },
+      {
+        "key": "n",
+        "label": "Next track"
+      },
+      {
+        "key": "b",
+        "label": "Previous track"
+      }
+    ]
+  },
+  "r": {
+    "title": "Raycast tools",
+    "subtitle": "Keep Hyper held. Choose your next key.",
+    "items": [
+      {
+        "key": "c",
+        "label": "Pick color"
+      },
+      {
+        "key": "n",
+        "label": "Dismiss notifications"
+      },
+      {
+        "key": "e",
+        "label": "Search emoji symbols"
+      },
+      {
+        "key": "p",
+        "label": "Confetti"
+      },
+      {
+        "key": "a",
+        "label": "Ai chat"
+      },
+      {
+        "key": "h",
+        "label": "Clipboard history"
+      }
+    ]
+  }
+}
