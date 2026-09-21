@@ -18,7 +18,7 @@ def name(m,layer):
   d=re.sub(r"^open -a ['\"]?",'',d);d=d.removesuffix(".app'")
   d=re.sub(r"^-a ['\"]?",'',d)
   if '://' not in d:return d.replace('-',' ').capitalize() if layer=='w' else d
-  tail=d.rstrip("'\"").split('/')[-1]
+  tail=d.rstrip("'\"").split('/')[-1].split('?',1)[0]
   return tail.replace('-',' ').capitalize()
  t=m.get('to',[{}])[0]
  if 'mouse_key' in t:

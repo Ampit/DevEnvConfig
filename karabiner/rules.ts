@@ -334,9 +334,8 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      d: open("raycast://extensions/raycast/system/toggle-do-not-disturb"),
-      t: open("raycast://extensions/raycast/system/toggle-system-appearance"),
-      c: open("raycast://extensions/raycast/system/open-camera"),
+      t: open("raycast://extensions/raycast/system-actions/toggle-system-appearance?launchType=background"),
+      c: open("raycast://extensions/raycast/raycast/open-camera"),
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
@@ -384,12 +383,11 @@ const rules: KarabinerRules[] = [
     // r = "Raycast"
     r: {
       c: open("raycast://extensions/thomas/color-picker/pick-color"),
-      n: open("raycast://script-commands/dismiss-notifications"),
+      n: open("raycast://extensions/raycast/system-actions/dismiss-notifications?launchType=background"),
       e: open(
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
       ),
       p: open("raycast://extensions/raycast/raycast/confetti"),
-      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),

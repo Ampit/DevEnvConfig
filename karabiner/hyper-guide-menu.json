@@ -403,10 +403,6 @@
         "label": "Next track"
       },
       {
-        "key": "d",
-        "label": "Toggle do not disturb"
-      },
-      {
         "key": "t",
         "label": "Toggle system appearance"
       },
@@ -491,10 +487,6 @@
       {
         "key": "p",
         "label": "Confetti"
-      },
-      {
-        "key": "a",
-        "label": "Ai chat"
       },
       {
         "key": "h",

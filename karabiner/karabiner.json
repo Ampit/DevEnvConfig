@@ -1955,10 +1955,9 @@
                 },
                 "to": [
                   {
-                    "key_code": "f20",
+                    "key_code": "f15",
                     "modifiers": [
-                      "left_option",
-                      "left_shift"
+                      "left_command"
                     ]
                   }
                 ],
@@ -3547,34 +3546,6 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "f15",
-                    "modifiers": [
-                      "left_control",
-                      "left_option"
-                    ]
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/system/toggle-do-not-disturb",
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
                   "key_code": "t",
                   "modifiers": {
                     "optional": [
@@ -3591,7 +3562,7 @@
                     ]
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/system/toggle-system-appearance",
+                "description": "Open raycast://extensions/raycast/system-actions/toggle-system-appearance?launchType=background",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -3619,7 +3590,7 @@
                     ]
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/system/open-camera",
+                "description": "Open raycast://extensions/raycast/raycast/open-camera",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -4310,7 +4281,7 @@
                     ]
                   }
                 ],
-                "description": "Open raycast://script-commands/dismiss-notifications",
+                "description": "Open raycast://extensions/raycast/system-actions/dismiss-notifications?launchType=background",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -4367,34 +4338,6 @@
                   }
                 ],
                 "description": "Open raycast://extensions/raycast/raycast/confetti",
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "a",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "f20",
-                    "modifiers": [
-                      "left_command",
-                      "left_option"
-                    ]
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
                 "conditions": [
                   {
                     "type": "variable_if",

@@ -49,7 +49,7 @@ M.input = hs.eventtap.new({events.keyDown, events.mouseMoved, events.leftMouseDo
   warpPosition = nil
   keyboardUntil = 0
   cancelHover()
-  if kind == events.mouseMoved then M.hoverTimer = hs.timer.doAfter(0.15, focusUnderPointer) end
+  if kind == events.mouseMoved then M.hoverTimer = hs.timer.doAfter(0.60, focusUnderPointer) end
   return false
 end):start()
 

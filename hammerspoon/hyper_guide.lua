@@ -69,6 +69,7 @@ function M.show(key)
   table.insert(elements,text('RELEASE CAPS TO DISMISS',28,height-25,300,9,muted,'Menlo'))
   table.insert(elements,text(string.format('%02d  /  AVAILABLE',#menu.items),width-164,height-25,140,9,muted,'Menlo'))
   canvas:replaceElements(table.unpack(elements))
+  canvas:alpha(1)
   if not wasVisible then canvas:show(0.12) end
   M.current=key
 end

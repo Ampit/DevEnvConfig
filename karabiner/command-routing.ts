@@ -145,14 +145,12 @@ const bindings: CommandBinding[] = [
   },
   {
     "command": "open -a 'Finder.app'",
-    "key": "f20",
+    "key": "f15",
     "modifiers": [
-      "left_option",
-      "left_shift"
+      "left_command"
     ],
     "receiverModifiers": [
-      "alt",
-      "shift"
+      "cmd"
     ]
   },
   {
@@ -556,18 +554,6 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open raycast://extensions/raycast/raycast-ai/ai-chat",
-    "key": "f20",
-    "modifiers": [
-      "left_command",
-      "left_option"
-    ],
-    "receiverModifiers": [
-      "cmd",
-      "alt"
-    ]
-  },
-  {
     "command": "open raycast://extensions/raycast/raycast/confetti",
     "key": "f13",
     "modifiers": [
@@ -580,7 +566,7 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open raycast://extensions/raycast/system/open-camera",
+    "command": "open raycast://extensions/raycast/raycast/open-camera",
     "key": "f14",
     "modifiers": [
       "left_control",
@@ -592,19 +578,7 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open raycast://extensions/raycast/system/toggle-do-not-disturb",
-    "key": "f15",
-    "modifiers": [
-      "left_control",
-      "left_option"
-    ],
-    "receiverModifiers": [
-      "ctrl",
-      "alt"
-    ]
-  },
-  {
-    "command": "open raycast://extensions/raycast/system/toggle-system-appearance",
+    "command": "open raycast://extensions/raycast/system-actions/toggle-system-appearance?launchType=background",
     "key": "f16",
     "modifiers": [
       "left_control",
@@ -628,7 +602,7 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open raycast://script-commands/dismiss-notifications",
+    "command": "open raycast://extensions/raycast/system-actions/dismiss-notifications?launchType=background",
     "key": "f18",
     "modifiers": [
       "left_control",
