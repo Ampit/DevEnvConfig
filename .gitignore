@@ -91,3 +91,7 @@ stripe
 /local/
 /ghostty/config.before-*
 /firebase/
+
+# Python helper runtime files
+__pycache__/
+*.pyc
