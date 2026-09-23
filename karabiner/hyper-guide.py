@@ -3,13 +3,15 @@ import json, re, copy
 root=Path(__file__).resolve().parent
 config=root/'karabiner.json'
 raw=config.read_text()
-assert 'hammerspoon://hyper-guide?' not in raw, 'Build rules.ts before generating Hyper Guide'
+assert 'hyperGuide.event(' not in raw and 'hammerspoon://hyper-guide?' not in raw, 'Build rules.ts before generating Hyper Guide'
 data=json.loads(raw)
 menus={'root':{'title':'Your next move','subtitle':'One key away.','items':[]}}
 titles={'o':'Daily apps','i':'More apps','w':'Window studio','b':'On the web','s':'System controls','v':'Navigation','c':'Now playing','r':'Raycast tools','d':'Precise pointer','f':'Fast pointer'}
 labels={'spacebar':'Pomodoro','h':'Pointer left','j':'Pointer down','k':'Pointer up','l':'Pointer right','e':'Left click','t':'Right click'}
 friendly={'volume_increment':'Volume up','volume_decrement':'Volume down','display_brightness_increment':'Brightness up','display_brightness_decrement':'Brightness down','play_or_pause':'Play / pause','fastforward':'Next track','rewind':'Previous track','left_arrow':'Left','right_arrow':'Right','up_arrow':'Up','down_arrow':'Down','page_down':'Page down','page_up':'Page up'}
-def hook(key,state):return {'shell_command':f"/usr/bin/open -g 'hammerspoon://hyper-guide?key={key}&state={state}'"}
+def hook(key,state):
+ return {'shell_command':f"/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"{key}\",\"{state}\") end'"}
+
 def name(m,layer):
  d=m.get('description','')
  # Descriptions survive command routing, so app labels remain source-derived.
@@ -50,7 +52,7 @@ root_command=next(m for r in rules for m in r.get('manipulators',[]) if m.get('f
 rules.append({'description':'Hyper Guide: toggle hints','manipulators':[{
  'type':'basic','from':{'key_code':'slash','modifiers':{'optional':['any']}},
  'conditions':copy.deepcopy(root_command['conditions']),
- 'to':[], 'to_after_key_up':[{'shell_command':"/usr/bin/open -g 'hammerspoon://hyper-guide-toggle'"}]
+ 'to':[], 'to_after_key_up':[{'shell_command':"/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.toggle() end'"}]
 }]})
 menus['root']['items'].append({'key':'slash','label':'Toggle Hyper Guide'})
 menus['root']['items'].sort(key=lambda i:(not i.get('group',False),i['key']))

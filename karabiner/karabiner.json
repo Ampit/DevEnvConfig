@@ -148,7 +148,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=root&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"root\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -159,7 +159,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=root&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"root\",\"up\") end'"
                   }
                 ],
                 "to_if_alone": [
@@ -323,7 +323,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=d&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"d\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -334,7 +334,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=d&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"d\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -549,7 +549,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=f&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"f\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -560,7 +560,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=f&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"f\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -1461,7 +1461,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=b&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"b\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -1472,7 +1472,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=b&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"b\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -1643,7 +1643,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=o&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"o\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -1654,7 +1654,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=o&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"o\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -2391,7 +2391,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=i&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"i\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -2402,7 +2402,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=i&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"i\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -2660,7 +2660,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=w&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"w\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -2671,7 +2671,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=w&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"w\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -3276,7 +3276,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=s&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"s\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -3287,7 +3287,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=s&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"s\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -3623,7 +3623,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=v&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"v\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -3634,7 +3634,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=v&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"v\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -3937,7 +3937,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=c&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"c\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -3948,7 +3948,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=c&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"c\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -4132,7 +4132,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=r&state=down'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"r\",\"down\") end'"
                   }
                 ],
                 "to_after_key_up": [
@@ -4143,7 +4143,7 @@
                     }
                   },
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide?key=r&state=up'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.event(\"r\",\"up\") end'"
                   }
                 ],
                 "conditions": [
@@ -4484,7 +4484,7 @@
                 "to": [],
                 "to_after_key_up": [
                   {
-                    "shell_command": "/usr/bin/open -g 'hammerspoon://hyper-guide-toggle'"
+                    "shell_command": "/opt/homebrew/bin/hs -c 'if hyperGuide then hyperGuide.toggle() end'"
                   }
                 ]
               }

@@ -15,6 +15,11 @@ function M.hide()
   if pending then pending:stop();pending=nil end
   if canvas then canvas:hide(0.12) end
 end
+function M.dismiss()
+  M.held=false
+  M.layer=nil
+  M.hide()
+end
 function M.show(key)
   if not M.enabled then return end
   local menu = menus[key]
@@ -95,14 +100,17 @@ function M.toggle()
   return M.enabled
 end
 function M.stop()
-  M.held=false;M.hide()
+  M.dismiss()
+  if M.input then M.input:stop();M.input=nil end
   if canvas then canvas:delete();canvas=nil end
-  hs.urlevent.bind('hyper-guide',nil)
-  hs.urlevent.bind('hyper-guide-toggle',nil)
 end
 function M.snapshot(path)
   if canvas then canvas:imageFromCanvas():saveToFile(path) end
 end
-hs.urlevent.bind('hyper-guide',function(_,params) M.event(params.key,params.state) end)
-hs.urlevent.bind('hyper-guide-toggle',function() M.toggle() end)
+local events=hs.eventtap.event.types
+M.input=hs.eventtap.new({events.keyDown,events.leftMouseDown,events.rightMouseDown,
+  events.otherMouseDown},function()
+  M.dismiss()
+  return false
+end):start()
 return M
