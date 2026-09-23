@@ -83,3 +83,11 @@ stripe
 /karabiner/uc-*/
 /karabiner/window-focus-setup-*/
 /karabiner/automatic_backups/
+
+# Machine-local preferences, identity, and runtime state
+/herdr/
+/gh/hosts.yml
+/gitid/
+/local/
+/ghostty/config.before-*
+/firebase/
