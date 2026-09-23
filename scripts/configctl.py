@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCAL = ('firebase/', 'herdr/', 'gitid/', 'gh/hosts.yml', 'karabiner/automatic_backups/',
+LOCAL = ('1Password/', 'Questrade/', 'mole/', 'zed/', 'firebase/', 'herdr/', 'gitid/', 'gh/hosts.yml', 'karabiner/automatic_backups/',
          'ghostty/config.before-', 'local/')
 COMPONENTS = ('keyboard', 'neovim', 'terminal', 'other')
 

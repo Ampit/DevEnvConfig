@@ -14,6 +14,9 @@ Changes reach the other Mac only after a commit, push, and explicit update there
 | Configuration management scripts | Optional private files in `local/` |
 
 `local/` is only an ignored storage directory; applications do not load it automatically.
+Unused 1Password, Questrade, Mole, and Zed configuration is also excluded from Git.
+Helix configuration remains shared.
+
 Machine-local files stay where their applications expect them. Excluding files from
 Git does not remove earlier copies from Git history.
 

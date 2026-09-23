@@ -69,8 +69,6 @@ op
 raycast
 vifm
 yarn
-zed/*
-!zed/settings.json
 karabiner/.DS_Store
 Webull Desktop
 simple-update-notifier
@@ -95,3 +93,9 @@ stripe
 # Python helper runtime files
 __pycache__/
 *.pyc
+
+# Unused app configuration kept outside the shared repository
+/1Password/
+/Questrade/
+/mole/
+/zed/
