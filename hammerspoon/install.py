@@ -9,7 +9,7 @@ parser.add_argument('--check', action='store_true', help='verify links without c
 args = parser.parse_args()
 source = Path(__file__).resolve().parent
 runtime = Path.home() / '.hammerspoon'
-names = ['init.lua', 'command_receiver.lua', 'directional_focus.lua', 'pointer_navigation.lua']
+names = ['init.lua', 'command_receiver.lua', 'directional_focus.lua', 'pointer_navigation.lua', 'app_overrides.lua']
 pending = []
 for name in names:
     src, dst = source / name, runtime / name

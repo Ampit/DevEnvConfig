@@ -13,7 +13,23 @@ Changes reach the other Mac only after a commit, push, and explicit update there
 | Terminal configuration and Git ignore rules | Karabiner automatic backups and old Ghostty backup files |
 | Configuration management scripts | Optional private files in `local/` |
 
-`local/` is only an ignored storage directory; applications do not load it automatically.
+`local/` holds settings that stay on this Mac. Hammerspoon reads optional
+`local/apps.json` on reload. Keys are shared app names without `.app`; values
+are `false` to disable that launcher or a replacement app name:
+
+```json
+{
+  "IntelliJ IDEA OSS": false
+}
+```
+
+Without an entry, the shared app shortcut works as usual. Disabled launchers do
+nothing and are hidden from this Mac's Hyper Guide. Replacement names update both
+the launcher and its guide label. Reload Hammerspoon after editing this file.
+The internal receiver keys remain shared so Universal Control dispatch stays
+consistent: the receiving Mac decides which app to launch. Hyper Guide itself
+still shows the physical keyboard host's local choices.
+Other files in `local/` are not automatically loaded.
 Unused 1Password, Questrade, Mole, and Zed configuration is also excluded from Git.
 Helix configuration remains shared.
 

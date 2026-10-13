@@ -1,6 +1,8 @@
+package.path = arg[1]:match('^(.*)/') .. '/?.lua;' .. package.path
 local timers, bindings, inputCallback = {}, {}
 local visible = false
 hs = {
+ fs={attributes=function() return nil end},
  settings={get=function() return true end,set=function() end},
  json={read=function() return {root={title='Root',subtitle='',items={}},o={title='Apps',subtitle='',items={}}} end},
  window={focusedWindow=function() return nil end},

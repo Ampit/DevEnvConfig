@@ -1,5 +1,7 @@
+local apps = require('app_overrides')
 local M = {held = false, layer = nil, enabled = hs.settings.get('hyperGuideEnabled') ~= false}
 local menus = assert(hs.json.read(os.getenv('HOME') .. '/.config/karabiner/hyper-guide-menu.json'))
+for _, menu in pairs(menus) do menu.items = apps.menuItems(menu.items) end
 local canvas, pending
 local icons = {}
 local ink = {hex='#F2F3FA'}

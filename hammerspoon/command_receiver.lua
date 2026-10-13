@@ -1,8 +1,11 @@
+local apps = require('app_overrides')
 local M = {hotkeys = {}, tasks = {}, lastCommand = nil, dryRun = false}
 local bindings = assert(hs.json.read(os.getenv('HOME') .. '/.config/karabiner/command-receiver.json'))
 
 function M.run(command)
+  command = apps.command(command)
   M.lastCommand = command
+  if not command then return end
   if M.dryRun then return end
   require('pointer_navigation').keyboardSwitch()
   local direction = command:match("^/usr/bin/open %-g 'hammerspoon://focus%-(%a+)'$")
