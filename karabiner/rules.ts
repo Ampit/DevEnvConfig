@@ -172,7 +172,7 @@ const rules: KarabinerRules[] = [
       s: app("Slack"),
       t: app("Telegram"),
       u: app("PgAdmin 4"),
-      v: app("Agent Orchestrator"),
+      v: app("IntelliJ IDEA OSS"),
       w: app("Warp"),
       x: app("ChatGPT"),
       y: app("Xcode"),

@@ -2245,7 +2245,7 @@
                     ]
                   }
                 ],
-                "description": "Open -a 'Agent Orchestrator.app'",
+                "description": "Open -a 'IntelliJ IDEA OSS.app'",
                 "conditions": [
                   {
                     "type": "variable_if",

@@ -84,7 +84,7 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open -a 'Agent Orchestrator.app'",
+    "command": "open -a 'IntelliJ IDEA OSS.app'",
     "key": "f18",
     "modifiers": [
       "left_control",
