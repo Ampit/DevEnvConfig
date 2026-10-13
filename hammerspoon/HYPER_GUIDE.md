@@ -4,6 +4,22 @@ Hold Caps Lock for 500 ms to see the available shortcuts. Hold a group key such 
 
 **Hyper + /** toggles the guide when / is released. A brief message confirms the change. The setting is saved separately on each Mac. App, window, and pointer shortcuts continue to work when the guide is off.
 
+## Current shortcuts
+
+Hyper means holding Caps Lock. For a layer sequence, keep Caps Lock and the layer key held while pressing the action key.
+
+| Shortcut | Action |
+| --- | --- |
+| Hyper + A | Unassigned, reserved for a future shortcut |
+| Hyper + O, then 3 | Open T3 Code Nightly from Daily apps |
+| Hyper + V, then H/J/K/L | Arrow keys: left/down/up/right |
+| Hyper + V, then U/I | Page down/up |
+| Hyper + V, then N/M | Scroll down/up |
+| Hyper + O, then V | Open IntelliJ IDEA OSS when enabled locally |
+| Hyper + I, then V | Open Cursor |
+
+V is the **Arrows & scrolling** layer, not an app launcher by itself. Agent Orchestrator has no active shortcut. App overrides in `local/apps.json` can disable or replace launchers on one Mac; the guide reflects those choices.
+
 ## Configuration
 
 - `karabiner/rules.ts` defines the shortcut layers.

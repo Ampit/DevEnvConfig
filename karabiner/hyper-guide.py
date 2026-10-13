@@ -6,7 +6,7 @@ raw=config.read_text()
 assert 'hyperGuide.event(' not in raw and 'hammerspoon://hyper-guide?' not in raw, 'Build rules.ts before generating Hyper Guide'
 data=json.loads(raw)
 menus={'root':{'title':'Your next move','subtitle':'One key away.','items':[]}}
-titles={'o':'Daily apps','i':'More apps','w':'Window studio','b':'On the web','s':'System controls','v':'Navigation','c':'Now playing','r':'Raycast tools','d':'Precise pointer','f':'Fast pointer'}
+titles={'o':'Daily apps','i':'More apps','w':'Window studio','b':'On the web','s':'System controls','v':'Arrows & scrolling','c':'Now playing','r':'Raycast tools','d':'Precise pointer','f':'Fast pointer'}
 labels={'spacebar':'Pomodoro','h':'Pointer left','j':'Pointer down','k':'Pointer up','l':'Pointer right','e':'Left click','t':'Right click'}
 friendly={'volume_increment':'Volume up','volume_decrement':'Volume down','display_brightness_increment':'Brightness up','display_brightness_decrement':'Brightness down','play_or_pause':'Play / pause','fastforward':'Next track','rewind':'Previous track','left_arrow':'Left','right_arrow':'Right','up_arrow':'Up','down_arrow':'Down','page_down':'Page down','page_up':'Page up'}
 def hook(key,state):

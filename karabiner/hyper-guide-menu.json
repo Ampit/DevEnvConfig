@@ -45,7 +45,7 @@
       },
       {
         "key": "v",
-        "label": "Navigation",
+        "label": "Arrows & scrolling",
         "group": true
       },
       {
@@ -413,7 +413,7 @@
     ]
   },
   "v": {
-    "title": "Navigation",
+    "title": "Arrows & scrolling",
     "subtitle": "Keep Hyper held. Choose your next key.",
     "items": [
       {
