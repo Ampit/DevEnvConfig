@@ -137,7 +137,7 @@ or pushes local edits.
 
 Devbox uses a separate source checkout in `~/workspace/personal/DevEnvConfig` and
 only deploys the allowlist in `scripts/config_sync.py`: Neovim, btop/theme, Starship,
-and the explicit Linux Zsh/tmux/lazygit files. The Linux files avoid Mac-only paths
+and the explicit Linux Zsh/tmux/lazygit files (including PATH for noninteractive SSH commands). The Linux files avoid Mac-only paths
 and automatic tmux session restoration. Java paths are selected by OS. Selene on
 Linux ARM is installed outside Mason. Authenticate Copilot explicitly.
 

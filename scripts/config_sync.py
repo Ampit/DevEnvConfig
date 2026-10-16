@@ -87,6 +87,7 @@ def desired_linux(repo):
         'btop/btop.conf': '.config/btop/btop.conf',
         'starship.toml': '.config/starship.toml',
         'linux/zshrc': '.zshrc',
+        'linux/zshenv': '.zshenv',
         'linux/tmux.conf': '.tmux.conf',
         'linux/lazygit.yml': '.config/lazygit/config.yml',
     }
@@ -140,7 +141,7 @@ def validate(repo, desired):
                 checker = root / 'check.lua'
                 checker.write_text(code)
                 run(['nvim', '--headless', '-u', 'NONE', '-l', str(checker)])
-            if name == '.zshrc':
+            if name in ('.zshrc', '.zshenv'):
                 run(['zsh', '-n', str(p)])
 
 
