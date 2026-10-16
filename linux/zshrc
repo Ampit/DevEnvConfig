@@ -1,0 +1,17 @@
+# Shared Devbox shell. Machine-private additions belong in ~/.config/local/zshrc.
+export PATH="$HOME/.local/bin:$HOME/.bun/bin:$HOME/.cargo/bin:$PATH"
+export EDITOR=nvim VISUAL=nvim
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=20000
+SAVEHIST=20000
+setopt HIST_IGNORE_DUPS SHARE_HISTORY
+bindkey -e
+autoload -Uz compinit
+compinit
+[[ -r /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
+[[ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+(( $+commands[gitid] )) && eval "$(gitid hook zsh)"
+(( $+commands[starship] )) && eval "$(starship init zsh)"
+alias ll='eza -lah'
+[[ -r "$HOME/.config/local/zshrc" ]] && source "$HOME/.config/local/zshrc"

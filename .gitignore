@@ -103,3 +103,6 @@ __pycache__/
 /cliamp/
 
 /opencode/service.json
+
+# Fleet host identity is machine-local.
+/fleet/

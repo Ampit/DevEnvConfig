@@ -120,3 +120,43 @@ python3 scripts/test_configctl.py
 
 Tests cover preservation of modified local files and sessions, private backup
 permissions, repeated migration, and refusal of dirty or mixed-component updates.
+
+## Fleet automatic sync
+
+Published commits on `main` are checked every five minutes by Fleet on Devbox and
+by a login-time LaunchAgent on each Mac. Macs fetch the published DevEnvConfig
+reference over their existing SSH connection to Devbox. An offline machine keeps
+its current settings and checks again after reconnecting. No machine auto-commits
+or pushes local edits.
+
+- Run `fleet config status --all` from either Mac for applied versions and blockers.
+- Run `fleet config sync --all` from either Mac after publishing for an immediate check.
+- On one machine, omit `--all` to check or update only that machine.
+- Edit shared files, validate, commit and push to `Ampit/DevEnvConfig`. Tool-specific
+  runtime versions remain in each project. Project `.env` files and secrets are not synced.
+
+Devbox uses a separate source checkout in `~/workspace/personal/DevEnvConfig` and
+only deploys the allowlist in `scripts/config_sync.py`: Neovim, btop/theme, Starship,
+and the explicit Linux Zsh/tmux/lazygit files. The Linux files avoid Mac-only paths
+and automatic tmux session restoration. Java paths are selected by OS. Selene on
+Linux ARM is installed outside Mason. Authenticate Copilot explicitly.
+
+The initial Devbox import requires a deliberate `--bootstrap` run and saves the
+previous settings. Later runs use hashes of the last applied files to detect local
+edits, including deletions. A conflict preserves the file and stops the batch.
+Macs retain their existing active Git checkout: any dirty checkout or keyboard
+configuration update needs attention/manual application. Configuration changes
+wait while affected Neovim, btop or lazygit processes run. No running apps are
+restarted; shell and tmux settings take effect in new sessions.
+
+Backups and status live in `~/.local/state/fleet/config/`. A Linux deployment
+failure restores the previous configuration files. Mac update failures retain a
+backup and report attention; do not force-reset the checkout. Native plugin
+updates run only when the lockfile changes and the editor is not running. The
+updater verifies pinned plugin Git revisions. Binary/runtime upgrades remain an
+explicit operation; the updater refuses an incompatible Neovim version policy.
+
+The shared `zsh/.zshrc` is historical Mac config. The Macs currently load their
+own `~/.zshrc`; those root shell files are intentionally not replaced automatically.
+For Devbox shell changes, edit `linux/zshrc`. Portable settings belong in their
+shared tool files; machine-private additions can go in `~/.config/local/zshrc`.

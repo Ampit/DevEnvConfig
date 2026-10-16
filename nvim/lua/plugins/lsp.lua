@@ -9,9 +9,11 @@ return {
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
+      if vim.uv.os_uname().sysname ~= "Linux" then
+        table.insert(opts.ensure_installed, "selene")
+      end
       vim.list_extend(opts.ensure_installed, {
         "stylua",
-        "selene",
         "luacheck",
         "shellcheck",
         "shfmt",

@@ -146,6 +146,9 @@ def main():
     sub.add_parser('status')
     sub.add_parser('plan')
     sub.add_parser('protect-local')
+    sync = sub.add_parser('sync')
+    sync.add_argument('--host', choices=['work-mac', 'personal-mac', 'devbox'], required=True)
+    sync.add_argument('--bootstrap', action='store_true')
     for action in ('apply', 'update'):
         p = sub.add_parser(action)
         p.add_argument('components', choices=COMPONENTS, nargs='+')
@@ -165,6 +168,12 @@ def main():
         plan()
     elif args.action == 'protect-local':
         protect_local()
+    elif args.action == 'sync':
+        from config_sync import synchronize
+        report = synchronize(ROOT, Path.home(), args.host, args.bootstrap)
+        print(json.dumps(report, indent=2))
+        if report['state'] == 'needs-attention':
+            sys.exit(1)
     elif args.action == 'apply':
         apply(args.components)
     elif args.action == 'update':
