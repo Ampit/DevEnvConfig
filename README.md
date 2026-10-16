@@ -123,7 +123,7 @@ permissions, repeated migration, and refusal of dirty or mixed-component updates
 
 ## Fleet automatic sync
 
-Published commits on `main` are checked every five minutes by Fleet on Devbox and
+Published commits on `main` are checked every twelve hours by Fleet on Devbox and
 by a login-time LaunchAgent on each Mac. Macs fetch the published DevEnvConfig
 reference over their existing SSH connection to Devbox. An offline machine keeps
 its current settings and checks again after reconnecting. No machine auto-commits
