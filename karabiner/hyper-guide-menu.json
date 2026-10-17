@@ -375,6 +375,10 @@
     "subtitle": "Keep Hyper held. Choose your next key.",
     "items": [
       {
+        "key": "m",
+        "label": "Toggle Fleet Monitor"
+      },
+      {
         "key": "u",
         "label": "Volume up"
       },

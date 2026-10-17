@@ -284,6 +284,7 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
+      m: { description: "Toggle Fleet Monitor", to: [{ shell_command: "/usr/bin/open -g 'fleet-monitor://toggle'" }] },
       u: {
         to: [
           {

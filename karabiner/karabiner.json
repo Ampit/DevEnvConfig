@@ -3381,6 +3381,35 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "description": "Toggle Fleet Monitor",
+                "to": [
+                  {
+                    "key_code": "f14",
+                    "modifiers": [
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "u",
                   "modifiers": {
                     "optional": [
