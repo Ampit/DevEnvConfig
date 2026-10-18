@@ -106,3 +106,6 @@ __pycache__/
 
 # Fleet host identity is machine-local.
 /fleet/
+
+# Fleet generates monitor connections from its inventory on each machine.
+/fleet-monitor/
