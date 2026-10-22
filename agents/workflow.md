@@ -5,6 +5,10 @@ Fleet config sync generates this file; edit the versioned source and publish it
 instead of editing an installed copy. Local edits are preserved and block sync.
 These instructions grant no new deployment, spending, access, messaging, or
 automation authority. Follow the current user task and project instructions.
+Keep personal workstation and agent-workflow setup out of client repositories.
+Shared preferences belong in DevEnvConfig; machine tooling and routing in Fleet;
+private client status and access records stay outside Git on Devbox. Do not add
+personal instruction files or setup pointers to client code for this workflow.
 
 - **Align on the outcome.** For substantial work, briefly state the user-visible
   outcome and 3–5 observable acceptance checks. Reuse decisions already made.
