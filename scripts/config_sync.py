@@ -107,6 +107,50 @@ def desired_linux(repo):
     return mapping
 
 
+def desired_agent_rules(repo, home, host):
+    """Render only the versioned, non-secret workflow into global entry points."""
+    if host not in ('devbox', 'work-mac', 'personal-mac'):
+        raise RuntimeError('Unknown guidance host: ' + host)
+    files = set(git(repo, 'ls-files').splitlines())
+    source = 'agents/workflow.md'
+    if source not in files:
+        return {}
+    host_source = 'agents/hosts/' + ('devbox.md' if host == 'devbox' else 'macos.md')
+    sections = []
+    for name in (source, host_source):
+        p = repo / name
+        if name not in files or p.is_symlink() or not p.is_file():
+            raise RuntimeError('Guidance source must be a tracked regular file: ' + name)
+        text = p.read_text()
+        if not text.strip():
+            raise RuntimeError('Empty guidance source: ' + name)
+        sections.append(text.rstrip())
+    text = '\n\n'.join(sections).replace('{{HOME}}', str(home)) + '\n'
+    if '{{' in text or '\x00' in text:
+        raise RuntimeError('Invalid guidance template')
+    override = current(target(home, '.codex/AGENTS.override.md'))
+    if override and override.strip():
+        raise RuntimeError('Global Codex override is active; inspect before updating guidance')
+    return {name: text.encode() for name in (
+        'AGENTS.md', '.codex/AGENTS.md', '.claude/CLAUDE.md', '.gemini/GEMINI.md')}
+
+
+def synchronize_agent_rules(repo, home, host, old, report, state, commit):
+    desired = desired_agent_rules(repo, home, host)
+    if not desired and not old.get('agent_managed'):
+        return
+    batch = changes(home, desired, old.get('agent_managed', {}))
+    if batch:
+        # Drift checks run again immediately before the existing backup/apply path.
+        batch = changes(home, desired, old.get('agent_managed', {}))
+        backup = state / 'backups' / ('agents-' + datetime.datetime.now().strftime('%Y%m%dT%H%M%S%f'))
+        apply_files(home, batch, backup)
+        report['agent_backup'] = str(backup)
+    report.update(agent_applied_commit=commit,
+                  agent_managed={name: digest(data) for name, data in desired.items()},
+                  agent_updated_files=len(batch))
+
+
 def changes(home, desired, previous, bootstrap=False):
     result = {}
     for name in sorted(set(desired) | set(previous)):
@@ -209,7 +253,8 @@ def synchronize(repo, home, host, bootstrap=False, fetch=True):
             return {'state': 'busy'}
         status_path = state / 'status.json'
         old = json.loads(status_path.read_text()) if status_path.exists() else {}
-        report = {k: old[k] for k in ['applied_commit', 'managed', 'backup'] if k in old}
+        report = {k: old[k] for k in ['applied_commit', 'managed', 'backup',
+                                    'agent_applied_commit', 'agent_managed', 'agent_backup'] if k in old}
         report.update(host=host, checked_at=datetime.datetime.now(datetime.timezone.utc).isoformat())
         try:
             if fetch:
@@ -241,11 +286,12 @@ def synchronize(repo, home, host, bootstrap=False, fetch=True):
                     if any(p.startswith(('karabiner/', 'hammerspoon/')) for p in incoming):
                         report.update(state='pending', reason='Keyboard changes require explicit configctl update')
                     else:
-                        configctl.preflight(['neovim'])
-                        incoming_policy = json.loads(git(repo, 'show', ref + ':config-policy.json'))
-                        version = run(['nvim', '--version']).splitlines()[0]
-                        if not version.startswith('NVIM v' + incoming_policy['neovim_series'] + '.'):
-                            raise RuntimeError('Incoming Neovim version policy needs a tool upgrade')
+                        if any(p.startswith('nvim/') or p == 'config-policy.json' for p in incoming):
+                            configctl.preflight(['neovim'])
+                            incoming_policy = json.loads(git(repo, 'show', ref + ':config-policy.json'))
+                            version = run(['nvim', '--version']).splitlines()[0]
+                            if not version.startswith('NVIM v' + incoming_policy['neovim_series'] + '.'):
+                                raise RuntimeError('Incoming Neovim version policy needs a tool upgrade')
                         backup = state / 'backups' / datetime.datetime.now().strftime('%Y%m%dT%H%M%S%f')
                         backup.mkdir(parents=True, mode=0o700)
                         atomic(backup / 'previous-commit', (git(repo, 'rev-parse', 'HEAD')+'\n').encode())
@@ -279,6 +325,8 @@ def synchronize(repo, home, host, bootstrap=False, fetch=True):
                         apply_files(home, batch, backup, plugin_change)
                         report['backup'] = str(backup)
                     report.update(state='current', applied_commit=desired_commit, managed={p:digest(data) for p,data in desired.items()}, reason=f'{len(batch)} configuration files updated')
+            if report.get('state') == 'current':
+                synchronize_agent_rules(repo, home, host, old, report, state, desired_commit)
         except Exception as exc:
             report.update(state='needs-attention', reason=str(exc))
         atomic(status_path, json.dumps(report, indent=2).encode())

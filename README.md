@@ -141,6 +141,29 @@ and the explicit Linux Zsh/tmux/lazygit files (including PATH for noninteractive
 and automatic tmux session restoration. Java paths are selected by OS. Selene on
 Linux ARM is installed outside Mason. Authenticate Copilot explicitly.
 
+## Shared agent workflow
+
+`agents/workflow.md` and `agents/hosts/{devbox,macos}.md` are the maintained
+sources for global workflow guidance. The existing Fleet config updater renders
+them to `~/AGENTS.md`, `~/.codex/AGENTS.md`, `~/.claude/CLAUDE.md` and
+`~/.gemini/GEMINI.md` on all three hosts. The Mac notes address Devbox records
+over SSH; private access maps, project status, credentials and conversation state
+are never added to this repository.
+
+Edit these source files, run `python3 scripts/test_config_sync.py`, commit and
+push, then run `fleet sync --all`. That command updates clean Fleet mirrors and
+uses the same config updater as `fleet config sync --all` and the existing
+twelve-hour/login checks. `fleet config status --all` reports the rule revision
+separately. A locally edited installed rule file, unknown existing customization,
+symlink destination or active global Codex override needs review; no force
+overwrite is performed. Existing agents are not restarted.
+
+The global rules point to Fleet's `docs/cross-machine-threads.md` for the owning
+host's T3 CLI over SSH. This reuses established routing; config sync does not
+message threads or migrate their history.
+
+## Update safety and recovery
+
 The initial Devbox import requires a deliberate `--bootstrap` run and saves the
 previous settings. Later runs use hashes of the last applied files to detect local
 edits, including deletions. A conflict preserves the file and stops the batch.
