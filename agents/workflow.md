@@ -43,6 +43,10 @@ personal instruction files or setup pointers to client code for this workflow.
 - **Keep updates scannable.** Lead with the result; use short bullets and bold
   labels for status, decisions, and blockers. Explain technical work through its
   effect on users. Keep implementation details out of product copy.
+- **Put the proposal in chat.** Always give a concise, self-contained summary
+  of the proposed action, impact, checks, and decision needed in the conversation.
+  Keep handoff documents and detailed evidence optional; never require the user
+  to read a long document to understand a proposal or approve the next step.
 
 ## Cross-machine threads
 
