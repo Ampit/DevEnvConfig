@@ -379,6 +379,10 @@
         "label": "Toggle Fleet Monitor"
       },
       {
+        "key": "b",
+        "label": "Toggle Fleet Stats Bar"
+      },
+      {
         "key": "u",
         "label": "Volume up"
       },

@@ -638,6 +638,12 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
+    "command": "/usr/bin/open -g 'fleet-monitor://bar-toggle'",
+    "key": "f15",
+    "modifiers": ["left_control", "left_option", "left_shift"],
+    "receiverModifiers": ["ctrl", "alt", "shift"]
+  },
+  {
     "command": "/usr/bin/open -g 'fleet-monitor://toggle'",
     "key": "f14",
     "modifiers": [

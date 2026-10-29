@@ -11,6 +11,7 @@ Hyper means holding Caps Lock. For a layer sequence, keep Caps Lock and the laye
 | Shortcut | Action |
 | --- | --- |
 | Hyper + S, then M | Toggle Fleet Monitor on the focused Mac |
+| Hyper + S, then B | Toggle the Fleet stats bar on the focused Mac |
 | Hyper + A | Unassigned, reserved for a future shortcut |
 | Hyper + O, then 3 | Open T3 Code Nightly from Daily apps |
 | Hyper + V, then H/J/K/L | Arrow keys: left/down/up/right |

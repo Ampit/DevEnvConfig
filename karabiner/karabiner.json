@@ -3410,6 +3410,35 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "description": "Toggle Fleet Stats Bar",
+                "to": [
+                  {
+                    "key_code": "f15",
+                    "modifiers": [
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "u",
                   "modifiers": {
                     "optional": [
