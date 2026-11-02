@@ -1982,14 +1982,15 @@
                 },
                 "to": [
                   {
-                    "key_code": "f14",
+                    "key_code": "f17",
                     "modifiers": [
                       "left_command",
+                      "left_option",
                       "left_shift"
                     ]
                   }
                 ],
-                "description": "Open -a 'Rex Beta.app'",
+                "description": "Open -a 'Telegram.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -2181,15 +2182,14 @@
                 },
                 "to": [
                   {
-                    "key_code": "f17",
+                    "key_code": "f14",
                     "modifiers": [
                       "left_command",
-                      "left_option",
                       "left_shift"
                     ]
                   }
                 ],
-                "description": "Open -a 'Telegram.app'",
+                "description": "Open -a 'Rex Beta.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
