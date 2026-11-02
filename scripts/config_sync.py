@@ -131,8 +131,11 @@ def desired_agent_rules(repo, home, host):
     override = current(target(home, '.codex/AGENTS.override.md'))
     if override and override.strip():
         raise RuntimeError('Global Codex override is active; inspect before updating guidance')
-    return {name: text.encode() for name in (
-        'AGENTS.md', '.codex/AGENTS.md', '.claude/CLAUDE.md', '.gemini/GEMINI.md')}
+    names = ['AGENTS.md', '.codex/AGENTS.md', '.claude/CLAUDE.md', '.gemini/GEMINI.md']
+    for profile in ('.claude-speer', '.claude-personal'):
+        if target(home, profile).is_dir():
+            names.append(profile + '/CLAUDE.md')
+    return {name: text.encode() for name in names}
 
 
 def synchronize_agent_rules(repo, home, host, old, report, state, commit):

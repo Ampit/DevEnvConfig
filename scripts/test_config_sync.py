@@ -93,6 +93,36 @@ class AgentGuidanceSafety(unittest.TestCase):
         self.assertEqual(mac, self.desired('personal-mac'))
         self.assertNotIn('access-map.md', linux)
 
+    def test_existing_isolated_claude_profiles_receive_managed_guidance(self):
+        for profile in ('.claude-speer', '.claude-personal'):
+            (self.home / profile).mkdir()
+        first = {}
+        state = self.home / 'state'
+        sync.synchronize_agent_rules(self.repo, self.home, 'devbox', {}, first, state, 'one')
+        self.assertEqual(first['agent_updated_files'], 6)
+        for profile in ('.claude-speer', '.claude-personal'):
+            self.assertEqual((self.home / profile / 'CLAUDE.md').read_bytes(),
+                             (self.home / '.claude/CLAUDE.md').read_bytes())
+        second = {}
+        sync.synchronize_agent_rules(self.repo, self.home, 'devbox', first, second, state, 'one')
+        self.assertEqual(second['agent_updated_files'], 0)
+
+    def test_isolated_claude_profile_customization_and_symlink_are_preserved(self):
+        profile = self.home / '.claude-speer'
+        profile.mkdir()
+        rules = profile / 'CLAUDE.md'
+        rules.write_text('private profile instructions')
+        with self.assertRaisesRegex(RuntimeError, 'Local configuration changed'):
+            sync.synchronize_agent_rules(self.repo, self.home, 'devbox', {}, {},
+                                         self.home / 'state', 'one')
+        self.assertEqual(rules.read_text(), 'private profile instructions')
+        self.assertFalse((self.home / 'AGENTS.md').exists())
+        rules.unlink()
+        profile.rmdir()
+        profile.symlink_to(self.repo, target_is_directory=True)
+        with self.assertRaisesRegex(RuntimeError, 'Symlink path'):
+            self.desired()
+
     def test_unknown_host_and_active_override_stop(self):
         with self.assertRaisesRegex(RuntimeError, 'Unknown guidance host'):
             self.desired('unrecognized')

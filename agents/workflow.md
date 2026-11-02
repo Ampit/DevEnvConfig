@@ -48,6 +48,22 @@ personal instruction files or setup pointers to client code for this workflow.
   Keep handoff documents and detailed evidence optional; never require the user
   to read a long document to understand a proposal or approve the next step.
 
+## Terminals and command execution
+
+Rex connects all three hosts. Read Fleet's `docs/rex.md` for destinations,
+identities, CLI paths, and recovery before using it; `rex skill show` provides
+the installed CLI's agent guide. Use the CLI rather than scripting the Rex UI.
+Use the normal command tool on the executing host for ordinary commands and
+existing strict-host-key SSH for short remote commands. Use Rex when the task
+needs a persistent terminal, visible output, or a shared pane. Rex is not
+required for every command; its Mac connections already use SSH socket tunnels.
+Choose the destination explicitly and verify identity before running commands.
+Use returned session/block IDs, preserve focus, and create a separate task-owned
+session when no existing terminal was requested. Never type into a busy or
+unrelated pane, expose secrets in captured output, or restart Rex to fix a route.
+Close only temporary sessions created for the current check. This does not
+change the Devbox compute boundary or authorize new access or background work.
+
 ## Cross-machine threads
 
 T3 conversations belong to the server running them. Local T3 tools cannot assume
