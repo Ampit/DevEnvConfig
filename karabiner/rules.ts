@@ -163,7 +163,7 @@ const rules: KarabinerRules[] = [
       d: app("Discord"),
       e: app("Superhuman"),
       f: app("Finder"),
-      g: app("Ghostty"),
+      g: app("Rex Beta"),
       h: app("Google Chrome"),
       k: app("WhatsApp"),
       l: app("Linear"),

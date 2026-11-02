@@ -1989,7 +1989,7 @@
                     ]
                   }
                 ],
-                "description": "Open -a 'Ghostty.app'",
+                "description": "Open -a 'Rex Beta.app'",
                 "conditions": [
                   {
                     "type": "variable_if",

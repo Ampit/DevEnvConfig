@@ -166,7 +166,7 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open -a 'Ghostty.app'",
+    "command": "open -a 'Rex Beta.app'",
     "key": "f14",
     "modifiers": [
       "left_command",
