@@ -135,7 +135,22 @@ def desired_agent_rules(repo, home, host):
     for profile in ('.claude-speer', '.claude-personal'):
         if target(home, profile).is_dir():
             names.append(profile + '/CLAUDE.md')
-    return {name: text.encode() for name in names}
+    rendered = {name: text.encode() for name in names}
+    # T3/ancestor discovery can include ~/AGENTS.md as well as the provider's
+    # native global file. Keep one full copy per provider and a small fallback.
+    rendered['AGENTS.md'] = (
+        '# Shared workflow entry point\n\n'
+        'The shared workflow is installed in each provider global file:\n'
+        '- Codex: ' + str(home / '.codex/AGENTS.md') + '\n'
+        '- Claude Code: ' + str(home / '.claude/CLAUDE.md') + '\n'
+        '- Gemini: ' + str(home / '.gemini/GEMINI.md') + '\n\n'
+        'If the shared workflow is already in context, do not load another copy.\n'
+        'Otherwise read ' + str(home / '.claude/CLAUDE.md') + ' once, including\n'
+        'when using a provider without a native global instructions file.\n'
+        'Edit DevEnvConfig agents/workflow.md and agents/hosts/; Fleet sync\n'
+        'generates these installed files. Do not edit them directly.\n'
+    ).encode()
+    return rendered
 
 
 def synchronize_agent_rules(repo, home, host, old, report, state, commit):

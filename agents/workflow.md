@@ -24,10 +24,21 @@ personal instruction files or setup pointers to client code for this workflow.
   desktop/mobile layouts, branding, errors, and realistic content. Distinguish
   implemented, deployed, journey-verified, and pending. Name blocked checks;
   hand over one primary review link, changes, evidence, and remaining limits.
+- **Own temporary processes.** Stop dev servers, test browsers and watchers you
+  started before handoff. Preserve other owners' processes. For a temporary
+  foreground server, use Fleet's `bin/dev-process.py start --owner-thread ID --`
+  with the current local T3 thread id; see Fleet `docs/dev-server-cleanup.md`.
+  Use `--keep` for a server needed for ongoing review and include its managed id
+  in the handoff; release or stop it when that review ends. Never infer that a
+  process is abandoned from its name or age. Unregistered processes are reported,
+  never automatically stopped. T3's own preview/browser sessions remain app-owned.
 - **Keep shared state current.** Before substantial work and at handoff, read
   and update the project's status record: timestamp, objective, owner/thread,
   active operation, PR/commit, deployment, next action, blocker, and approval
-  boundaries. Distinguish historical reports from fresh verification. Preserve
+  boundaries. Keep the current record concise; update the relevant workstream
+  instead of repeatedly appending completed history. Archive completed detail
+  with a discoverable link. Distinguish historical reports from fresh verification.
+  Preserve
   unfinished queued work in handoffs. Use one owner per production operation;
   resolve competing ownership before mutation. Status is not a lock or approval.
 - **Reuse access knowledge.** Read Fleet's access docs and the private access
