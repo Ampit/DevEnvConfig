@@ -181,7 +181,7 @@ const rules: KarabinerRules[] = [
     i: {
       d: app("TradingView"),
       f: app("Firefox"),
-      s: app("Todoist"),
+      t: app("Todoist"),
       v: app("Cursor"),
       w: app("Webull Desktop"),
     },
