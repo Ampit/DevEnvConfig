@@ -172,7 +172,7 @@ const rules: KarabinerRules[] = [
       s: app("Slack"),
       t: app("Rex Beta"),
       u: app("PgAdmin 4"),
-      v: app("IntelliJ IDEA OSS"),
+      v: app("Cursor"),
       w: app("Warp"),
       x: app("ChatGPT"),
       y: app("Xcode"),
@@ -182,7 +182,7 @@ const rules: KarabinerRules[] = [
       d: app("TradingView"),
       f: app("Firefox"),
       t: app("Todoist"),
-      v: app("Cursor"),
+      v: app("IntelliJ IDEA OSS"),
       w: app("Webull Desktop"),
     },
 

@@ -46,7 +46,7 @@ Hold Caps Lock to use the existing Hyper layers. Option + Shift + H/J/K/L focuse
 
 Hyper + A is unassigned. Hyper + O, then 3 opens T3 Code Nightly from Daily apps. Agent Orchestrator has no active binding.
 
-Hyper + V is the Arrows & scrolling layer: H/J/K/L sends left/down/up/right, U/I sends page down/up, and N/M scrolls down/up. Hyper + O, then V opens IntelliJ IDEA OSS; Hyper + I, then V opens Cursor. Hold the layer key while pressing the final key. The full guide is in `../hammerspoon/HYPER_GUIDE.md`.
+Hyper + V is the Arrows & scrolling layer: H/J/K/L sends left/down/up/right, U/I sends page down/up, and N/M scrolls down/up. Hyper + O, then V opens Cursor on both Macs. Hyper + I, then V opens IntelliJ IDEA OSS on Personal Mac; Work Mac removes that binding locally. Hold the layer key while pressing the final key. The full guide is in `../hammerspoon/HYPER_GUIDE.md`.
 
 App, window, and Raycast commands use the shared receiver. Existing ordinary keystrokes, mouse and media outputs remain unchanged.
 
