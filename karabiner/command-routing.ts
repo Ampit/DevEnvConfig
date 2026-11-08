@@ -96,7 +96,7 @@ const bindings: CommandBinding[] = [
     ]
   },
   {
-    "command": "open -a 'Arc.app'",
+    "command": "open -a 'Helium.app'",
     "key": "f19",
     "modifiers": [
       "left_control",

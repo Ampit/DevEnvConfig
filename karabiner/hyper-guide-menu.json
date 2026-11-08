@@ -161,13 +161,13 @@
       },
       {
         "key": "a",
-        "label": "Arc",
-        "app": "Arc"
+        "label": "Obsidian",
+        "app": "Obsidian"
       },
       {
         "key": "b",
-        "label": "Obsidian",
-        "app": "Obsidian"
+        "label": "Helium",
+        "app": "Helium"
       },
       {
         "key": "c",
