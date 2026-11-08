@@ -14,7 +14,16 @@ Karabiner recognizes the key sequence. Command actions become reserved key combi
 | `../hammerspoon/command_receiver.lua` | Registers receiver hotkeys and executes commands |
 | `../hammerspoon/directional_focus.lua` | Directional window focus and edge wrapping |
 
-Both JSON files are committed. Edit the TypeScript sources and generate both JSON files together. Do not edit generated files directly. The current generator writes the whole Default profile, including the ANSI keyboard setting; review device/profile differences before rebuilding on another machine.
+`command-receiver.json` is committed and identical on both Macs. The active
+`karabiner.json` and `hyper-guide-menu.json` are generated locally and ignored by
+Git. Edit the TypeScript sources or `../local/keyboard.json`, then run `yarn build`.
+Do not edit generated files directly. The generator writes the whole Default
+profile, including the ANSI keyboard setting; review device/profile differences
+before rebuilding on another machine.
+
+For example, `{"remove": [["o", "h"]]}` in `../local/keyboard.json` removes
+Hyper O H from this Mac's keymap and guide. It does not change the shared receiver
+registry or the other Mac. Run `yarn test` to verify both generated variants.
 
 ## Set up a Mac
 

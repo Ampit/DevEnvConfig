@@ -5,6 +5,16 @@ config=root/'karabiner.json'
 raw=config.read_text()
 assert 'hyperGuide.event(' not in raw and 'hammerspoon://hyper-guide?' not in raw, 'Build rules.ts before generating Hyper Guide'
 data=json.loads(raw)
+local_keyboard=root.parent/'local/keyboard.json'
+removed=json.loads(local_keyboard.read_text()).get('remove',[]) if local_keyboard.exists() else []
+assert isinstance(removed,list) and all(isinstance(pair,list) and len(pair)==2 and all(isinstance(key,str) and key for key in pair) for pair in removed), 'local/keyboard.json remove must contain [layer, key] pairs'
+removed={tuple(pair) for pair in removed}
+def keep_shortcut(manipulator):
+ layer=next((c['name'].removeprefix('hyper_sublayer_') for c in manipulator.get('conditions',[]) if c.get('type')=='variable_if' and str(c.get('name','')).startswith('hyper_sublayer_') and c.get('value')==1),None)
+ return (layer,manipulator.get('from',{}).get('key_code')) not in removed
+for profile in data['profiles']:
+ for rule in profile['complex_modifications']['rules']:
+  rule['manipulators']=[m for m in rule.get('manipulators',[]) if keep_shortcut(m)]
 menus={'root':{'title':'Your next move','subtitle':'One key away.','items':[]}}
 titles={'o':'Daily apps','i':'More apps','w':'Window studio','b':'On the web','s':'System controls','v':'Arrows & scrolling','c':'Now playing','r':'Raycast tools','d':'Precise pointer','f':'Fast pointer'}
 labels={'spacebar':'Pomodoro','h':'Pointer left','j':'Pointer down','k':'Pointer up','l':'Pointer right','e':'Left click','t':'Right click'}

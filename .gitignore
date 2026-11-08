@@ -82,6 +82,10 @@ stripe
 /karabiner/window-focus-setup-*/
 /karabiner/automatic_backups/
 
+# Keyboard outputs are generated for each Mac's local shortcut choices.
+/karabiner/karabiner.json
+/karabiner/hyper-guide-menu.json
+
 # Machine-local preferences, identity, and runtime state
 /herdr/
 /gh/hosts.yml

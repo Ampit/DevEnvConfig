@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "tsm rules.ts && python3 hyper-guide.py",
+    "test": "python3 test-hyper-guide.py",
     "watch": "nodemon --exec yarn build -e ts,py"
   }
 }

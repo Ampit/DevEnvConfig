@@ -7,7 +7,7 @@ Changes reach the other Mac only after a commit, push, and explicit update there
 
 | Shared in Git | Local to each Mac, ignored by Git |
 | --- | --- |
-| Karabiner rules and generated configuration | Entire `herdr/` directory: sessions, preferences, logs, sockets, onboarding |
+| Karabiner sources and command receiver registry | Entire `herdr/` directory: sessions, preferences, logs, sockets, onboarding |
 | Hammerspoon helpers and Hyper Guide | GitHub login file `gh/hosts.yml` and Firebase credentials in `firebase/` |
 | Neovim configuration and `nvim/lazy-lock.json` | Git identity profiles and mappings in `gitid/` |
 | Terminal configuration and Git ignore rules | Karabiner automatic backups and old Ghostty backup files |
@@ -29,7 +29,22 @@ the launcher and its guide label. Reload Hammerspoon after editing this file.
 The internal receiver keys remain shared so Universal Control dispatch stays
 consistent: the receiving Mac decides which app to launch. Hyper Guide itself
 still shows the physical keyboard host's local choices.
-Other files in `local/` are not automatically loaded.
+To remove a key mapping from one Mac's keyboard configuration, set
+`local/keyboard.json` and run `python3 scripts/configctl.py apply keyboard`:
+
+```json
+{
+  "remove": [["o", "h"]]
+}
+```
+
+This removes Hyper O H from that Mac's generated keymap and guide. The shared
+receiver registry stays identical for Universal Control. Generated
+`karabiner/karabiner.json` and `karabiner/hyper-guide-menu.json` stay outside Git
+so different local choices do not block updates. Both files are rebuilt by the
+normal keyboard apply workflow.
+
+Other files in `local/` are not read by these helpers.
 Unused 1Password, Questrade, Mole, and Zed configuration is also excluded from Git.
 Helix configuration remains shared.
 
